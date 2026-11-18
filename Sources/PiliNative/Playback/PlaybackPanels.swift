@@ -293,7 +293,7 @@ HStack(alignment: .top, spacing: 8) {
   let wide = width > height && width >= 540
   let side = wide && (horizontal || creator != nil)
   let list: AnyView? = wide && (playlistPref ?? horizontal) ? playlist : nil
-  let selected = wantsList && list != nil && selection == nil ? 2 : comments ? 1 : 0
+  let selected: Int = wantsList && list != nil && selection == nil ? 2 : comments ? 1 : 0
   let vertical =
     enlarge && playback.pictureSize.height > playback.pictureSize.width && playback.pictureSize.width > 0
   let ratio: CGFloat = vertical ? (side ? 9.0 / 16 : 1) : 16.0 / 9
@@ -305,12 +305,12 @@ HStack(alignment: .top, spacing: 8) {
       playerWidth / ratio,
       side ? max(1, usable - 44) : usable * (vertical ? 0.72 : 0.6)))
   let showTabs = !(wide && creator != nil) && (canDiscuss || list != nil || accessory != nil)
-  let tabs = [0] + (canDiscuss ? [1] : []) + (list != nil ? [2] : [])
+  let tabIDs: [Int] = [0] + (canDiscuss ? [1] : []) + (list != nil ? [2] : [])
   Group {
     if side {
-      sidePanels(wide: wide, playerWidth: playerWidth, playerHeight: playerHeight, showTabs: showTabs, tabs: tabs, selected: selected, list: list)
+      sidePanels(wide: wide, playerWidth: playerWidth, playerHeight: playerHeight, showTabs: showTabs, tabs: tabIDs, selected: selected, list: list)
     } else {
-      portraitPanels(playerWidth: playerWidth, playerHeight: playerHeight, showTabs: showTabs, tabs: tabs, selected: selected, list: list)
+      portraitPanels(playerWidth: playerWidth, playerHeight: playerHeight, showTabs: showTabs, tabs: tabIDs, selected: selected, list: list)
     }
   }
   .environment(\.presentGalleryRail, wide && galleryEnabled ? { gallery = $0 } : nil)
