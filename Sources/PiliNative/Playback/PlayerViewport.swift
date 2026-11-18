@@ -219,6 +219,9 @@ struct Theater: View {
     }
     .background { if let native = player.nativePlayer { VideoSceneMarker(player: native) } }
     .background { if let mpv = player as? MPVPlayer, let upscale { MPVUpscaleBinding(player: mpv, session: upscale) } }
+  }
+  var body: some View {
+    viewportBase
     .alert("画中画", isPresented: Binding(get: { pipError != nil }, set: { if !$0 { pipError = nil } })) {
       Button("好") {}
     } message: { Text(pipError ?? "") }
