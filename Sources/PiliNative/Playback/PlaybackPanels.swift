@@ -229,28 +229,8 @@ struct PlaybackPanels<Surface: View, Info: View, Replies: View>: View {
     }
   }
 
-  @ViewBuilder private func panelsContent(layout: GeometryProxy, topInset: CGFloat) -> some View {
-  let width = layout.size.width
-  let height = layout.size.height
-  let wide = width > height && width >= 540
-  let side = wide && (horizontal || creator != nil)
-  let list: AnyView? = wide && (playlistPref ?? horizontal) ? playlist : nil
-  let selected = wantsList && list != nil && selection == nil ? 2 : comments ? 1 : 0
-  let vertical =
-    enlarge && playback.pictureSize.height > playback.pictureSize.width && playback.pictureSize.width > 0
-  let ratio: CGFloat = vertical ? (side ? 9.0 / 16 : 1) : 16.0 / 9
-  let usable = max(1, height - topInset)
-  let playerWidth = side ? max(130, min(width * 0.63, (usable - 44) * ratio)) : width
-  let playerHeight = max(
-    1,
-    min(
-      playerWidth / ratio,
-      side ? max(1, usable - 44) : usable * (vertical ? 0.72 : 0.6)))
-  let showTabs = !(wide && creator != nil) && (canDiscuss || list != nil || accessory != nil)
-  let tabs = [0] + (canDiscuss ? [1] : []) + (list != nil ? [2] : [])
-  Group {
-    if side {
-      HStack(alignment: .top, spacing: 8) {
+@ViewBuilder private func sidePanels(wide: Bool, playerWidth: CGFloat, playerHeight: CGFloat, showTabs: Bool, tabs: [Int], selected: Int, list: AnyView?) -> some View {
+HStack(alignment: .top, spacing: 8) {
         surface().frame(width: playerWidth, height: playerHeight).clipped().background(.black)
           .recordsInlinePlayerFrame(model.engine)
           .overlay(alignment: .topLeading) { headerButtons }
@@ -266,7 +246,8 @@ struct PlaybackPanels<Surface: View, Info: View, Replies: View>: View {
         .background(Color(uiColor: .systemBackground))
         .overlay { ReplyPanelStack(items: $replyPanels) }
       }
-    } else {
+  }
+  @ViewBuilder private func portraitPanels(playerWidth: CGFloat, playerHeight: CGFloat, showTabs: Bool, tabs: [Int], selected: Int, list: AnyView?) -> some View {
       // The original client's nested scroll: the player and tabs sit over the panels. While
       // playing they stay pinned; while paused they move up 1:1 with the list, so the
       // comments slide over the player following the finger.
@@ -305,6 +286,31 @@ struct PlaybackPanels<Surface: View, Info: View, Replies: View>: View {
           fold: fold, active: !playback.playing, playerHeight: playerHeight, items: $replyPanels)
       }
       .clipped()
+      }
+  @ViewBuilder private func panelsContent(layout: GeometryProxy, topInset: CGFloat) -> some View {
+  let width = layout.size.width
+  let height = layout.size.height
+  let wide = width > height && width >= 540
+  let side = wide && (horizontal || creator != nil)
+  let list: AnyView? = wide && (playlistPref ?? horizontal) ? playlist : nil
+  let selected = wantsList && list != nil && selection == nil ? 2 : comments ? 1 : 0
+  let vertical =
+    enlarge && playback.pictureSize.height > playback.pictureSize.width && playback.pictureSize.width > 0
+  let ratio: CGFloat = vertical ? (side ? 9.0 / 16 : 1) : 16.0 / 9
+  let usable = max(1, height - topInset)
+  let playerWidth = side ? max(130, min(width * 0.63, (usable - 44) * ratio)) : width
+  let playerHeight = max(
+    1,
+    min(
+      playerWidth / ratio,
+      side ? max(1, usable - 44) : usable * (vertical ? 0.72 : 0.6)))
+  let showTabs = !(wide && creator != nil) && (canDiscuss || list != nil || accessory != nil)
+  let tabs = [0] + (canDiscuss ? [1] : []) + (list != nil ? [2] : [])
+  Group {
+    if side {
+      sidePanels(wide: wide, playerWidth: playerWidth, playerHeight: playerHeight, showTabs: showTabs, tabs: tabs, selected: selected, list: list)
+    } else {
+      portraitPanels(playerWidth: playerWidth, playerHeight: playerHeight, showTabs: showTabs, tabs: tabs, selected: selected, list: list)
     }
   }
   .environment(\.presentGalleryRail, wide && galleryEnabled ? { gallery = $0 } : nil)
