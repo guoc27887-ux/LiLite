@@ -62,14 +62,14 @@ struct LiveTrackView: View {
       + (shield?.shield_user_list ?? []).map { "u:" + String($0.uid) }
   }
   private var bullets: [Bullet] { timeline.entries.map(\.bullet) }
-  @ViewBuilder private func bulletOverlay() -> some View {
+  private var bulletOverlayView: BulletOverlay {
     BulletOverlay(
-      items: bullets, time: 0, revision: timeline.revision,
-      clock: player, inspector: inspector, fullscreen: fullscreen
-    )
+          items: bullets, time: 0, revision: timeline.revision,
+          clock: player, inspector: inspector, fullscreen: fullscreen
+        )
   }
   var body: some View {
-    bulletOverlay()
+    bulletOverlayView
     .onAppear { timeline.update(lines: chat.lines, player: player, shield: shield, fresh: true) }
     .onChange(of: chat.lines.last?.id) { _, _ in
       timeline.update(lines: chat.lines, player: player, shield: shield, fresh: false)
