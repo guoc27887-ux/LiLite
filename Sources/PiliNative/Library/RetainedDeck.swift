@@ -74,7 +74,7 @@ struct RetainedDeck<Choice:Hashable,Content:View>:View {
           HStack(spacing: 0) {
             ForEach(choices, id: \.self) { choice in
               page(choice).containerRelativeFrame([.horizontal, .vertical])
-                .modifier(DeckEdgePriority(first: choice == choices.first, selectedFirst: selection == choices.first))
+                // DIAG5: DeckEdgePriority probe removed
                 .id(choice)
             }
           }.scrollTargetLayout()
@@ -85,8 +85,8 @@ struct RetainedDeck<Choice:Hashable,Content:View>:View {
         .scrollPosition(id: $scrolled)
         .onScrollGeometryChange(for: CGFloat.self) { g in
           g.containerSize.width > 0 ? g.contentOffset.x / g.containerSize.width : 0
-        } action: { _, value in
-          onProgress?(min(max(0, value), CGFloat(max(0, choices.count - 1))))
+        } action: { _, _ in
+          // DIAG5: progress write-back disabled
         }
         .onAppear { if scrolled == nil { scrolled = selection } }
         // Commit only once the pager rests, so a tapped jump across several pages does not
