@@ -77,9 +77,12 @@ struct CreatorGuards: View {
     }
   }
   private var catalogList: some View {
-    PageList(empty: "暂无大航海成员", autoMore: true, fetch: fetchGuardPage, row: { entry in guardRow(entry) })
+    AnyView(PageList(empty: "暂无大航海成员", autoMore: true, fetch: fetchGuardPage, row: { entry in guardRow(entry) }))
+  }
+  private var catalogTitle: String {
+    (name.map { $0 + "的" } ?? "") + "舰队" + (total.map { "（" + String($0) + "）" } ?? "")
   }
   var body: some View {
-    catalogList.id(accounts.state.active).navigationTitle((name.map { $0 + "的" } ?? "") + "舰队" + (total.map { "（" + String($0) + "）" } ?? ""))
+    catalogList.id(accounts.state.active).navigationTitle(catalogTitle)
   }
 }

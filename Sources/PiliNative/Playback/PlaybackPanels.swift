@@ -245,7 +245,7 @@ struct PlaybackPanels<Surface: View, Info: View, Replies: View>: View {
   let height = layout.size.height
   let wide = width > height && width >= 540
   let side = wide && (horizontal || creator != nil)
-  let list = wide && (playlistPref ?? horizontal) ? playlist : nil
+  let list: AnyView? = wide && (playlistPref ?? horizontal) ? playlist : nil
   let selected = wantsList && list != nil && selection == nil ? 2 : comments ? 1 : 0
   let vertical =
     enlarge && playback.pictureSize.height > playback.pictureSize.width && playback.pictureSize.width > 0

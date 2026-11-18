@@ -354,14 +354,7 @@ private func startPlayer() async {
         await captions.offline(saved)
       } catch { if !Task.isCancelled { issue = error.localizedDescription } }
       }
-  var body: some View {
-    PiliNavigationStack {
-      playerContent()
-
-    }.piliSheet(isPresented:$showPlayingRows){if let pickOffline{OfflinePlayingList(rows:playingRows,current:video.token,choose:pickOffline)}}.task(
-      id: (accounts.state.active ?? "guest") + ":"
-        + (accounts.state.owner(.role(.video)) ?? "guest")
-    ) { await startPlayer() }.onReceive(NotificationCenter.default.publisher(for: .AVPlayerItemDidPlayToEndTime)) { event in
+private func handlePlayToEnd(_ event: Notification) { event in
       guard let player, let item = event.object as? AVPlayerItem, player.currentItem === item else {
         return
       }
@@ -389,7 +382,15 @@ private func startPlayer() async {
           player.play()
         }
       }
-    }.onChange(of: sessionPrefs.background) { _, v in
+      }
+  var body: some View {
+    PiliNavigationStack {
+      playerContent()
+
+    }.piliSheet(isPresented:$showPlayingRows){if let pickOffline{OfflinePlayingList(rows:playingRows,current:video.token,choose:pickOffline)}}.task(
+      id: (accounts.state.active ?? "guest") + ":"
+        + (accounts.state.owner(.role(.video)) ?? "guest")
+    ) { await startPlayer() }.onReceive(NotificationCenter.default.publisher(for: .AVPlayerItemDidPlayToEndTime)) { event in handlePlayToEnd(event) }.onChange(of: sessionPrefs.background) { _, v in
       if let player {
         VideoTransport.background(player, temporary: sessionPrefs.temporary ? v : nil)
       }
