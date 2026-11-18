@@ -2,12 +2,12 @@
 import PackageDescription
 import Foundation
 
-// The Linux Swift driver otherwise stamps the deployment target as the linked SDK.
-// Keep the deployment target at iOS 26 while passing the SDK actually used by build.sh.
-// Without the real SDK version iOS runs the app in the legacy (pre-Liquid Glass) compatibility appearance.
+// iOS 18 compatibility fork: deployment target lowered to iOS 18.0.
+// The linked-SDK version is still passed through so the Mach-O records the real SDK,
+// but the minimum platform version is 18.0 instead of upstream's 26.0.
 let linkedSDK = ProcessInfo.processInfo.environment["PILI_IOS_SDK_VERSION"]
 let sdkLinkFlags: [LinkerSetting] = linkedSDK.map {
-  [.unsafeFlags(["-Xlinker", "-platform_version", "-Xlinker", "ios", "-Xlinker", "26.0", "-Xlinker", $0], .when(platforms: [.iOS]))]
+  [.unsafeFlags(["-Xlinker", "-platform_version", "-Xlinker", "ios", "-Xlinker", "18.0", "-Xlinker", $0], .when(platforms: [.iOS]))]
 } ?? []
 // Development device builds (`build.sh --sign-dev`) keep -O but compile in parallel batches and
 // incrementally instead of one single-threaded whole-module job; delivery builds are unchanged.
@@ -23,7 +23,7 @@ let firebaseLinkFlags = firebaseFrameworks.sorted().filter { $0.hasSuffix(".fram
 
 let package = Package(
   name: "PiliNative",
-  platforms: [.iOS("26.0")],
+  platforms: [.iOS("18.0")],
   products: [.library(name: "PiliNative", targets: ["PiliNative"])],
   dependencies: [.package(path: "Wire"), .package(path: "ArchiveKit"), .package(path: "MediaKit"), .package(path: "ColorKit")],
   targets: [
