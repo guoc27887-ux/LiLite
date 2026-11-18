@@ -39,6 +39,13 @@ jobs:
           brew install xtool
           xtool --version
 
+      - name: Cache native deps (FFmpeg/mpv build trees)
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/piliplus-native/tools
+          key: native-tools-${{ hashFiles('MediaKit/**') }}
+          restore-keys: native-tools-
+
       - name: Install native build tools
         run: |
           brew install meson ninja pkg-config
