@@ -44,17 +44,7 @@ import UIKit
 /// iOS 27.1). Inactive while the device lies flat, so layouts only change in a folded posture.
 enum DeviceFold {
   static func division(in proxy: GeometryProxy) -> CGRect? {
-    if #available(iOS 27.1, *) {
-      // While the device folds shut, the regions arrive for a moment from the screen being left,
-      // some a quarter turn out: a 669 pt fold across the 466 pt outer screen laid the video
-      // page out for a tabletop posture, its picture letterboxed, for most of a second. A fold
-      // runs within the window, so one reaching past this view's sides (and any safe area
-      // beside them) is not this screen's.
-      let slack = proxy.safeAreaInsets.leading + proxy.safeAreaInsets.trailing + 1
-      return proxy.reservedRegions(kind: .division).first {
-        $0.isActive && $0.frame.minX >= -slack && $0.frame.maxX <= proxy.size.width + slack
-      }?.frame
-    }
+    // iOS 27.1 reservedRegions API is not in the iOS 26 SDK; folds report nil.
     return nil
   }
 }
