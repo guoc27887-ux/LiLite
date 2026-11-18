@@ -39,6 +39,9 @@ jobs:
           brew install xtool
           xtool --version
 
+      - name: Install native build tools
+        run: brew install meson ninja pkg-config
+
       - name: Build (log to file)
         run: |
           set -o pipefail
