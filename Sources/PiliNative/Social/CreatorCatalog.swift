@@ -53,7 +53,7 @@ struct CreatorGuards: View {
     }
     let guard_top_list: [Row]?, has_more: Int?
   }
-  var body: some View {
+  private var catalogList: some View {
     PageList(empty: "暂无大航海成员", autoMore: true) { cursor in
       let page = Int(cursor ?? "1") ?? 1
       let r = try await BiliAPI.shared.read(
@@ -71,6 +71,9 @@ struct CreatorGuards: View {
           tag: r.guard_level.flatMap { [1: "总督", 2: "提督", 3: "舰长"][$0] },
           tagColor: r.guard_level == 1 ? .red : r.guard_level == 2 ? .purple : .blue)
       }
-    }.id(accounts.state.active).navigationTitle((name.map { $0 + "的" } ?? "") + "舰队" + (total.map { "（" + String($0) + "）" } ?? ""))
+    }
+  }
+  var body: some View {
+    catalogList.id(accounts.state.active).navigationTitle((name.map { $0 + "的" } ?? "") + "舰队" + (total.map { "（" + String($0) + "）" } ?? ""))
   }
 }

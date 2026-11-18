@@ -30,9 +30,9 @@ import UIKit
     Self.sessions.add(self)
     surface.moved = { [weak self] in self?.visibility() }
     let n = NotificationCenter.default
-    let inactiveSession: Notification.Name
-    if #available(iOS 27, *) { inactiveSession = AVAudioSession.didBecomeInactiveNotification }
-    else { inactiveSession = AVAudioSession.interruptionNotification }
+    // iOS 18 fork: the iOS 27 didBecomeInactiveNotification does not exist in the
+    // iOS 26 SDK; the classic interruption notification is used instead.
+    let inactiveSession: Notification.Name = AVAudioSession.interruptionNotification
     for name in [
       UIApplication.willResignActiveNotification, UIApplication.didEnterBackgroundNotification,
       UIApplication.didReceiveMemoryWarningNotification, AVAudioSession.routeChangeNotification,
