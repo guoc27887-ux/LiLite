@@ -125,7 +125,7 @@ struct RelationsList: View {
         uid: uid, fans: fans, page: Int(p ?? "1") ?? 1, term: query, order: order, expectedAccount: accounts.state.active ?? "")
     } row: { person in creatorRow(person) }
   }
-  private var creatorsContent: some View {
+  private var creatorsBase: some View {
     creatorsList
     .id("\(query):\(revision):\(fans || !query.isEmpty ? 0 : order):\(accounts.state.active ?? "")")
     .navigationTitle((remoteName.map { $0 + "的" } ?? "") + (fans ? "粉丝" : "关注"))
@@ -144,6 +144,9 @@ struct RelationsList: View {
       }
     }
   
+  }
+  private var creatorsContent: some View {
+    creatorsBase
     .confirmationDialog(
       "移除这位粉丝？", isPresented: Binding(get: { removing != nil }, set: { if !$0 { removing = nil } }),
       titleVisibility: .visible, presenting: removing
@@ -155,7 +158,7 @@ struct RelationsList: View {
       Text(issue ?? "")
     }
     .onChange(of: accounts.state.active) { _, _ in removing = nil }
-}
+  }
   var body: some View {
     creatorsContent
     if fans {
