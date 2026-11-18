@@ -137,8 +137,8 @@ struct FeedView: View {
   private func deck(_ channels: [HomeChannel]) -> some View {
     let owner = accounts.state.owner(.role(.recommend)) ?? ""
     let shelfID = "\(mobile):\(rules.hashValue):\(owner)"
-    return RetainedDeck(choices: channels, selection: $shelf, progress: $pageProgress) { channel in
-      // DIAG3: real page content replaced with a static placeholder
+    return RetainedDeck(choices: channels, selection: $shelf, swipe: false, progress: $pageProgress) { channel in
+      // DIAG4: non-swipe ZStack branch + stub content (DIAG3 was swipe branch, still white)
       ZStack { Color.clear; Text(verbatim: "DIAG3 page") }
     }.id("\(accounts.state.active ?? ""):\(owner)")
       .onChange(of: channels) { _, new in
