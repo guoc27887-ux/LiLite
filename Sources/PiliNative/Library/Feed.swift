@@ -98,7 +98,7 @@ struct FeedView: View {
   var body: some View {
     PiliNavigationStack {
       let channels = NavigationLayout.read(layoutData).channels
-      deck(channels)
+      Color.clear  // DIAG2: deck removed
         // The original client's header: one row (search, messages, menu, avatar) that scrolls
         // away with the feed, and the channel chips under it, which always stay.
         .piliSafeAreaBar(edge: .top, spacing: 0) {
