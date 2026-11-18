@@ -120,13 +120,13 @@ struct NotebookFrame: View {
         HStack {
           Button(capture.thumbnail == nil ? "截取当前画面" : "重新截取") {
             if allowed() { capture.capture(gif: false, length: 1, fps: 1) }
-          }.buttonStyle(.glass).disabled(capture.busy || !allowed())
+          }.piliButtonStyle(.glass).disabled(capture.busy || !allowed())
           Spacer()
           if let img = capture.thumbnail {
             Button("加入笔记") {
               guard allowed(), let bytes = img.jpegData(compressionQuality: 0.85) else { return }
               select(bytes)
-            }.buttonStyle(.glassProminent)
+            }.piliButtonStyle(.glassProminent)
           }
         }
         Spacer(minLength: 0)

@@ -93,7 +93,7 @@ struct CreatorGroupEditor: View {
     .navigationTitle("设置关注分组").navigationBarTitleDisplayMode(.inline).disabled(busy)
       .toolbar {
         ToolbarItem(placement: .confirmationAction) {
-          Button("保存") { Task { await save() } }.buttonStyle(.glassProminent).disabled(!loaded || busy)
+          Button("保存") { Task { await save() } }.piliButtonStyle(.glassProminent).disabled(!loaded || busy)
         }
       }
       .alert("新建分组", isPresented: $naming) {

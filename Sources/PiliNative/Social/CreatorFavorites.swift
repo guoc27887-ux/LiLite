@@ -55,7 +55,7 @@ struct CreatorFavorites: View {
                 ProgressView().frame(maxWidth: .infinity)
               } else if next[i] > 0 {
                 Button(groupErrors[i] == nil ? "加载更多" : "重试") { Task { await more(i) } }
-                  .buttonStyle(.glass).frame(maxWidth: .infinity)
+                  .piliButtonStyle(.glass).frame(maxWidth: .infinity)
               }
             }
           } header: {

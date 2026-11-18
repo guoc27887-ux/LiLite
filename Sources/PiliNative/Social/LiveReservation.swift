@@ -101,7 +101,7 @@ struct ReservationEditor: View {
           }
           .font(.body.weight(.semibold)).frame(maxWidth: .infinity).padding(.vertical, 6)
         }
-        .buttonStyle(.glassProminent).controlSize(.large)
+        .piliButtonStyle(.glassProminent).controlSize(.large)
         .disabled(
           busy || !ready || title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
             || title.count > 14 || date.timeIntervalSinceNow < 300)

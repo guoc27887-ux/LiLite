@@ -101,11 +101,11 @@ struct SeasonBatchCache: View {
             Text(selection.isEmpty ? "缓存" : "缓存 \(selection.count) 集").fontWeight(.semibold)
           }
         }
-        .buttonStyle(.glassProminent).disabled(selection.isEmpty)
+        .piliButtonStyle(.glassProminent).disabled(selection.isEmpty)
       }
       .font(.subheadline)
       .padding(.leading, 20).padding(.trailing, 8).padding(.vertical, 8)
-      .glassEffect(.regular, in: Capsule())
+      .piliGlass(in: Capsule())
       .padding(.horizontal, 16).padding(.bottom, 4)
     }
     .disabled(busy).navigationTitle("离线缓存").navigationBarTitleDisplayMode(.inline).onChange(of: uid) { _, _ in

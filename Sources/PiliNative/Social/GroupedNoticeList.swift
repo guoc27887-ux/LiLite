@@ -36,7 +36,7 @@ struct GroupedNoticeList<Row: View>: View {
         } else if let issue {
           VStack(spacing: 10) {
             Text(issue).font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
-            Button("重试") { startFetch(reset: !loaded) }.buttonStyle(.glass)
+            Button("重试") { startFetch(reset: !loaded) }.piliButtonStyle(.glass)
           }.frame(maxWidth: .infinity).padding(.vertical, 24)
         } else if next != nil {
           Color.clear.frame(height: 1).onAppear { startFetch(reset: false) }

@@ -100,7 +100,7 @@ private struct BubblePosts:View {
             Label(options.first{$0.id==current}?.text ?? "排序",systemImage:"arrow.up.arrow.down")
               .font(.subheadline.weight(.semibold)).padding(.horizontal,16).padding(.vertical,12)
           }
-          .glassEffect(.regular.interactive(),in:Capsule())
+          .piliGlass(in: Capsule(), interactive: true)
           .padding(.trailing,20).padding(.bottom,16)
         }
       }

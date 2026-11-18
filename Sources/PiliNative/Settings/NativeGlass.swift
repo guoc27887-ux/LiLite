@@ -17,11 +17,14 @@ private struct NativeGlassSurface<S: Shape>: ViewModifier {
   let interactive: Bool
   let tint: Color?
   @Environment(\.accessibilityReduceTransparency) private var reduceTransparency
-  func body(content: Content) -> some View {
+  @ViewBuilder func body(content: Content) -> some View {
     if reduceTransparency {
       content.background(.background, in: shape)
-    } else {
+    } else if #available(iOS 26, *) {
       content.glassEffect(.regular.tint(tint).interactive(interactive), in: shape)
+    } else {
+      // iOS 18 fallback for this fork: plain system material instead of Liquid Glass.
+      content.background(.regularMaterial, in: shape)
     }
   }
 }
@@ -38,7 +41,13 @@ extension View {
 struct PiliGlassGroup<Content: View>: View {
   var spacing: CGFloat = 8
   @ViewBuilder var content: () -> Content
-  var body: some View { GlassEffectContainer(spacing: spacing, content: content) }
+  @ViewBuilder var body: some View {
+    if #available(iOS 26, *) {
+      GlassEffectContainer(spacing: spacing, content: content)
+    } else {
+      content()
+    }
+  }
 }
 
 /// Standard navigation/toolbars already adopt Liquid Glass. Do not replace their system material.

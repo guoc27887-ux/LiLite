@@ -48,7 +48,7 @@ struct CloudOrder: View {
     .environment(\.editMode, .constant(.active))
       .toolbar {
         ToolbarItem(placement: .confirmationAction) {
-          Button("完成") { Task { await save() } }.buttonStyle(.glassProminent)
+          Button("完成") { Task { await save() } }.piliButtonStyle(.glassProminent)
             .disabled(busy || rows.map(\.id) == original)
         }
       }.task(id: retry) {

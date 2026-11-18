@@ -59,7 +59,7 @@ private final class MotionDelegate: NSObject, UINavigationControllerDelegate {
     from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     let mode = PageMotion.current
     let state = nav.interactivePopGestureRecognizer?.state
-    let contentState = nav.interactiveContentPopGestureRecognizer?.state
+    let contentState = nav.piliContentPopGesture?.state
     let interactive = operation == .pop && (state == .began || state == .changed || contentState == .began
       || contentState == .changed || nav.transitionCoordinator?.isInteractive == true)
     if !mode.custom(reduced:UIAccessibility.isReduceMotionEnabled,interactivePop:interactive) {

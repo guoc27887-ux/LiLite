@@ -231,7 +231,7 @@ struct IMKeywordBlocking: View {
           HStack {
             TextField("输入要屏蔽的词", text: $draft).onSubmit { Task { await change(term, add: true) } }
             Button("添加") { Task { await change(term, add: true) } }
-              .buttonStyle(.glassProminent).controlSize(.small)
+              .piliButtonStyle(.glassProminent).controlSize(.small)
               .disabled(busy || addProblem != nil)
           }
         } footer: {

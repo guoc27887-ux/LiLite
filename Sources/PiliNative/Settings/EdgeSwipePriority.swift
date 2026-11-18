@@ -45,7 +45,7 @@ private struct EdgeSwipePriorityProbe: UIViewControllerRepresentable {
       DispatchQueue.main.async { [weak self] in self?.link() }
     }
     func restore() {
-      linkedNavigation?.interactiveContentPopGestureRecognizer?.isEnabled = true
+      linkedNavigation?.piliContentPopGesture?.isEnabled = true
     }
     private func link() {
       guard view.window != nil, let nav = navigationController ?? findNavigation() else { return }
@@ -53,13 +53,13 @@ private struct EdgeSwipePriorityProbe: UIViewControllerRepresentable {
       guard let owner = owningController(in: nav) else { return }
       guard owner !== nav.viewControllers.first, owner === nav.topViewController else { return }
       linkedNavigation = nav
-      nav.interactiveContentPopGestureRecognizer?.isEnabled = contentPop
+      nav.piliContentPopGesture?.isEnabled = contentPop
       guard let pager = enclosingPager() else { return }
       guard pager !== linkedPager else { return }
       if let edge = nav.interactivePopGestureRecognizer {
         pager.panGestureRecognizer.require(toFail: edge)
       }
-      if let content = nav.interactiveContentPopGestureRecognizer {
+      if let content = nav.piliContentPopGesture {
         // A disabled recognizer fails at once, so later pages still page normally.
         pager.panGestureRecognizer.require(toFail: content)
       }

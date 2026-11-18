@@ -60,7 +60,7 @@ struct SavedReadings: View {
         }
       }.id("\(shelf):\(version)")
     }
-    .safeAreaBar(edge: .top, spacing: 0) {
+    .piliSafeAreaBar(edge: .top, spacing: 0) {
       if hub == nil || hub == .note {
         ChipBar(
           items: hub == .note ? [.drafts, .published] : Shelf.allCases, selection: $shelf,

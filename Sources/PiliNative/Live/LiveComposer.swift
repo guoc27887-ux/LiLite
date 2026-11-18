@@ -121,7 +121,7 @@ struct LiveComposer: View {
         Button { submitDraft() } label: {
           if busy { ProgressView().tint(.white) } else { Image(systemName: "paperplane.fill") }
         }
-        .buttonStyle(.glassProminent).buttonBorderShape(.circle).controlSize(.regular)
+        .piliButtonStyle(.glassProminent).buttonBorderShape(.circle).controlSize(.regular)
         .accessibilityLabel("发送")
         .disabled(chosen == nil && text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
       }.onAppear{if focusOnEntry{focusCount += 1}}.onChange(of: reply) { _, target in

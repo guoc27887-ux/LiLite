@@ -154,7 +154,7 @@ struct PageList<Item: Identifiable, Row: View>: View where Item.ID: Hashable {
         VStack(spacing: 10) {
           Text(message).font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
           if let continuation { NavigationLink("在哔哩哔哩网站继续"){SitePage(url:continuation,role:.recommend)} }
-          Button("重试") { startLoad(reset: boundary.failedRefresh) }.buttonStyle(.glass)
+          Button("重试") { startLoad(reset: boundary.failedRefresh) }.piliButtonStyle(.glass)
         }.frame(maxWidth: .infinity).padding(.vertical, items.isEmpty ? 80 : 16)
       } else if busy {
         // First load sits in the middle of the page; later pages show a small footer spinner.
@@ -172,7 +172,7 @@ struct PageList<Item: Identifiable, Row: View>: View where Item.ID: Hashable {
       let automatic = channelActive && autoMore && !dynamicCards && active && autoPage
       if !automatic {
         Button("加载更多") { startLoad(reset: false) }
-          .buttonStyle(.glass).frame(maxWidth: .infinity)
+          .piliButtonStyle(.glass).frame(maxWidth: .infinity)
           .listRowSeparator(.hidden).listRowBackground(Color.clear)
       } else if let cursor = next {
         pageEdge(cursor).listRowSeparator(.hidden).listRowBackground(Color.clear)

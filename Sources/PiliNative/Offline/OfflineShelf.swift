@@ -71,7 +71,7 @@ struct OfflineShelfView: View {
     }
     .listStyle(.plain).environment(\.inListRows, true)
     .animation(.easeOut(duration: 0.2), value: matching.map(\.token))
-    .safeAreaBar(edge: .top, spacing: 0) {
+    .piliSafeAreaBar(edge: .top, spacing: 0) {
       ChipBar(items: [0, 1, 2], selection: $shelf, title: { ["全部", "已缓存", "下载中"][$0] })
         .padding(.vertical, 6)
     }

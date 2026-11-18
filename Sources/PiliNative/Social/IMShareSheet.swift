@@ -115,7 +115,7 @@ struct IMShareSheet: View {
           .disabled(selected.isEmpty || busy || accounts.state.active != uid)
         }
       }
-      .buttonStyle(.glassProminent).controlSize(.large)
+      .piliButtonStyle(.glassProminent).controlSize(.large)
       .padding(.horizontal, 20).padding(.bottom, 8)
     }
     .navigationTitle("分享至私信").navigationBarTitleDisplayMode(.inline).navigationBarBackButtonHidden(busy)

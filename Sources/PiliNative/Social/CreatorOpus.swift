@@ -94,7 +94,7 @@ struct CreatorOpus: View {
       }
     }
     .reportsScrollCollapse()
-    .safeAreaBar(edge: .top, spacing: 0) {
+    .piliSafeAreaBar(edge: .top, spacing: 0) {
       if filters.count > 1 {
         ChipBar(
           items: filters.map(\.meta), selection: $selected,

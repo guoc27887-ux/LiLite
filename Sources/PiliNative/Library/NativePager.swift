@@ -168,7 +168,7 @@ private struct NativePagerHost<Page: View>: UIViewControllerRepresentable {
     guard let nav = navigationController, nav !== linkedNavigation else { return }
     linkedNavigation = nav
     if let edge = nav.interactivePopGestureRecognizer { scroll.panGestureRecognizer.require(toFail: edge) }
-    if let content = nav.interactiveContentPopGestureRecognizer { scroll.panGestureRecognizer.require(toFail: content) }
+    if let content = nav.piliContentPopGesture { scroll.panGestureRecognizer.require(toFail: content) }
   }
   func close() {
     closed = true

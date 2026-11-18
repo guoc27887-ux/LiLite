@@ -61,11 +61,11 @@ struct VideoNavigationChrome: UIViewControllerRepresentable {
       if navigation !== nav || saved == nil {
         leave()
         navigation = nav
-        saved = (nav.navigationBar.isUserInteractionEnabled, nav.interactiveContentPopGestureRecognizer?.isEnabled)
+        saved = (nav.navigationBar.isUserInteractionEnabled, nav.piliContentPopGesture?.isEnabled)
       }
       self.owner = owner
       nav.navigationBar.isUserInteractionEnabled = false
-      if let content = nav.interactiveContentPopGestureRecognizer,
+      if let content = nav.piliContentPopGesture,
         content.state != .began, content.state != .changed
       {
         content.isEnabled = false
@@ -85,7 +85,7 @@ struct VideoNavigationChrome: UIViewControllerRepresentable {
       self.saved = nil
       navigation = nil
       nav.navigationBar.isUserInteractionEnabled = saved.interaction
-      if let enabled = saved.contentPop { nav.interactiveContentPopGestureRecognizer?.isEnabled = enabled }
+      if let enabled = saved.contentPop { nav.piliContentPopGesture?.isEnabled = enabled }
     }
 
     // MARK: Gesture

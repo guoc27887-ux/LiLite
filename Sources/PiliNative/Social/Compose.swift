@@ -252,7 +252,7 @@ private struct OwnedDynamicComposer: View {
               ProgressView()
             } else {
               Button(record.scheduled == nil ? "发布" : "定时发布") { submit() }
-                .buttonStyle(.glassProminent).disabled(!canPost)
+                .piliButtonStyle(.glassProminent).disabled(!canPost)
             }
           }
           if ready && snapshot.hasContent {

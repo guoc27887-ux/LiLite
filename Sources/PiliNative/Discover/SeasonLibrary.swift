@@ -43,7 +43,7 @@ struct SeasonCalendar: View {
         }
       }.id("\(type):\(owner)")
     }
-    .safeAreaBar(edge: .top, spacing: 0) {
+    .piliSafeAreaBar(edge: .top, spacing: 0) {
       ChipBar(items: [0, 1, 4], selection: $type, title: { ["全部", "番剧", "", "", "国创"][$0] })
         .padding(.vertical, 6)
     }
@@ -117,7 +117,7 @@ struct FollowedSeasons: View {
         }
       }.id("\(uid):\(accounts.state.active ?? ""):\(type):\(status):\(revision)")
     }
-    .safeAreaBar(edge: .top, spacing: 0) {
+    .piliSafeAreaBar(edge: .top, spacing: 0) {
       VStack(spacing: 2) {
         if !fixedType {
           ChipBar(items: [1, 2], selection: $type, title: { $0 == 1 ? "追番" : "追剧" })

@@ -99,7 +99,7 @@ struct DynamicEditView: View {
             if busy || importing {
               ProgressView()
             } else {
-              Button("保存") { submit() }.buttonStyle(.glassProminent).disabled(!maySave)
+              Button("保存") { submit() }.piliButtonStyle(.glassProminent).disabled(!maySave)
             }
           }
           if differs, !conflict {

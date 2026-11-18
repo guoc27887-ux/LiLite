@@ -50,7 +50,7 @@ struct AvatarEditor: View {
             Label(photo == nil ? "从相册选择" : "重新选择", systemImage: "photo.on.rectangle")
               .frame(maxWidth: 260).padding(.vertical, 4)
           }
-          .buttonStyle(.glass)
+          .piliButtonStyle(.glass)
           .controlSize(.large)
           if let photo {
             Button { Task { await save(photo) } } label: {
@@ -60,7 +60,7 @@ struct AvatarEditor: View {
               }
               .frame(maxWidth: 260).padding(.vertical, 4)
             }
-            .buttonStyle(.glassProminent).controlSize(.large).disabled(busy)
+            .piliButtonStyle(.glassProminent).controlSize(.large).disabled(busy)
           }
         }
         Text("支持 JPG、PNG 与 5 MB 以内的 GIF 动图").font(.caption).foregroundStyle(.tertiary)

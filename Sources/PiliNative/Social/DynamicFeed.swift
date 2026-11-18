@@ -76,7 +76,7 @@ private struct AccountDynamicFeed: View {
                 Image(systemName: "chevron.right").font(.caption2.weight(.bold))
               }.font(.footnote)
             }
-            .buttonStyle(.glass).padding(.vertical, 6)
+            .piliButtonStyle(.glass).padding(.vertical, 6)
             .transition(.opacity.combined(with: .move(edge: .top)))
           }
           ZStack {
@@ -97,7 +97,7 @@ private struct AccountDynamicFeed: View {
         }
       }
     }
-    .safeAreaBar(edge: .top, spacing: 0) {
+    .piliSafeAreaBar(edge: .top, spacing: 0) {
       HStack(spacing: 0) {
         if position == .leftDrawer { drawerButton.padding(.leading, 12) }
         ChipBar(

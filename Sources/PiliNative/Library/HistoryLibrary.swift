@@ -86,7 +86,7 @@ struct ProfileFullHistory: View {
       row(item)
     }
     .id(identity).navigationTitle("观看历史")
-    .safeAreaBar(edge: .top, spacing: 0) {
+    .piliSafeAreaBar(edge: .top, spacing: 0) {
       if term.isEmpty && !tabs.isEmpty { categories.padding(.vertical, 6) }
     }
     .navigationDestination(item: $visit) { mid in

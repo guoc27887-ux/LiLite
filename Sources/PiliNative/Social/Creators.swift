@@ -433,16 +433,16 @@ struct CreatorSpace: View {
     HStack(spacing: 8) {
       if accounts.state.active == String(mid) {
         Button { route = .edit } label: { Text("编辑资料").frame(maxWidth: .infinity) }
-          .buttonStyle(.glass)
+          .piliButtonStyle(.glass)
         Button { route = .account } label: { Image(systemName: "person.badge.key") }
-          .buttonStyle(.glass).accessibilityLabel("账号")
+          .piliButtonStyle(.glass).accessibilityLabel("账号")
       } else if let uid = accounts.state.active {
         followButton(uid, followsViewer: p?.followsViewer == true)
         Button { route = .chat } label: { Text("发消息").frame(maxWidth: .infinity) }
-          .buttonStyle(.glass)
+          .piliButtonStyle(.glass)
       } else {
         NavigationLink { QRLoginView() } label: { Text("登录后关注").frame(maxWidth: .infinity) }
-          .buttonStyle(.glassProminent)
+          .piliButtonStyle(.glassProminent)
       }
     }
     .font(.subheadline.weight(.semibold)).disabled(busy)
@@ -451,7 +451,7 @@ struct CreatorSpace: View {
     if let relation, relation.attribute == 128 {
       Button { reviewedOwner = uid; confirmBlock = true } label: {
         Text("已拉黑").frame(maxWidth: .infinity)
-      }.buttonStyle(.glass).tint(.red)
+      }.piliButtonStyle(.glass).tint(.red)
     } else if let relation, relation.followed {
       Menu {
         Button(relation.special == 1 ? "取消特别关注" : "设为特别关注",
@@ -472,7 +472,7 @@ struct CreatorSpace: View {
           Image(systemName: relation.special == 1 ? "star.fill" : "checkmark")
           Text(relation.special == 1 ? "特别关注" : followsViewer ? "互相关注" : "已关注")
         }.frame(maxWidth: .infinity)
-      }.buttonStyle(.glass)
+      }.piliButtonStyle(.glass)
     } else {
       Button {
         TouchFeedback.light()
@@ -482,7 +482,7 @@ struct CreatorSpace: View {
           Image(systemName: "plus")
           Text(followsViewer ? "回关" : "关注")
         }.frame(maxWidth: .infinity)
-      }.buttonStyle(.glassProminent)
+      }.piliButtonStyle(.glassProminent)
     }
   }
   private func identity(_ p: CreatorSpaceRecord.Person?, _ h: CreatorSpaceRecord.HeaderDetails) -> some View {

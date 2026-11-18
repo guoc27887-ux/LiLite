@@ -54,14 +54,14 @@ struct SongView: View {
             } label: {
               Label("播放", systemImage: "play.fill").frame(maxWidth: .infinity)
             }
-            .buttonStyle(.glassProminent)
+            .piliButtonStyle(.glassProminent)
             Button {
               ListenQueue.shared.add(ListenTrack(s, origin: origin))
               listen = true
             } label: {
               Label("加入待播", systemImage: "text.badge.plus").frame(maxWidth: .infinity)
             }
-            .buttonStyle(.glass)
+            .piliButtonStyle(.glass)
           }
           .font(.subheadline.weight(.semibold)).controlSize(.large)
           .listRowSeparator(.hidden)

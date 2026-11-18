@@ -101,7 +101,7 @@ struct Rankings: View {
               if let error {
                 VStack(spacing: 10) {
                   Text(error).font(.footnote).foregroundStyle(.secondary)
-                  Button("重试") { attempt += 1 }.buttonStyle(.glass)
+                  Button("重试") { attempt += 1 }.piliButtonStyle(.glass)
                 }.frame(maxWidth: .infinity).padding(.vertical, 24)
               }
             }

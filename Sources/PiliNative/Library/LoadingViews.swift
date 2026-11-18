@@ -47,7 +47,7 @@ struct PageFailure: View {
     VStack(spacing: 12) {
       Image(systemName: "exclamationmark.triangle").font(.title2).foregroundStyle(.secondary)
       Text(message).font(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
-      if let retry { Button("重试", action: retry).buttonStyle(.glass) }
+      if let retry { Button("重试", action: retry).piliButtonStyle(.glass) }
     }
     .padding(.horizontal, 32)
     .frame(maxWidth: .infinity, minHeight: 220)

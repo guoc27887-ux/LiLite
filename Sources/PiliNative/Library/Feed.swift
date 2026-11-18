@@ -101,7 +101,7 @@ struct FeedView: View {
       deck(channels)
         // The original client's header: one row (search, messages, menu, avatar) that scrolls
         // away with the feed, and the channel chips under it, which always stay.
-        .safeAreaBar(edge: .top, spacing: 0) {
+        .piliSafeAreaBar(edge: .top, spacing: 0) {
           VStack(spacing: 0) {
             headerRow.padding(.top, 2).padding(.bottom, 8).piliHomeSearchVisibility()
             if channels.count > 1 { channelBar(channels).padding(.bottom, 6) }
@@ -322,13 +322,13 @@ private struct VideoShelf: View {
         if let error = model.error {
           VStack(spacing: 12) {
             Text(error).piliFont(.footnote).foregroundStyle(.secondary).multilineTextAlignment(.center)
-            Button("重试") { startLoad(retry: true) }.buttonStyle(.glass)
+            Button("重试") { startLoad(retry: true) }.piliButtonStyle(.glass)
           }.frame(maxWidth: .infinity).padding(.vertical, 24)
         } else if model.busy {
           ProgressView().frame(maxWidth: .infinity).padding(.vertical, model.videos.isEmpty ? 120 : 16)
         } else if !model.finished {
           Button("加载更多") { startLoad() }
-            .buttonStyle(.glass).frame(maxWidth: .infinity)
+            .piliButtonStyle(.glass).frame(maxWidth: .infinity)
           if channelActive,let cursor=model.autoCursor {
             Color.clear.frame(height:1).id("discover.feed.next.\(cursor)").onAppear {
               if cursor == model.autoCursor { startLoad() }

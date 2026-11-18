@@ -64,7 +64,7 @@ struct FolderEditor: View {
         .toolbar {
           ToolbarItem(placement: .cancellationAction) { Button("取消") { dismiss() } }
           ToolbarItem(placement: .confirmationAction) {
-            Button("完成") { Task { await store() } }.buttonStyle(.glassProminent).disabled(
+            Button("完成") { Task { await store() } }.piliButtonStyle(.glassProminent).disabled(
               !ready || saving || cropping
                 || title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
           }

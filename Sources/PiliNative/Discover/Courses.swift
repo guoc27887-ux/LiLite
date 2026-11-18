@@ -96,7 +96,7 @@ struct CourseDetail: View {
             NavigationLink { SitePage(url: url) } label: {
               Label("查看官方课程目录", systemImage: "safari").font(.subheadline.weight(.medium))
                 .frame(maxWidth: .infinity)
-            }.buttonStyle(.glass)
+            }.piliButtonStyle(.glass)
           }
           introduction(c)
         }
@@ -184,7 +184,7 @@ struct CourseDetail: View {
             Image(systemName: "play.fill")
             Text(lastEpisode == nil ? "开始学习" : "继续学习").lineLimit(1)
           }.frame(maxWidth: .infinity)
-        }.buttonStyle(.glassProminent)
+        }.piliButtonStyle(.glassProminent)
       }
       if !main.isEmpty, displayedMain == main, let f = favored {
         Button {
@@ -197,7 +197,7 @@ struct CourseDetail: View {
             Text(f ? "已收藏" : "收藏")
           }.frame(maxWidth: resume(c) == nil ? .infinity : nil)
         }
-        .buttonStyle(.glass).tint(f ? .orange : nil).disabled(busy)
+        .piliButtonStyle(.glass).tint(f ? .orange : nil).disabled(busy)
       }
     }
     .font(.subheadline.weight(.semibold))

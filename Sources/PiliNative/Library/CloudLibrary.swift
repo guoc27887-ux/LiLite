@@ -106,7 +106,7 @@ struct CloudLibraryView: View {
       .navigationTitle(
         kind.title
       )
-      .safeAreaBar(edge: .top, spacing: 0) {
+      .piliSafeAreaBar(edge: .top, spacing: 0) {
         if isLater {
           ChipBar(items: [0, 2], selection: $viewed, title: { $0 == 0 ? "全部" : "未看完" })
             .padding(.vertical, 6).disabled(selecting)

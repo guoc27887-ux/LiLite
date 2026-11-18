@@ -105,7 +105,7 @@ struct NewVote: View {
             }
             .font(.body.weight(.semibold)).frame(maxWidth: .infinity).padding(.vertical, 6)
           }
-          .buttonStyle(.glassProminent).controlSize(.large).disabled(busy || !valid)
+          .piliButtonStyle(.glassProminent).controlSize(.large).disabled(busy || !valid)
           .padding(.top, 36)
         }
         if let issue {

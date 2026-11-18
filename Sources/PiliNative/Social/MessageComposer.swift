@@ -164,7 +164,7 @@ struct MessageComposer: View {
         Button { Task { await send() } } label: {
           if busy { ProgressView().tint(.white) } else { Image(systemName: "paperplane.fill") }
         }
-        .buttonStyle(.glassProminent).buttonBorderShape(.circle)
+        .piliButtonStyle(.glassProminent).buttonBorderShape(.circle)
         .accessibilityLabel("发送")
         .disabled(selection == nil && text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
       }

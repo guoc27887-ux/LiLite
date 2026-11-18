@@ -63,7 +63,7 @@ struct OfflineGroupView: View {
             Button { play(ready.first) } label: {
               Label("播放全部", systemImage: "play.fill").font(.subheadline.weight(.semibold))
             }
-            .buttonStyle(.glassProminent).buttonBorderShape(.capsule)
+            .piliButtonStyle(.glassProminent).buttonBorderShape(.capsule)
             if let last,
               let v = ready.first(where: {
                 $0.token == last || ($0.scoped != true && $0.id == last)
@@ -72,7 +72,7 @@ struct OfflineGroupView: View {
               Button { play(v) } label: {
                 Label("继续播放", systemImage: "clock.arrow.circlepath").font(.subheadline)
               }
-              .buttonStyle(.glass).buttonBorderShape(.capsule)
+              .piliButtonStyle(.glass).buttonBorderShape(.capsule)
             }
             Spacer()
             Text("\(ready.count) 个已缓存").font(.caption).foregroundStyle(.secondary)
@@ -116,7 +116,7 @@ struct OfflineGroupView: View {
         }
         .labelStyle(.titleAndIcon).font(.subheadline.weight(.medium))
         .padding(.horizontal, 20).padding(.vertical, 12)
-        .glassEffect(.regular, in: Capsule())
+        .piliGlass(in: Capsule())
         .padding(.horizontal, 16).padding(.bottom, 4)
       }
     }

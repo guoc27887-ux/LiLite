@@ -24,8 +24,8 @@ private struct QuickRelationButton: View {
   private var followed: Bool { relation?.followed ?? knownFollowing }
   var body: some View {
     Group{if keyboard != nil{ Color.clear.frame(width:1,height:1).accessibilityHidden(true) }
-      else if followed || relation?.attribute == 128 { relationButton.buttonStyle(.glass) }
-      else { relationButton.buttonStyle(.glassProminent) }
+      else if followed || relation?.attribute == 128 { relationButton.piliButtonStyle(.glass) }
+      else { relationButton.piliButtonStyle(.glassProminent) }
     }.controlSize(.regular).disabled(busy)
       .task {
         if keyboard==nil && !knownFollowing { await reload(reportErrors:false) }

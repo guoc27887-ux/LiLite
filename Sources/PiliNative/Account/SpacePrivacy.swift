@@ -51,10 +51,10 @@ struct SpacePrivacy: View {
           Text("更改将在离开时自动保存").font(.footnote).foregroundStyle(.secondary)
           Spacer()
           Button(busy ? "保存中" : "立即保存") { Task { await save() } }.disabled(busy)
-            .buttonStyle(.glassProminent)
+            .piliButtonStyle(.glassProminent)
         }
         .padding(.leading, 20).padding(.trailing, 8).padding(.vertical, 8)
-        .glassEffect(.regular, in: Capsule())
+        .piliGlass(in: Capsule())
         .padding(.horizontal, 16).padding(.bottom, 4)
         .transition(.move(edge: .bottom).combined(with: .opacity))
       }

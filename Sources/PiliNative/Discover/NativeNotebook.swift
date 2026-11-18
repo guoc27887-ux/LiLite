@@ -96,11 +96,11 @@ struct NativeNotebook: View {
               Button { Task { await send(publish: false) } } label: {
                 Label("保存到云笔记", systemImage: "icloud.and.arrow.up").frame(maxWidth: .infinity)
               }
-              .buttonStyle(.glass).disabled(!canSend)
+              .piliButtonStyle(.glass).disabled(!canSend)
               Button { publishing = true } label: {
                 Label("公开笔记", systemImage: "globe").frame(maxWidth: .infinity)
               }
-              .buttonStyle(.glassProminent).disabled(!canSend)
+              .piliButtonStyle(.glassProminent).disabled(!canSend)
             }
             .font(.subheadline.weight(.semibold)).controlSize(.large)
             .listRowBackground(Color.clear).listRowInsets(.init())

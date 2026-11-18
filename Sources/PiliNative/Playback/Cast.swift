@@ -218,7 +218,7 @@ struct CastView: View {
       if !directory.searching, directory.devices.isEmpty {
         VStack(spacing: 14) {
           Text(directory.issue ?? "没有设备").foregroundStyle(.secondary).multilineTextAlignment(.center)
-          Button("重试") { directory.search() }.buttonStyle(.glass)
+          Button("重试") { directory.search() }.piliButtonStyle(.glass)
         }
         .frame(maxWidth: .infinity).padding(.vertical, 60)
         .listRowSeparator(.hidden).listRowBackground(Color.clear)

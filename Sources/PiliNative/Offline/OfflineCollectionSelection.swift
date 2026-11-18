@@ -52,12 +52,12 @@ struct OfflineCollectionSelection: View {
             Text(count == 0 ? "缓存" : "缓存 \(count) 个稿件").fontWeight(.semibold)
           }
         }
-        .buttonStyle(.glassProminent)
+        .piliButtonStyle(.glassProminent)
         .disabled(whole.isEmpty && picked.values.allSatisfy(\.isEmpty))
       }
       .font(.subheadline)
       .padding(.leading, 20).padding(.trailing, 8).padding(.vertical, 8)
-      .glassEffect(.regular, in: Capsule())
+      .piliGlass(in: Capsule())
       .padding(.horizontal, 16).padding(.bottom, 4)
     }
     .navigationTitle(collection.title ?? "合集缓存").navigationBarTitleDisplayMode(.inline)

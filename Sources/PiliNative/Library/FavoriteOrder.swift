@@ -26,7 +26,7 @@ struct FavoriteOrder: View {
     .environment(\.editMode, .constant(.active)).navigationTitle("收藏内容排序").navigationBarTitleDisplayMode(.inline)
       .toolbar {
         ToolbarItem(placement: .confirmationAction) {
-          Button("完成") { Task { await save() } }.buttonStyle(.glassProminent).disabled(busy || ops.isEmpty)
+          Button("完成") { Task { await save() } }.piliButtonStyle(.glassProminent).disabled(busy || ops.isEmpty)
         }
       }
       .task(id: folder) { if rows.isEmpty && page == 1 { await load() } }

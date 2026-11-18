@@ -44,7 +44,7 @@ struct SponsorEditor: View {
           Group { if busy { ProgressView() } else { Image(systemName: "checkmark").font(.system(size: 19, weight: .semibold)) } }
             .frame(width: 50, height: 50)
         }
-        .buttonStyle(.glassProminent).buttonBorderShape(.circle).disabled(busy)
+        .piliButtonStyle(.glassProminent).buttonBorderShape(.circle).disabled(busy)
         .accessibilityLabel("提交").padding(18)
       }
     }

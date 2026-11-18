@@ -69,14 +69,14 @@ struct MatchDetailView: View {
           NavigationLink { LivePlayer(id: room, title: d.season?.title ?? "比赛直播") } label: {
             Label(d.contest_status == 2 ? "观看直播" : "直播间", systemImage: "dot.radiowaves.left.and.right")
           }
-          .buttonStyle(.glassProminent)
+          .piliButtonStyle(.glassProminent)
         }
         if d.contest_status != 2, let p = d.playback, !p.isEmpty {
           if let r = SharedLink.parse(p) {
             NavigationLink { LinkDestination(item: r) } label: { Label("观看回放", systemImage: "play.rectangle") }
-              .buttonStyle(.glass)
+              .piliButtonStyle(.glass)
           } else if let url = httpsURL(p) {
-            Link(destination: url) { Label("观看回放", systemImage: "play.rectangle") }.buttonStyle(.glass)
+            Link(destination: url) { Label("观看回放", systemImage: "play.rectangle") }.piliButtonStyle(.glass)
           }
         }
       }

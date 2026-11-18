@@ -30,7 +30,7 @@ struct ArchiveCoinPicker: View {
           if already>0{Text("已投 \(already) 枚").font(.footnote).foregroundStyle(.secondary)}
           Button(action:submit){
             Text("投 \(amount) 枚硬币").font(.body.weight(.semibold)).frame(maxWidth:260).padding(.vertical,4)
-          }.buttonStyle(.glassProminent).controlSize(.large)
+          }.piliButtonStyle(.glassProminent).controlSize(.large)
             .disabled(drop != nil || !available.contains(amount) || accounts.state.active != owner)
         }.padding(.horizontal,24).padding(.vertical,12)
       }.disabled(drop != nil).navigationTitle("投币").navigationBarTitleDisplayMode(.inline)

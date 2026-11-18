@@ -63,11 +63,11 @@ struct LegacyCacheImportView: View {
           }
           Spacer()
           Button("重新缓存 \(checked.count) 项") { confirm = true }
-            .buttonStyle(.glassProminent).disabled(checked.isEmpty)
+            .piliButtonStyle(.glassProminent).disabled(checked.isEmpty)
         }
         .font(.subheadline)
         .padding(.leading, 20).padding(.trailing, 8).padding(.vertical, 8)
-        .glassEffect(.regular, in: Capsule())
+        .piliGlass(in: Capsule())
         .padding(.horizontal, 16).padding(.bottom, 4)
       }
     }

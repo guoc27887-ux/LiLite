@@ -106,7 +106,7 @@ struct ArchiveRelatedList: View {
         Text("相关推荐").font(.headline)
         if failed && items.isEmpty {
           Button("重新加载相关推荐") { failed = false; Task { await load() } }
-            .buttonStyle(.glass).frame(maxWidth: .infinity)
+            .piliButtonStyle(.glass).frame(maxWidth: .infinity)
         } else if !loaded {
           ProgressView().frame(maxWidth: .infinity).padding(.vertical, 24)
         } else if items.isEmpty {

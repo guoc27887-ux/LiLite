@@ -609,7 +609,7 @@ struct Discussion: View {
           Image(systemName: "square.and.pencil").font(.system(size: 19, weight: .semibold))
             .frame(width: 50, height: 50)
         }
-        .buttonStyle(.glassProminent).buttonBorderShape(.circle)
+        .piliButtonStyle(.glassProminent).buttonBorderShape(.circle)
         .disabled(inputDisabled).accessibilityLabel("发表评论")
         .padding(.trailing, 18).padding(.bottom, 18)
         .offset(y: composerHidden ? 120 : 0)
@@ -863,7 +863,7 @@ struct Discussion: View {
         }
         .font(.subheadline.weight(.semibold)).frame(minWidth: 40)
       }
-      .buttonStyle(.glassProminent)
+      .piliButtonStyle(.glassProminent)
       .disabled(!canSend)
     }
     .padding(.horizontal, 12).frame(height: 52)

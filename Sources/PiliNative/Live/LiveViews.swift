@@ -33,7 +33,7 @@ struct LiveDirectory: View {
                 NavigationLink { LivePlayer(id: id, title: "直播间 \(id)") } label: {
                   Text("进入").font(.subheadline.weight(.semibold))
                 }
-                .buttonStyle(.glassProminent).controlSize(.small)
+                .piliButtonStyle(.glassProminent).controlSize(.small)
                 .transition(.scale.combined(with: .opacity))
               }
             }
@@ -60,15 +60,15 @@ struct LiveDirectory: View {
           HStack(spacing: 8) {
             NavigationLink { LiveAreaCatalog() } label: {
               Label("分区", systemImage: "square.grid.2x2").font(.subheadline)
-            }.buttonStyle(.glass)
+            }.piliButtonStyle(.glass)
             NavigationLink { LiveFollows() } label: {
               Label("关注", systemImage: "heart").font(.subheadline)
-            }.buttonStyle(.glass)
+            }.piliButtonStyle(.glass)
             NavigationLink {
               SitePage(url: URL(string: colorScheme == .dark ? "https://www.bilibili.com/h5/match/data/home?navhide=1&native.theme=2&night=1" : "https://www.bilibili.com/h5/match/data/home?navhide=1&native.theme=1&night=0")!)
             } label: {
               Label("赛事", systemImage: "gamecontroller").font(.subheadline)
-            }.buttonStyle(.glass)
+            }.piliButtonStyle(.glass)
           }
         }
         .padding(.horizontal, 16).padding(.vertical, 8)

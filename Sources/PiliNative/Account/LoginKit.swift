@@ -112,7 +112,7 @@ struct LoginSubmit: View {
       }
       .font(.body.weight(.semibold)).frame(maxWidth: 260).padding(.vertical, 4)
     }
-    .buttonStyle(.glassProminent).controlSize(.large)
+    .piliButtonStyle(.glassProminent).controlSize(.large)
   }
 }
 

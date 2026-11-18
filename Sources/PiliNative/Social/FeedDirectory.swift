@@ -113,7 +113,7 @@ struct CommunityFilterPanel: View {
               issue = nil
             } catch { issue = "表达式无效" }
           }
-          .buttonStyle(.glassProminent).controlSize(.small).disabled(draft == regex)
+          .piliButtonStyle(.glassProminent).controlSize(.small).disabled(draft == regex)
         }
       } header: {
         Text("屏蔽动态关键词（正则表达式）")

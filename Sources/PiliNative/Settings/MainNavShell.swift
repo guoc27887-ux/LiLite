@@ -202,7 +202,7 @@ struct MainNavShell: View {
       }
     }
     .modifier(AdaptiveTabStyle())
-    .tabBarMinimizeBehavior(layout.collapseBottom && !voiceOver ? .onScrollDown : .never)
+    .piliTabBarMinimizeOnScroll(layout.collapseBottom && !voiceOver)
     .environment(\.navChrome, chrome)
     .environment(\.usesSystemSearchTab, layout.tabs.contains(.search))
     .environment(\.openPersonalPage, {

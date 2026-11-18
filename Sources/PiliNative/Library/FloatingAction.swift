@@ -11,7 +11,7 @@ struct FloatingAction: ViewModifier {
       Button(action: action) {
         Image(systemName: symbol).font(.title2.weight(.semibold)).frame(width: 56, height: 56)
       }
-      .buttonStyle(.glassProminent).buttonBorderShape(.circle)
+      .piliButtonStyle(.glassProminent).buttonBorderShape(.circle)
       .disabled(disabled)
       .accessibilityLabel(title)
       .padding(.trailing, 20).padding(.bottom, 16)

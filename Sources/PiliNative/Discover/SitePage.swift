@@ -22,9 +22,9 @@ struct SitePage: View {
         if let issue { Text(issue).font(.footnote).foregroundStyle(.secondary) }
         VStack(spacing: 10) {
           Button { launch() } label: { Text("用浏览器打开").frame(maxWidth: 240) }
-            .buttonStyle(.glassProminent)
+            .piliButtonStyle(.glassProminent)
           Button { inside = true } label: { Text("在应用内打开").frame(maxWidth: 240) }
-            .buttonStyle(.glass)
+            .piliButtonStyle(.glass)
         }
         .controlSize(.large)
       }

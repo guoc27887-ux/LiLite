@@ -29,7 +29,7 @@ struct ListenView: View {
             PageFailure(message: err) { queue.resume() }
           }
           Button("结束播放", role: .destructive) { queue.stop() }
-            .font(.subheadline).buttonStyle(.glass).padding(.top, 4)
+            .font(.subheadline).piliButtonStyle(.glass).padding(.top, 4)
         } else {
           ContentUnavailableView("没有正在收听的内容", systemImage: "headphones",
             description: Text("在视频详情页选择“听视频”开始收听"))
@@ -38,7 +38,7 @@ struct ListenView: View {
               queue.continueListening()
             } label: {
               Label("继续收听：" + mark.track.title, systemImage: "play.fill").lineLimit(1)
-            }.buttonStyle(.glassProminent)
+            }.piliButtonStyle(.glassProminent)
           }
         }
       }
@@ -195,7 +195,7 @@ struct ListenView: View {
         Image(systemName: "speaker.wave.3.fill").font(.caption).foregroundStyle(.secondary)
       }
       if let s = queue.requestedSkip {
-        Button("跳过" + (s.detail?.title ?? "片段")) { queue.skip(s) }.buttonStyle(.glass)
+        Button("跳过" + (s.detail?.title ?? "片段")) { queue.skip(s) }.piliButtonStyle(.glass)
       }
       if let hint = queue.skipHint { Text(hint).font(.caption).foregroundStyle(.secondary) }
     }

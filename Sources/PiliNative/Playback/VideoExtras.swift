@@ -54,7 +54,7 @@ struct VideoExtras: View {
           ForEach(node.options) { c in
             Button { story.choose(c, navigate: choose) } label: {
               Text(c.option ?? "继续").frame(maxWidth: .infinity)
-            }.buttonStyle(.glass)
+            }.piliButtonStyle(.glass)
           }
           if story.canRestart {
             Button("回到故事开头") { story.restart(choose) }.font(.footnote)
@@ -65,7 +65,7 @@ struct VideoExtras: View {
           in: RoundedRectangle(cornerRadius: NativeGlass.cardRadius, style: .continuous))
       }
       if let issue = story.error {
-        Button("重新加载互动选项") { story.retry() }.buttonStyle(.glass).accessibilityHint(issue)
+        Button("重新加载互动选项") { story.retry() }.piliButtonStyle(.glass).accessibilityHint(issue)
       }
       if let catalog = video.ugc_season, !(catalog.sections ?? []).isEmpty {
         ArchiveCollectionCard(catalog: catalog, currentBVID: video.bvid) { collectionOpen = true }

@@ -38,7 +38,7 @@ struct FavoriteHub: View {
         .transition(.opacity)
     }
     .animation(.easeOut(duration: 0.2), value: tab)
-    .safeAreaBar(edge: .top, spacing: 0) {
+    .piliSafeAreaBar(edge: .top, spacing: 0) {
       ChipBar(items: Tab.allCases, selection: $tab, title: \.title, reselect: { top &+= 1 })
         .padding(.vertical, 6)
     }
