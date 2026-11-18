@@ -346,7 +346,7 @@ private func startPlayer() async {
         await captions.offline(saved)
       } catch { if !Task.isCancelled { issue = error.localizedDescription } }
       }
-private func handlePlayToEnd(_ event: Notification) { event in
+private func handlePlayToEnd(_ event: Notification) {
       guard let player, let item = event.object as? AVPlayerItem, player.currentItem === item else {
         return
       }
@@ -375,7 +375,7 @@ private func handlePlayToEnd(_ event: Notification) { event in
         }
       }
       }
-  var body: some View {
+  private var playerStack: some View {
     PiliNavigationStack {
       playerContent()
 
@@ -390,7 +390,9 @@ private func handlePlayToEnd(_ event: Notification) { event in
     .onChange(of: sessionPrefs.controls) { _, v in
       systemMedia.setTemporary(sessionPrefs.temporary ? v : nil)
     }
-    .task(id: String(segment) + ":" + (accounts.state.owner(.role(.video)) ?? "")) {
+  }
+  var body: some View {
+    playerStack.task(id: String(segment) + ":" + (accounts.state.owner(.role(.video)) ?? "")) {
       guard video.matchesOwner(accounts.state.owner(.role(.video)) ?? "") else {
         bullets = []; return
       }
@@ -409,7 +411,7 @@ private func handlePlayToEnd(_ event: Notification) { event in
         OfflineWatchBook.store(key, viewer: resumeViewer, seconds: p.currentTime().seconds, duration: i.duration.seconds)
       }
     }.onDisappear { closePlayer() }
-  }
+    }
 }
 struct CacheSelection: View {
   let video: Video, cid: Int64

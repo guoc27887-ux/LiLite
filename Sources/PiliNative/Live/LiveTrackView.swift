@@ -58,8 +58,10 @@ struct LiveTrackView: View {
   @ObservedObject var timeline: LiveOverlayTimeline
   let player: AVPlayer, shield: LiveShield?, inspector: BulletInspector?, fullscreen: Bool
   private var rules: [String] {
-    (shield?.keyword_list ?? []).map { "k:" + $0 }
-      + (shield?.shield_user_list ?? []).map { "u:" + String($0.uid) }
+    var out: [String] = []
+    for k in shield?.keyword_list ?? [] { out.append("k:" + k) }
+    for u in shield?.shield_user_list ?? [] { out.append("u:" + String(u.uid)) }
+    return out
   }
   private var bullets: [Bullet] { timeline.entries.map(\.bullet) }
   private var bulletOverlayView: BulletOverlay {
