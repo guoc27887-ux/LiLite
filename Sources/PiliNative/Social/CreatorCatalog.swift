@@ -53,25 +53,31 @@ struct CreatorGuards: View {
     }
     let guard_top_list: [Row]?, has_more: Int?
   }
-  private var catalogList: some View {
-    PageList(empty: "暂无大航海成员", autoMore: true) { cursor in
-      let page = Int(cursor ?? "1") ?? 1
-      let r = try await BiliAPI.shared.read(
-        "/xlive/app-ucenter/v1/guard/MainGuardCardAll",
-        ["page": String(page), "page_size": "20", "ruid": String(mid)],
-        host: "api.live.bilibili.com", expectedAccount: accounts.state.active ?? "", as: Payload.self)
-      return Page(items: (r.guard_top_list ?? []).enumerated().map { Ranked(rank: (page - 1) * 20 + $0.offset + 1, member: $0.element) }, next: r.has_more == 1 && !(r.guard_top_list ?? []).isEmpty ? String(page + 1) : nil)
-    } row: { entry in
-      let r = entry.member
-      PlainRowLink {
-        CreatorSpace(mid: r.uid, name: r.username ?? "用户")
-      } label: {
-        RankedPersonRow(
-          rank: entry.rank, avatar: r.face.flatMap(httpsURL), name: r.username ?? "用户",
-          tag: r.guard_level.flatMap { [1: "总督", 2: "提督", 3: "舰长"][$0] },
-          tagColor: r.guard_level == 1 ? .red : r.guard_level == 2 ? .purple : .blue)
-      }
+  private func fetchGuardPage(cursor: String?) async throws -> Page<Ranked> {
+    let page = Int(cursor ?? "1") ?? 1
+    let r = try await BiliAPI.shared.read(
+      "/xlive/app-ucenter/v1/guard/MainGuardCardAll",
+      ["page": String(page), "page_size": "20", "ruid": String(mid)],
+      host: "api.live.bilibili.com", expectedAccount: accounts.state.active ?? "", as: Payload.self)
+    let rows = r.guard_top_list ?? []
+    let items = rows.enumerated().map {
+      Ranked(rank: (page - 1) * 20 + $0.offset + 1, member: $0.element)
     }
+    return Page(items: items, next: r.has_more == 1 && !rows.isEmpty ? String(page + 1) : nil)
+  }
+  @ViewBuilder private func guardRow(_ entry: Ranked) -> some View {
+    let r = entry.member
+    PlainRowLink {
+      CreatorSpace(mid: r.uid, name: r.username ?? "用户")
+    } label: {
+      RankedPersonRow(
+        rank: entry.rank, avatar: r.face.flatMap(httpsURL), name: r.username ?? "用户",
+        tag: r.guard_level.flatMap { [1: "总督", 2: "提督", 3: "舰长"][$0] },
+        tagColor: r.guard_level == 1 ? .red : r.guard_level == 2 ? .purple : .blue)
+    }
+  }
+  private var catalogList: some View {
+    PageList(empty: "暂无大航海成员", autoMore: true, fetch: fetchGuardPage, row: { entry in guardRow(entry) })
   }
   var body: some View {
     catalogList.id(accounts.state.active).navigationTitle((name.map { $0 + "的" } ?? "") + "舰队" + (total.map { "（" + String($0) + "）" } ?? ""))
