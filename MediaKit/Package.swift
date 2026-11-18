@@ -4,8 +4,14 @@ import Foundation
 
 import PackageDescription
 
-let vendor = URL(fileURLWithPath: #filePath).deletingLastPathComponent().appendingPathComponent(
-  "Vendor")
+// iOS 18 fork CI note: paths precomputed as typed Strings — the inline
+// URL/string-concatenation form made the manifest compiler time out on
+// GitHub's macOS runners ("unable to type-check this expression").
+let vendor: URL = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
+  .appendingPathComponent("Vendor")
+let vendorPath: String = vendor.path
+let includeFlag: String = "-I" + vendorPath + "/include"
+let libFlag: String = "-L" + vendorPath + "/lib"
 let package = Package(
   name: "PiliMedia", platforms: [.iOS(.v17)],
   products: [
@@ -14,18 +20,18 @@ let package = Package(
   ],
   targets: [
     .target(name: "CMPV", dependencies: ["CLiveRemux"], publicHeadersPath: "include",
-      cSettings: [.unsafeFlags(["-I" + vendor.appendingPathComponent("include").path])],
+      cSettings: [.unsafeFlags([includeFlag])],
       linkerSettings: [
-        .unsafeFlags(["-L" + vendor.appendingPathComponent("lib").path]),
+        .unsafeFlags([libFlag]),
         .linkedLibrary("mpv"), .linkedLibrary("placebo"),
         .linkedFramework("OpenGLES"), .linkedFramework("QuartzCore"),
         .linkedFramework("AVFoundation"), .linkedFramework("Security"),
       ]),
     .target(
       name: "CLiveRemux", publicHeadersPath: "include",
-      cSettings: [.unsafeFlags(["-I" + vendor.appendingPathComponent("include").path])],
+      cSettings: [.unsafeFlags([includeFlag])],
       linkerSettings: [
-        .unsafeFlags(["-L" + vendor.appendingPathComponent("lib").path]),
+        .unsafeFlags([libFlag]),
         .linkedLibrary("avformat"), .linkedLibrary("avfilter"), .linkedLibrary("avcodec"),
         .linkedLibrary("swscale"), .linkedLibrary("swresample"),
         .linkedLibrary("avutil"), .linkedLibrary("dav1d"),
