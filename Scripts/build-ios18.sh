@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-root=$(cd "$(dirname "$0")" && pwd)
+root=$(cd "$(dirname "$0")/.." && pwd)
 case "${1:-}" in
     ""|--release|--release-personal|--sign-dev) ;;
     --sign-personal) python3 "$root/Checks/parity.py" --client-complete ;;
