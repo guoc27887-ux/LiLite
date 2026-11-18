@@ -78,9 +78,12 @@ struct EpisodePlayPayload {
     let dash = info["dash"] as? Map ?? [:]
     let dolby = (dash["dolby"] as? Map)?["audio"] as? [Map] ?? []
     let flac = (dash["flac"] as? Map)?["audio"] as? Map
-    let rows =
-      [p, arc, info, dash] + (dash["video"] as? [Map] ?? []) + (dash["audio"] as? [Map] ?? [])
-      + dolby + [flac].compactMap { $0 } + (info["durl"] as? [Map] ?? [])
+    var rows: [Map] = [p, arc, info, dash]
+    rows += dash["video"] as? [Map] ?? []
+    rows += dash["audio"] as? [Map] ?? []
+    rows += dolby
+    if let flac { rows.append(flac) }
+    rows += info["durl"] as? [Map] ?? []
     guard !rows.contains(where: protected) else {
       route = .unavailable("此分集需要受保护的播放器")
       return

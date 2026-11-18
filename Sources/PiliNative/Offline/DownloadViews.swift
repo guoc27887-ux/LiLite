@@ -212,60 +212,64 @@ struct OfflinePlayer: View {
           return false
         }))
   }
+  @ViewBuilder private func playerContent() -> some View {
+  Group {
+    if let player {
+      offlineScreen(player)
+    } else if let issue {
+      Text(issue)
+    } else {
+      ProgressView()
+    }
+  }
+  .modifier(PlaybackEdgeInsets(fullscreen: true))
+  .navigationTitle(video.part.isEmpty ? video.title : video.part).navigationBarTitleDisplayMode(
+    .inline
+  )
+  .interactiveDismissDisabled(locked)
+  .toolbar {
+    if lockButton || locked{
+      Button {locked.toggle();inspector.pick=nil} label:{Image(systemName:locked ? "lock.fill":"lock.open")}
+        .accessibilityLabel(locked ? "解锁播放控件":"锁定播放控件")
+    }
+    if !locked{
+    Menu {
+      Toggle("弹幕", isOn: sessionPrefs.binding(\.bullets))
+      NavigationLink("缓存片段") { OfflineMarkerList(v: video) }
+      if let player{NavigationLink("播放信息"){ArchiveProgramInfo(player:player)}}
+      if let player{
+        Menu("播放速度"){ForEach(SpeedPresets.decode(speedList),id:\.self){speed in
+          Button(speed.formatted()+"×"){player.defaultRate=Float(speed);sessionSpeed?.wrappedValue=Float(speed)
+            if let item=player.currentItem{VideoTransport.prepare(player,item)}
+            if player.rate != 0{player.rate=Float(speed)}
+          }
+        }}
+      }
+      RepeatPicker(session: sessionPrefs)
+      SessionPlaybackSettings(session: sessionPrefs)
+    } label: {
+      Label("字幕和弹幕", systemImage: "captions.bubble")
+    }
+    SubtitleButton(session:captions,title:video.part.isEmpty ? video.title:video.part,cid:video.cid).labelStyle(.iconOnly)
+    if captureButton,let player { CaptureButton(player: player) }
+    if previous != nil || next != nil {
+      Menu {
+        if pickOffline != nil{Button("查看缓存列表"){showPlayingRows=true}}
+        Button("上一集") { previous?() }.disabled(previous == nil)
+        Button("下一集") { next?() }.disabled(next == nil)
+      } label: {
+        Image(systemName: "list.bullet").accessibilityLabel("播放队列")
+      }
+    }
+    SleepTimerButton().labelStyle(.iconOnly)
+    Button("关闭") { dismiss() }
+    }
+  }
+  }
   var body: some View {
     PiliNavigationStack {
-      Group {
-        if let player {
-          offlineScreen(player)
-        } else if let issue {
-          Text(issue)
-        } else {
-          ProgressView()
-        }
-      }
-      .modifier(PlaybackEdgeInsets(fullscreen: true))
-      .navigationTitle(video.part.isEmpty ? video.title : video.part).navigationBarTitleDisplayMode(
-        .inline
-      )
-      .interactiveDismissDisabled(locked)
-      .toolbar {
-        if lockButton || locked{
-          Button {locked.toggle();inspector.pick=nil} label:{Image(systemName:locked ? "lock.fill":"lock.open")}
-            .accessibilityLabel(locked ? "解锁播放控件":"锁定播放控件")
-        }
-        if !locked{
-        Menu {
-          Toggle("弹幕", isOn: sessionPrefs.binding(\.bullets))
-          NavigationLink("缓存片段") { OfflineMarkerList(v: video) }
-          if let player{NavigationLink("播放信息"){ArchiveProgramInfo(player:player)}}
-          if let player{
-            Menu("播放速度"){ForEach(SpeedPresets.decode(speedList),id:\.self){speed in
-              Button(speed.formatted()+"×"){player.defaultRate=Float(speed);sessionSpeed?.wrappedValue=Float(speed)
-                if let item=player.currentItem{VideoTransport.prepare(player,item)}
-                if player.rate != 0{player.rate=Float(speed)}
-              }
-            }}
-          }
-          RepeatPicker(session: sessionPrefs)
-          SessionPlaybackSettings(session: sessionPrefs)
-        } label: {
-          Label("字幕和弹幕", systemImage: "captions.bubble")
-        }
-        SubtitleButton(session:captions,title:video.part.isEmpty ? video.title:video.part,cid:video.cid).labelStyle(.iconOnly)
-        if captureButton,let player { CaptureButton(player: player) }
-        if previous != nil || next != nil {
-          Menu {
-            if pickOffline != nil{Button("查看缓存列表"){showPlayingRows=true}}
-            Button("上一集") { previous?() }.disabled(previous == nil)
-            Button("下一集") { next?() }.disabled(next == nil)
-          } label: {
-            Image(systemName: "list.bullet").accessibilityLabel("播放队列")
-          }
-        }
-        SleepTimerButton().labelStyle(.iconOnly)
-        Button("关闭") { dismiss() }
-        }
-      }
+      playerContent()
+
     }.piliSheet(isPresented:$showPlayingRows){if let pickOffline{OfflinePlayingList(rows:playingRows,current:video.token,choose:pickOffline)}}.task(
       id: (accounts.state.active ?? "guest") + ":"
         + (accounts.state.owner(.role(.video)) ?? "guest")

@@ -39,120 +39,7 @@ struct Theater: View {
   @State private var pulse = 0
   @AccessibilityFocusState private var controlsFocused: Bool
   var body: some View {
-    GeometryReader { geo in
-      let size = geo.size
-      let chosen = PictureFit(rawValue: gravity) ?? .fit
-      let canvas = chosen.geometry(view: size, source: player.playbackSize, firstChoice: clock.picture.changedItem != clock.item)
-      let frame = system ? size : canvas.size
-      ZStack {
-        Color.black
-        ZStack {
-          if !detached {
-            Group {
-            if let native = player.nativePlayer {
-            SystemTheater(
-              player: native,
-              overlay: system && !clock.picture.inPictureInPicture
-                ? AnyView(
-                  ZStack(alignment: .bottom) {
-                    overlay
-                    if let scripts{StyledSubtitleLayer(session:scripts,player:player,gravity:gravity)}
-                    if let caption { caption }
-                  }) : nil, live: live,
-              showsControls: showsControls && system, onPresentation: onPresentation, pictureGravity: system ? gravity : canvas.gravity,
-              pipError: { pipError = $0 }
-            )
-            } else if let mpv = player as? MPVPlayer {
-              MPVVideoView(player: mpv, gravity: canvas.gravity)
-            }
-            }
-            .scaleEffect(x: !system && clock.picture.mirrorX ? -1 : 1, y: !system && clock.picture.mirrorY ? -1 : 1)
-            .frame(width: frame.width * zoom.scale, height: frame.height * zoom.scale)
-            .position(x: size.width / 2 + zoom.x, y: size.height / 2 + zoom.y)
-          }
-          if !system && !clock.picture.inPictureInPicture {
-            if let upscale, !detached, let native = player.nativePlayer, let item = native.currentItem {
-              UpscaleLayer(
-                player: native, session: upscale, item: item, gravity: canvas.gravity
-              )
-              .scaleEffect(x: !system && clock.picture.mirrorX ? -1 : 1, y: !system && clock.picture.mirrorY ? -1 : 1)
-            .frame(width: frame.width * zoom.scale, height: frame.height * zoom.scale)
-              .position(x: size.width / 2 + zoom.x, y: size.height / 2 + zoom.y)
-            }
-            if !detached,let scripts{StyledSubtitleLayer(session:scripts,player:player,gravity:canvas.gravity)
-              .frame(width:frame.width*zoom.scale,height:frame.height*zoom.scale)
-              .position(x:size.width/2+zoom.x,y:size.height/2+zoom.y)}
-            overlay.allowsHitTesting(false)
-            if let interaction { interaction.environment(\.viewportTouch, touch) }
-            if let caption {
-              VStack {
-                Spacer()
-                caption.environment(\.captionMinimumBottom, visible && showsControls ? (size.width < 600 || textSize.isAccessibilitySize ? 118 : 70) : 0)
-              }
-            }
-          }
-        }.frame(width: size.width, height: size.height).clipped().contentShape(Rectangle())
-          .simultaneousGesture(
-            MagnifyGesture().onChanged { v in
-              guard showsControls, !system, !clock.picture.inPictureInPicture else { return }
-              if initialZoom == nil { initialZoom = zoom }
-              touch.pinching = true
-              touch.horizontalSeek = nil
-              zoom = (initialZoom ?? zoom).magnified(
-                v.magnification,
-                anchor: CGPoint(x: v.startAnchor.x, y: v.startAnchor.y), size: size,
-                shrinks: shrinks)
-              if !visible { visible = true }
-            }.onEnded { _ in
-              if touch.pinching {
-                touch.ignorePanBefore = ProcessInfo.processInfo.systemUptime + 0.2
-              }
-              initialZoom = nil
-              touch.pinching = false
-              wake()
-            }, including: system || !showsControls ? .subviews : .all
-          )
-          .simultaneousGesture(
-            TapGesture(count:2).exclusively(before:TapGesture()).onEnded{value in
-              guard case .second=value,showsControls,!system,!clock.picture.inPictureInPicture,touch.acceptsPan else{return}
-              DispatchQueue.main.async{
-                guard ProcessInfo.processInfo.systemUptime-touch.lastBulletTap>0.08 else{return}
-                visible.toggle();wake()
-              }
-            },including:system || !showsControls ? .subviews:.all)
-        if showsControls && !clock.picture.inPictureInPicture {
-          if system {
-            VStack {
-              HStack {
-                Spacer()
-                Button {
-                  system = false
-                  visible = true
-                  wake()
-                } label: {
-                  Label("应用控件", systemImage: "rectangle.and.hand.point.up.left")
-                    .font(.caption).padding(6).background(.black.opacity(0.65), in: Capsule())
-                }.foregroundStyle(.white)
-                Spacer()
-              }
-              Spacer()
-            }.padding(.top, 4)
-          } else {
-            appControls(width: size.width)
-          }
-        }
-        if scrollVolume && !detached {
-          PointerVolume(player: player) { level in
-            routeVolume=false;volumeHint = level; volumeSequence &+= 1
-          }
-        }
-        if let volumeHint {
-          PlayerLevelPill(
-            symbol: PlayerLevelPill.volumeSymbol(Double(volumeHint) / 100), percent: volumeHint
-          ).accessibilityHidden(true)
-        }
-      }.frame(width: size.width, height: size.height)
-    }.preference(key: PlayerControlsVisibleKey.self, value: visible && showsControls && !system)
+    GeometryReader { geo in viewportContent(size: geo.size) }.preference(key: PlayerControlsVisibleKey.self, value: visible && showsControls && !system)
     .onReceive(AVAudioSession.sharedInstance().publisher(for:\.outputVolume).removeDuplicates().dropFirst()){level in
       guard !detached,level.isFinite else{return}
       routeVolume=true;volumeHint=Int((min(1,max(0,level))*100).rounded());volumeSequence &+= 1
@@ -212,6 +99,121 @@ struct Theater: View {
       }
     }
   }
+
+  @ViewBuilder private func viewportContent(size: CGSize) -> some View {
+  let chosen = PictureFit(rawValue: gravity) ?? .fit
+  let canvas = chosen.geometry(view: size, source: player.playbackSize, firstChoice: clock.picture.changedItem != clock.item)
+  let frame = system ? size : canvas.size
+  ZStack {
+    Color.black
+    ZStack {
+      if !detached {
+        Group {
+        if let native = player.nativePlayer {
+        SystemTheater(
+          player: native,
+          overlay: system && !clock.picture.inPictureInPicture
+            ? AnyView(
+              ZStack(alignment: .bottom) {
+                overlay
+                if let scripts{StyledSubtitleLayer(session:scripts,player:player,gravity:gravity)}
+                if let caption { caption }
+              }) : nil, live: live,
+          showsControls: showsControls && system, onPresentation: onPresentation, pictureGravity: system ? gravity : canvas.gravity,
+          pipError: { pipError = $0 }
+        )
+        } else if let mpv = player as? MPVPlayer {
+          MPVVideoView(player: mpv, gravity: canvas.gravity)
+        }
+        }
+        .scaleEffect(x: !system && clock.picture.mirrorX ? -1 : 1, y: !system && clock.picture.mirrorY ? -1 : 1)
+        .frame(width: frame.width * zoom.scale, height: frame.height * zoom.scale)
+        .position(x: size.width / 2 + zoom.x, y: size.height / 2 + zoom.y)
+      }
+      if !system && !clock.picture.inPictureInPicture {
+        if let upscale, !detached, let native = player.nativePlayer, let item = native.currentItem {
+          UpscaleLayer(
+            player: native, session: upscale, item: item, gravity: canvas.gravity
+          )
+          .scaleEffect(x: !system && clock.picture.mirrorX ? -1 : 1, y: !system && clock.picture.mirrorY ? -1 : 1)
+        .frame(width: frame.width * zoom.scale, height: frame.height * zoom.scale)
+          .position(x: size.width / 2 + zoom.x, y: size.height / 2 + zoom.y)
+        }
+        if !detached,let scripts{StyledSubtitleLayer(session:scripts,player:player,gravity:canvas.gravity)
+          .frame(width:frame.width*zoom.scale,height:frame.height*zoom.scale)
+          .position(x:size.width/2+zoom.x,y:size.height/2+zoom.y)}
+        overlay.allowsHitTesting(false)
+        if let interaction { interaction.environment(\.viewportTouch, touch) }
+        if let caption {
+          VStack {
+            Spacer()
+            caption.environment(\.captionMinimumBottom, visible && showsControls ? (size.width < 600 || textSize.isAccessibilitySize ? 118 : 70) : 0)
+          }
+        }
+      }
+    }.frame(width: size.width, height: size.height).clipped().contentShape(Rectangle())
+      .simultaneousGesture(
+        MagnifyGesture().onChanged { v in
+          guard showsControls, !system, !clock.picture.inPictureInPicture else { return }
+          if initialZoom == nil { initialZoom = zoom }
+          touch.pinching = true
+          touch.horizontalSeek = nil
+          zoom = (initialZoom ?? zoom).magnified(
+            v.magnification,
+            anchor: CGPoint(x: v.startAnchor.x, y: v.startAnchor.y), size: size,
+            shrinks: shrinks)
+          if !visible { visible = true }
+        }.onEnded { _ in
+          if touch.pinching {
+            touch.ignorePanBefore = ProcessInfo.processInfo.systemUptime + 0.2
+          }
+          initialZoom = nil
+          touch.pinching = false
+          wake()
+        }, including: system || !showsControls ? .subviews : .all
+      )
+      .simultaneousGesture(
+        TapGesture(count:2).exclusively(before:TapGesture()).onEnded{value in
+          guard case .second=value,showsControls,!system,!clock.picture.inPictureInPicture,touch.acceptsPan else{return}
+          DispatchQueue.main.async{
+            guard ProcessInfo.processInfo.systemUptime-touch.lastBulletTap>0.08 else{return}
+            visible.toggle();wake()
+          }
+        },including:system || !showsControls ? .subviews:.all)
+    if showsControls && !clock.picture.inPictureInPicture {
+      if system {
+        VStack {
+          HStack {
+            Spacer()
+            Button {
+              system = false
+              visible = true
+              wake()
+            } label: {
+              Label("应用控件", systemImage: "rectangle.and.hand.point.up.left")
+                .font(.caption).padding(6).background(.black.opacity(0.65), in: Capsule())
+            }.foregroundStyle(.white)
+            Spacer()
+          }
+          Spacer()
+        }.padding(.top, 4)
+      } else {
+        appControls(width: size.width)
+      }
+    }
+    if scrollVolume && !detached {
+      PointerVolume(player: player) { level in
+        routeVolume=false;volumeHint = level; volumeSequence &+= 1
+      }
+    }
+    if let volumeHint {
+      PlayerLevelPill(
+        symbol: PlayerLevelPill.volumeSymbol(Double(volumeHint) / 100), percent: volumeHint
+      ).accessibilityHidden(true)
+    }
+  }.frame(width: size.width, height: size.height)
+  }
+
   /// The original client's player chrome: a header (back/title left, tools right) and a bottom
   /// bar (progress, then play/time left and menus/fullscreen right), each on a 75 % black
   /// gradient that slides in from its own edge. Fullscreen adds the action row under the header

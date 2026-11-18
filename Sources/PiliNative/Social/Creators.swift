@@ -105,8 +105,8 @@ struct RelationsList: View {
   @State private var issue: String?
   @State private var draft = ""
   @State private var query = ""
-  var body: some View {
-    let list = PageList(empty: fans ? "暂无粉丝" : "暂无关注") { p in
+  private var creatorsList: some View {
+    PageList(empty: fans ? "暂无粉丝" : "暂无关注") { p in
       try await BiliAPI.shared.connections(
         uid: uid, fans: fans, page: Int(p ?? "1") ?? 1, term: query, order: order, expectedAccount: accounts.state.active ?? "")
     } row: { person in
@@ -123,6 +123,9 @@ struct RelationsList: View {
         }
       }
     }
+  }
+  var body: some View {
+    let list = creatorsList
     .id("\(query):\(revision):\(fans || !query.isEmpty ? 0 : order):\(accounts.state.active ?? "")")
     .navigationTitle((remoteName.map { $0 + "的" } ?? "") + (fans ? "粉丝" : "关注"))
     .task(id: uid + ":" + (accounts.state.active ?? "")) {

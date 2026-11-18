@@ -10,12 +10,8 @@ struct SharedFollowing: View {
   @EnvironmentObject private var accounts: AccountContext
   @State private var remoteName: String?
   @State private var total: Int?
-  var body: some View {
-    VStack(alignment: .leading) {
-      if let total {
-        Text("共 \(total) 人").piliFont(.caption).foregroundStyle(.secondary).padding(.horizontal)
-      }
-      PageList(empty: "暂无用户") { cursor in
+  private var sharedList: some View {
+    PageList(empty: "暂无用户") { cursor in
         let fields = (cursor ?? "1:0").split(separator: ":")
         let page = Int(fields.first ?? "1") ?? 1
         let offset = Int(fields.last ?? "0") ?? 0
@@ -37,6 +33,13 @@ struct SharedFollowing: View {
       } row: { person in
         CreatorLink(person: person)
       }
+  }
+  var body: some View {
+    VStack(alignment: .leading) {
+      if let total {
+        Text("共 \(total) 人").piliFont(.caption).foregroundStyle(.secondary).padding(.horizontal)
+      }
+      sharedList
     }.navigationTitle(alsoFollowsCreator ? "我关注的" + (total.map(String.init) ?? "") + "人也关注了" + (remoteName ?? "TA") : (remoteName.map { "我与" + $0 + "的" } ?? "") + "共同关注")
     .task(id: "\(mid):\(accounts.state.active ?? "")") {
       remoteName = nil
