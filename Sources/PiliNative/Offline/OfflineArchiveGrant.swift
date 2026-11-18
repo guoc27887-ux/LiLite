@@ -33,7 +33,9 @@ extension BiliAPI {
         singleFile: false)
     } catch let error as ServiceError where error.message == "这个视频没有分轨播放地址" {
       let legacy = try await legacyPlayback(bvid, cid: cid, expectedAccount: owner, forCache: true)
-      let qualities = Array(Set((legacy.body.accept_quality ?? []) + [legacy.body.quality ?? 0])).filter { $0 > 0 }.sorted(by: >)
+      var qualitySet = Set(legacy.body.accept_quality ?? [])
+      if let current = legacy.body.quality { qualitySet.insert(current) }
+      let qualities = qualitySet.filter { $0 > 0 }.sorted(by: >)
       return .init(archive: metadata, video: qualities, audio: [], singleFile: false)
     }
   }

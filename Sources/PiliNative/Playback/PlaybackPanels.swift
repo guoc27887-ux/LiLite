@@ -239,6 +239,104 @@ struct PlaybackPanels<Surface: View, Info: View, Replies: View>: View {
       wantsList = false
     }
   }
+
+  @ViewBuilder private func panelsContent(layout: GeometryProxy) -> some View {
+  let width = layout.size.width
+  let height = layout.size.height
+  let wide = width > height && width >= 540
+  let side = wide && (horizontal || creator != nil)
+  let list = wide && (playlistPref ?? horizontal) ? playlist : nil
+  let selected = wantsList && list != nil && selection == nil ? 2 : comments ? 1 : 0
+  let vertical =
+    enlarge && playback.pictureSize.height > playback.pictureSize.width && playback.pictureSize.width > 0
+  let ratio: CGFloat = vertical ? (side ? 9.0 / 16 : 1) : 16.0 / 9
+  let usable = max(1, height - topInset)
+  let playerWidth = side ? max(130, min(width * 0.63, (usable - 44) * ratio)) : width
+  let playerHeight = max(
+    1,
+    min(
+      playerWidth / ratio,
+      side ? max(1, usable - 44) : usable * (vertical ? 0.72 : 0.6)))
+  let showTabs = !(wide && creator != nil) && (canDiscuss || list != nil || accessory != nil)
+  let tabs = [0] + (canDiscuss ? [1] : []) + (list != nil ? [2] : [])
+  Group {
+    if side {
+      HStack(alignment: .top, spacing: 8) {
+        surface().frame(width: playerWidth, height: playerHeight).clipped().background(.black)
+          .recordsInlinePlayerFrame(model.engine)
+          .overlay(alignment: .topLeading) { headerButtons }
+        VStack(spacing: 0) {
+          if wide, let creator {
+            creator
+          } else {
+            if showTabs { tabBar(list: list, selected: selected) }
+            pager(tabs: tabs, selected: selected, list: list)
+          }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .background(Color(uiColor: .systemBackground))
+        .overlay { ReplyPanelStack(items: $replyPanels) }
+      }
+    } else {
+      // The original client's nested scroll: the player and tabs sit over the panels. While
+      // playing they stay pinned; while paused they move up 1:1 with the list, so the
+      // comments slide over the player following the finger.
+      let header = playerHeight + (showTabs ? 46 : 0)
+      ZStack(alignment: .top) {
+        pager(tabs: tabs, selected: selected, list: list)
+          .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+          .background(Color(uiColor: .systemBackground))
+          .environment(\.panelTopInset, header)
+          // Only changes inside the fold range are published, so a fully folded player
+          // stops invalidating on every scroll frame.
+          .environment(\.panelScroll, { [fold] y in
+            let v = min(max(y, 0), fold.limit + 1)
+            if v != fold.offset { fold.offset = v }
+          })
+        FoldingHeader(fold: fold, active: !playback.playing) {
+          VStack(spacing: 0) {
+            surface().frame(width: playerWidth, height: playerHeight).clipped().background(.black)
+              .recordsInlinePlayerFrame(model.engine)
+              .overlay(alignment: .topLeading) { headerButtons }
+              .overlay(alignment: .bottom) {
+                FoldBar(
+                  fold: fold, active: !playback.playing, played: playback.hasPlayed,
+                  back: { dismiss() }
+                ) {
+                  model.toggle()
+                }
+              }
+            if showTabs {
+              tabBar(list: list, selected: selected)
+                .background(Color(uiColor: .systemBackground))
+            }
+          }
+        }
+        FoldAwareReplyPanels(
+          fold: fold, active: !playback.playing, playerHeight: playerHeight, items: $replyPanels)
+      }
+      .clipped()
+    }
+  }
+  .environment(\.presentGalleryRail, wide && galleryEnabled ? { gallery = $0 } : nil)
+  .environment(\.replyPanelPresenter, ReplyPanelPresenter { title, content in
+    guard onScreen else { return false }
+    replyPanels.append(ReplyPanelItem(title: title, content: content))
+    return true
+  })
+  .overlay {
+    if wide && galleryEnabled, let gallery { GalleryRailPanel(request: gallery) { self.gallery = nil } }
+  }
+  .onChange(of: selected, initial: true) { _, tab in
+    fold.offset = 0
+  }
+  .background {
+    VideoNavigationChrome(player: model.engine, contentPop: selected == 0 && replyPanels.isEmpty)
+      .frame(width: 0, height: 0)
+  }
+  .onChange(of: playerHeight, initial: true) { _, h in fold.limit = max(1, h - PanelFold.bar) }.onChange(of: wide && galleryEnabled) { _, show in if !show { gallery = nil } }
+  }
+
   /// The original header's left side: back. Drawn here (not in the player) so it is there before
   /// the video is ready too.
   private var headerButtons: some View { PlayerPageHeaderButtons(chrome: chrome) }

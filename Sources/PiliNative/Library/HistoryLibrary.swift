@@ -64,7 +64,7 @@ struct ProfileFullHistory: View {
   @State private var confirmPause: Bool?
   @State private var paused: Bool?
   @State private var visit: Int64?
-  var body: some View {
+  private var historyList: some View {
     PageList(empty: "暂无观看记录") {
       cursor in
       let scope = identity
@@ -87,6 +87,9 @@ struct ProfileFullHistory: View {
     } row: { item in
       row(item)
     }
+  }
+  var body: some View {
+    historyList
     .id(identity).navigationTitle("观看历史")
     // The search row opens from the toolbar instead of the system's collapsing search drawer,
     // which snapped in and out under the chips on a light swipe and shook the list.
