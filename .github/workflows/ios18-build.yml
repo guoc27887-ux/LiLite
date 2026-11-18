@@ -20,11 +20,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Show Xcode and SDK
+      - name: Select newest stable Xcode 26
         run: |
+          ls /Applications | grep -i xcode || true
+          pick=$(ls -d /Applications/Xcode_26*.app 2>/dev/null | grep -v -i beta | sort -V | tail -1)
+          echo "Selected: $pick"
+          sudo xcode-select -s "$pick"
           xcodebuild -version
-          xcrun --sdk iphoneos --show-sdk-path
-          xcrun --sdk iphoneos --show-sdk-version
+          sdk=$(xcrun --sdk iphoneos --show-sdk-path)
+          echo "SDK: $sdk"
+          python3 -c "import json,plistlib,sys; s=json.load(open('$sdk/SDKSettings.json')); v=plistlib.load(open('$sdk/System/Library/CoreServices/SystemVersion.plist','rb')); print('SDKSettings Version:', s['Version'], '| ProductVersion:', v['ProductVersion'])"
 
       - name: Install xtool
         run: |
