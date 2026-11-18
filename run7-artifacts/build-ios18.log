@@ -1,0 +1,2109 @@
+The Meson build system
+Version: 1.12.1
+Source dir: /Users/runner/.cache/piliplus-native/tools/decoder-build/dav1d-1.5.4
+Build dir: /Users/runner/.cache/piliplus-native/tools/decoder-build/outputs/ios-b1ca19dbd69b/build
+Build type: cross build
+Project name: dav1d
+Project version: 1.5.4
+C compiler for the host machine: /Applications/Xcode_26.0.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang (clang 17.0.0 "Apple clang version 17.0.0 (clang-1700.3.19.1)")
+C linker for the host machine: /Applications/Xcode_26.0.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang ld64 1221.4
+C compiler for the build machine: cc (clang 17.0.0 "Apple clang version 17.0.0 (clang-1700.3.19.1)")
+C linker for the build machine: cc ld64 1221.4
+Build machine cpu family: aarch64
+Build machine cpu: aarch64
+Host machine cpu family: aarch64
+Host machine cpu: aarch64
+Target machine cpu family: aarch64
+Target machine cpu: aarch64
+Fetching value of define "DAV1D_API_VERSION_MAJOR" : 7 
+Fetching value of define "DAV1D_API_VERSION_MINOR" : 0 
+Fetching value of define "DAV1D_API_VERSION_PATCH" : 0 
+Run-time dependency threads found: YES
+Checking for function "clock_gettime" : YES 
+Checking for function "sigaction" : YES 
+Checking for function "posix_memalign" : YES 
+Checking for function "memalign" : NO 
+Checking for function "aligned_alloc" : YES 
+Library m found: YES
+Check usable header "stdatomic.h" : YES 
+Check usable header "sys/types.h" : YES 
+Check usable header "unistd.h" : YES 
+Check usable header "io.h" : NO 
+Check usable header "pthread_np.h" : NO 
+Checking for function "getopt_long" : YES 
+Checking for function "getauxval" : NO 
+Checking for function "elf_aux_info" : NO 
+Checking for function "pthread_getaffinity_np" with dependency threads: NO 
+Checking for function "pthread_setaffinity_np" with dependency threads: NO 
+Checking for function "pthread_setname_np" with dependency threads: YES 
+Checking for function "pthread_set_name_np" with dependency threads: NO 
+Checking if "_Generic" compiles: YES 
+Compiler for C supports arguments -fvisibility=hidden: YES 
+Compiler for C supports arguments -Wundef: YES 
+Compiler for C supports arguments -Werror=vla: YES 
+Compiler for C supports arguments -Wno-maybe-uninitialized: NO 
+Compiler for C supports arguments -Wno-missing-field-initializers: YES 
+Compiler for C supports arguments -Wno-unused-parameter: YES 
+Compiler for C supports arguments -Wstrict-prototypes: YES 
+Compiler for C supports arguments -Werror=missing-prototypes: YES 
+Compiler for C supports arguments -Wshorten-64-to-32: YES 
+Compiler for C supports arguments -fomit-frame-pointer: YES 
+Compiler for C supports arguments -ffast-math: YES 
+Compiler for C supports arguments -fno-align-functions: YES 
+Checking if "DOTPROD" compiles: YES 
+Checking if "I8MM" compiles: YES 
+Checking if "SVE" compiles: YES 
+Checking if "SVE2" compiles: YES 
+Configuring config.h using configuration
+Found pkg-config: NO
+Build targets in project: 5
+
+dav1d 1.5.4
+
+  User defined options
+    Cross files    : /Users/runner/.cache/piliplus-native/tools/decoder-build/outputs/ios-b1ca19dbd69b/cross.ini
+    b_staticpic    : true
+    buildtype      : release
+    default_library: static
+    enable_docs    : false
+    enable_examples: false
+    enable_tests   : false
+    enable_tools   : false
+    libdir         : lib
+    prefix         : /Users/runner/.cache/piliplus-native/tools/decoder-build/outputs/ios-b1ca19dbd69b/vendor
+
+Found ninja-1.13.2 at /opt/homebrew/bin/ninja
+ninja: Entering directory `/Users/runner/.cache/piliplus-native/tools/decoder-build/outputs/ios-b1ca19dbd69b/build'
+[1/74] Generating include/vcs_version.h with a custom command
+[2/74] Compiling C object src/libdav1d_bitdepth_8.a.p/cdef_tmpl.c.o
+[3/74] Compiling C object src/libdav1d_bitdepth_8.a.p/cdef_apply_tmpl.c.o
+[4/74] Compiling C object src/libdav1d_bitdepth_8.a.p/ipred_prepare_tmpl.c.o
+[5/74] Compiling C object src/libdav1d_bitdepth_8.a.p/fg_apply_tmpl.c.o
+[6/74] Compiling C object src/libdav1d_bitdepth_8.a.p/loopfilter_tmpl.c.o
+[7/74] Compiling C object src/libdav1d_bitdepth_8.a.p/filmgrain_tmpl.c.o
+[8/74] Compiling C object src/libdav1d_bitdepth_8.a.p/ipred_tmpl.c.o
+[9/74] Compiling C object src/libdav1d_bitdepth_8.a.p/lr_apply_tmpl.c.o
+[10/74] Compiling C object src/libdav1d_bitdepth_8.a.p/itx_tmpl.c.o
+[11/74] Compiling C object src/libdav1d_bitdepth_16.a.p/cdef_tmpl.c.o
+[12/74] Compiling C object src/libdav1d_bitdepth_16.a.p/fg_apply_tmpl.c.o
+[13/74] Compiling C object src/libdav1d_bitdepth_8.a.p/lf_apply_tmpl.c.o
+[14/74] Compiling C object src/libdav1d_bitdepth_16.a.p/cdef_apply_tmpl.c.o
+[15/74] Compiling C object src/libdav1d_bitdepth_16.a.p/ipred_prepare_tmpl.c.o
+[16/74] Compiling C object src/libdav1d_bitdepth_16.a.p/loopfilter_tmpl.c.o
+[17/74] Compiling C object src/libdav1d_bitdepth_8.a.p/looprestoration_tmpl.c.o
+[18/74] Compiling C object src/libdav1d_bitdepth_16.a.p/ipred_tmpl.c.o
+[19/74] Compiling C object src/libdav1d_bitdepth_16.a.p/filmgrain_tmpl.c.o
+[20/74] Compiling C object src/libdav1d_bitdepth_16.a.p/lr_apply_tmpl.c.o
+[21/74] Compiling C object src/libdav1d_bitdepth_16.a.p/itx_tmpl.c.o
+[22/74] Compiling C object src/libdav1d.a.p/cpu.c.o
+[23/74] Compiling C object src/libdav1d_bitdepth_8.a.p/mc_tmpl.c.o
+[24/74] Compiling C object src/libdav1d_bitdepth_16.a.p/lf_apply_tmpl.c.o
+[25/74] Compiling C object src/libdav1d.a.p/ctx.c.o
+[26/74] Compiling C object src/libdav1d.a.p/dequant_tables.c.o
+[27/74] Compiling C object src/libdav1d.a.p/data.c.o
+[28/74] Compiling C object src/libdav1d.a.p/intra_edge.c.o
+[29/74] Compiling C object src/libdav1d.a.p/getbits.c.o
+[30/74] Compiling C object src/libdav1d.a.p/lf_mask.c.o
+[31/74] Compiling C object src/libdav1d_bitdepth_16.a.p/mc_tmpl.c.o
+[32/74] Compiling C object src/libdav1d.a.p/log.c.o
+[33/74] Compiling C object src/libdav1d_bitdepth_16.a.p/looprestoration_tmpl.c.o
+[34/74] Compiling C object src/libdav1d.a.p/mem.c.o
+[35/74] Compiling C object src/libdav1d.a.p/msac.c.o
+[36/74] Compiling C object src/libdav1d.a.p/lib.c.o
+[37/74] Compiling C object src/libdav1d.a.p/pal.c.o
+[38/74] Compiling C object src/libdav1d.a.p/picture.c.o
+[39/74] Compiling C object src/libdav1d.a.p/itx_1d.c.o
+[40/74] Compiling C object src/libdav1d.a.p/ref.c.o
+[41/74] Compiling C object src/libdav1d.a.p/qm.c.o
+[42/74] Compiling C object src/libdav1d.a.p/scan.c.o
+[43/74] Compiling C object src/libdav1d.a.p/tables.c.o
+[44/74] Compiling C object src/libdav1d_bitdepth_8.a.p/recon_tmpl.c.o
+[45/74] Compiling C object src/libdav1d.a.p/warpmv.c.o
+[46/74] Compiling C object src/libdav1d.a.p/arm_cpu.c.o
+[47/74] Compiling C object src/libdav1d.a.p/wedge.c.o
+[48/74] Compiling C object src/libdav1d.a.p/arm_64_looprestoration_common.S.o
+[49/74] Compiling C object src/libdav1d.a.p/arm_64_msac.S.o
+[50/74] Compiling C object src/libdav1d.a.p/arm_64_refmvs.S.o
+[51/74] Compiling C object src/libdav1d.a.p/arm_64_itx.S.o
+[52/74] Compiling C object src/libdav1d.a.p/arm_64_cdef.S.o
+[53/74] Compiling C object src/libdav1d.a.p/arm_64_filmgrain.S.o
+[54/74] Compiling C object src/libdav1d.a.p/arm_64_ipred.S.o
+[55/74] Compiling C object src/libdav1d.a.p/arm_64_loopfilter.S.o
+[56/74] Compiling C object src/libdav1d.a.p/arm_64_looprestoration.S.o
+[57/74] Compiling C object src/libdav1d.a.p/arm_64_mc_dotprod.S.o
+[58/74] Compiling C object src/libdav1d.a.p/arm_64_mc.S.o
+[59/74] Compiling C object src/libdav1d.a.p/arm_64_cdef16.S.o
+[60/74] Compiling C object src/libdav1d.a.p/arm_64_filmgrain16.S.o
+[61/74] Compiling C object src/libdav1d.a.p/refmvs.c.o
+[62/74] Compiling C object src/libdav1d.a.p/arm_64_ipred16.S.o
+[63/74] Compiling C object src/libdav1d.a.p/arm_64_loopfilter16.S.o
+[64/74] Compiling C object src/libdav1d.a.p/arm_64_looprestoration16.S.o
+[65/74] Compiling C object src/libdav1d.a.p/arm_64_mc16_sve.S.o
+[66/74] Compiling C object src/libdav1d_bitdepth_16.a.p/recon_tmpl.c.o
+[67/74] Compiling C object src/libdav1d.a.p/arm_64_itx16.S.o
+[68/74] Compiling C object src/libdav1d.a.p/arm_64_mc16.S.o
+[69/74] Compiling C object src/libdav1d.a.p/cdf.c.o
+[70/74] Compiling C object src/libdav1d.a.p/obu.c.o
+[71/74] Compiling C object src/libdav1d.a.p/thread_task.c.o
+[72/74] Compiling C object src/libdav1d.a.p/decode.c.o
+[73/74] Linking static target src/libdav1d.a
+[73/74] Installing files
+Installing src/libdav1d.a to /Users/runner/.cache/piliplus-native/tools/decoder-build/outputs/ios-b1ca19dbd69b/vendor/lib
+Installing /Users/runner/.cache/piliplus-native/tools/decoder-build/dav1d-1.5.4/include/dav1d/common.h to /Users/runner/.cache/piliplus-native/tools/decoder-build/outputs/ios-b1ca19dbd69b/vendor/include/dav1d
+Installing /Users/runner/.cache/piliplus-native/tools/decoder-build/dav1d-1.5.4/include/dav1d/data.h to /Users/runner/.cache/piliplus-native/tools/decoder-build/outputs/ios-b1ca19dbd69b/vendor/include/dav1d
+Installing /Users/runner/.cache/piliplus-native/tools/decoder-build/dav1d-1.5.4/include/dav1d/dav1d.h to /Users/runner/.cache/piliplus-native/tools/decoder-build/outputs/ios-b1ca19dbd69b/vendor/include/dav1d
+Installing /Users/runner/.cache/piliplus-native/tools/decoder-build/dav1d-1.5.4/include/dav1d/headers.h to /Users/runner/.cache/piliplus-native/tools/decoder-build/outputs/ios-b1ca19dbd69b/vendor/include/dav1d
+Installing /Users/runner/.cache/piliplus-native/tools/decoder-build/dav1d-1.5.4/include/dav1d/picture.h to /Users/runner/.cache/piliplus-native/tools/decoder-build/outputs/ios-b1ca19dbd69b/vendor/include/dav1d
+Installing /Users/runner/.cache/piliplus-native/tools/decoder-build/dav1d-1.5.4/include/dav1d/version.h to /Users/runner/.cache/piliplus-native/tools/decoder-build/outputs/ios-b1ca19dbd69b/vendor/include/dav1d
+Installing /Users/runner/.cache/piliplus-native/tools/decoder-build/outputs/ios-b1ca19dbd69b/build/meson-private/dav1d.pc to /Users/runner/.cache/piliplus-native/tools/decoder-build/outputs/ios-b1ca19dbd69b/vendor/lib/pkgconfig
+install prefix            /Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/outputs/ios-ed4fdec830d1-b1ca19db/vendor
+source path               /Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2
+C compiler                /Applications/Xcode_26.0.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+C library                 
+host C compiler           gcc
+host C library            
+ARCH                      aarch64 (generic)
+big-endian                no
+runtime cpu detection     yes
+NEON enabled              yes
+DOTPROD enabled           yes
+I8MM enabled              yes
+PMULL enabled             yes
+EOR3 enabled              yes
+SVE enabled               yes
+SVE2 enabled              yes
+SME enabled               yes
+SME-I16I64 enabled        yes
+SME2 enabled              yes
+debug symbols             no
+strip symbols             yes
+optimize for size         no
+optimizations             yes
+static                    yes
+shared                    no
+network support           yes
+threading support         pthreads
+safe bitstream reader     yes
+texi2html enabled         no
+perl enabled              yes
+pod2man enabled           yes
+makeinfo enabled          no
+makeinfo supports HTML    no
+experimental features     yes
+xmllint enabled           yes
+
+External libraries:
+libdav1d                securetransport         zlib
+
+External libraries providing hardware acceleration:
+videotoolbox
+
+Libraries:
+avcodec                 avformat                swresample
+avfilter                avutil                  swscale
+
+Programs:
+
+Enabled decoders:
+aac                     flac                    opus
+ac3                     h264                    png
+alac                    hevc                    ssa
+ass                     libdav1d                subrip
+av1                     mjpeg                   vp9
+eac3                    mp3                     webvtt
+
+Enabled encoders:
+alac                    hevc_videotoolbox       png
+h264_videotoolbox       mjpeg
+
+Enabled hwaccels:
+av1_videotoolbox        hevc_videotoolbox
+h264_videotoolbox       vp9_videotoolbox
+
+Enabled parsers:
+aac                     flac                    mpegaudio
+ac3                     h264                    opus
+av1                     hevc                    vp9
+
+Enabled demuxers:
+aac                     flv                     mpegts
+ac3                     hls                     ogg
+ass                     matroska                srt
+eac3                    mov                     webvtt
+flac                    mp3
+
+Enabled muxers:
+adts                    latm                    mpegts
+hls                     mov                     webvtt
+image2                  mp4
+
+Enabled protocols:
+crypto                  http                    tls
+data                    https
+file                    tcp
+
+Enabled filters:
+aformat                 atempo                  null
+anull                   dynaudnorm              scale
+aresample               format                  volume
+asetpts                 loudnorm
+
+Enabled bsfs:
+aac_adtstoasc           hevc_mp4toannexb        vvc_mp4toannexb
+extract_extradata       vp9_superframe
+h264_mp4toannexb        vp9_superframe_split
+
+Enabled indevs:
+
+Enabled outdevs:
+
+License: LGPL version 2.1 or later
+GEN	libavutil/libavutil.version
+GEN	libavcodec/libavcodec.version
+GEN	libavformat/libavformat.version
+GEN	libavfilter/libavfilter.version
+GEN	libswscale/libswscale.version
+GEN	libswresample/libswresample.version
+CC	libavfilter/af_aformat.o
+CC	libavfilter/af_aresample.o
+CC	libavfilter/af_anull.o
+CC	libavfilter/af_atempo.o
+CC	libavfilter/af_dynaudnorm.o
+CC	libavfilter/af_loudnorm.o
+CC	libavfilter/af_volume.o
+CC	libavfilter/allfilters.o
+CC	libavfilter/audio.o
+CC	libavfilter/avfilter.o
+CC	libavfilter/avfiltergraph.o
+CC	libavfilter/buffersink.o
+CC	libavfilter/buffersrc.o
+CC	libavfilter/ccfifo.o
+CC	libavfilter/colorspace.o
+CC	libavfilter/drawutils.o
+CC	libavfilter/ebur128.o
+CC	libavfilter/formats.o
+CC	libavfilter/framepool.o
+CC	libavfilter/framequeue.o
+CC	libavfilter/framesync.o
+CC	libavfilter/graphdump.o
+CC	libavfilter/graphparser.o
+CC	libavfilter/pthread.o
+CC	libavfilter/scale_eval.o
+CC	libavfilter/setpts.o
+CC	libavfilter/version.o
+src/libavfilter/setpts.c:148:12: warning: unused function 'config_output_video' [-Wunused-function]
+  148 | static int config_output_video(AVFilterLink *outlink)
+      |            ^~~~~~~~~~~~~~~~~~~
+CC	libavfilter/vf_format.o
+CC	libavfilter/vf_null.o
+1 warning generated.
+CC	libavfilter/vf_scale.o
+CC	libavfilter/video.o
+GEN	libavfilter/libavfilter.pc
+CC	libavformat/aacdec.o
+CC	libavformat/ac3dec.o
+CC	libavformat/adtsenc.o
+CC	libavformat/allformats.o
+CC	libavformat/apetag.o
+CC	libavformat/apv.o
+CC	libavformat/assdec.o
+CC	libavformat/av1.o
+CC	libavformat/avc.o
+CC	libavformat/avformat.o
+CC	libavformat/avio.o
+CC	libavformat/aviobuf.o
+CC	libavformat/cbs.o
+CC	libavformat/cbs_apv.o
+CC	libavformat/cbs_av1.o
+CC	libavformat/codecstring.o
+CC	libavformat/crypto.o
+CC	libavformat/data_uri.o
+CC	libavformat/demux.o
+CC	libavformat/demux_utils.o
+CC	libavformat/dovi_isom.o
+CC	libavformat/dump.o
+CC	libavformat/dv.o
+CC	libavformat/dvdclut.o
+CC	libavformat/evc.o
+CC	libavformat/file.o
+CC	libavformat/flac_picture.o
+CC	libavformat/flacdec.o
+CC	libavformat/flvdec.o
+CC	libavformat/format.o
+CC	libavformat/hevc.o
+CC	libavformat/hls.o
+CC	libavformat/hls_sample_encryption.o
+CC	libavformat/hlsenc.o
+CC	libavformat/hlsplaylist.o
+CC	libavformat/http.o
+CC	libavformat/httpauth.o
+CC	libavformat/iamf.o
+CC	libavformat/iamf_parse.o
+CC	libavformat/iamf_reader.o
+CC	libavformat/iamf_writer.o
+CC	libavformat/id3v1.o
+CC	libavformat/id3v2.o
+CC	libavformat/id3v2enc.o
+CC	libavformat/img2.o
+CC	libavformat/img2enc.o
+src/libavformat/img2enc.c:119:12: warning: unused function 'write_packet_pipe' [-Wunused-function]
+  119 | static int write_packet_pipe(AVFormatContCC	libavformat/isom.o
+ext *s, AVPacket *pkt)
+      |            ^~~~~~~~~~~~~~~~~
+CC	libavformat/isom_tags.o
+CC	libavformat/latmenc.o
+CC	libavformat/lcevc.o
+CC	libavformat/matroska.o
+1 warning generated.
+CC	libavformat/matroskadec.o
+CC	libavformat/metadata.o
+CC	libavformat/mov.o
+CC	libavformat/mov_chan.o
+CC	libavformat/mov_esds.o
+CC	libavformat/movenc.o
+CC	libavformat/movenc_ttml.o
+CC	libavformat/movenccenc.o
+CC	libavformat/movenchint.o
+CC	libavformat/mp3dec.o
+CC	libavformat/mpegts.o
+CC	libavformat/mpegtsenc.o
+CC	libavformat/mux.o
+CC	libavformat/mux_utils.o
+CC	libavformat/nal.o
+CC	libavformat/network.o
+CC	libavformat/oggdec.o
+CC	libavformat/oggparsedirac.o
+CC	libavformat/oggparseflac.o
+CC	libavformat/oggparseogm.o
+CC	libavformat/oggparseopus.o
+CC	libavformat/oggparseskeleton.o
+CC	libavformat/oggparsespeex.o
+CC	libavformat/oggparsetheora.o
+CC	libavformat/oggparsevorbis.o
+CC	libavformat/oggparsevp8.o
+CC	libavformat/options.o
+CC	libavformat/os_support.o
+CC	libavformat/packet_list.o
+CC	libavformat/protocols.o
+CC	libavformat/rawdec.o
+CC	libavformat/qtpalette.o
+CC	libavformat/rawenc.o
+src/libavformat/rawdec.c:106:12: warning: unused function 'raw_data_read_header' [-Wunused-function]
+  106 | static int raw_data_read_header(AVFormatContext *s)
+      |            ^~~~~~~~~~~~~~~~~~~~
+CC	libavformat/rawutils.o
+CC	libavformat/replaygain.o
+1 warning generated.
+CC	libavformat/riff.o
+CC	libavformat/riffdec.o
+CC	libavformat/riffenc.o
+CC	libavformat/rmsipr.o
+CC	libavformat/rtp.o
+CC	libavformat/sdp.o
+CC	libavformat/rtpenc_chain.o
+CC	libavformat/seek.o
+CC	libavformat/srtdec.o
+CC	libavformat/subtitles.o
+CC	libavformat/tcp.o
+CC	libavformat/tls.o
+CC	libavformat/tls_securetransport.o
+CC	libavformat/url.o
+CC	libavformat/urldecode.o
+CC	libavformat/utils.o
+CC	libavformat/version.o
+CC	libavformat/vorbiscomment.o
+src/libavformat/tls_securetransport.c:182:5: warning: 'SSLSetCertificate' is deprecated: first deprecated in iOS 13.0 - No longer supported. Use Network.framework. [-Wdeprecated-declarations]
+  182 |     SSLSetCertificate(c->ssl_context, outArray);
+      |     ^
+/Applications/Xcode_26.0.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h:637:1: note: 'SSLSetCertificate' has been explicitly marked deprecated here
+  637 | SSLSetCertificate                       (SSLContextRef          context,
+      | ^
+src/libavformat/tls_securetransport.c:249:9: warning: 'SSLClose' is deprecated: first deprecated in iOS 13.0 - No longer supported. Use Network.framework. [-Wdeprecated-declarations]
+  249 |         SSLClose(c->ssl_context);
+      |         ^
+/Applications/Xcode_26.0.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h:1731:1: note: 'SSLClose' has been explicitly marked deprecated here
+ 1731 | SSLClose                                        (SSLContextRef          context)
+      | ^
+src/libavformat/tls_securetransport.c:276:22: warning: 'SSLCreateContext' is deprecated: first deprecated in iOS 13.0 - No longer supported. Use Network.framework. [-Wdeprecated-declarations]
+  276 |     c->ssl_context = SSLCreateContext(NULL, s->listen ? kSSLServerSide : kSSLClientSide, kSSLStreamType);
+      |                      ^
+/Applications/Xcode_26.0.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h:316:1: note: 'SSLCreateContext' has been explicitly marked deprecated here
+  316 | SSLCreateContext(CFAllocatorRef __nullable alloc, SSLProtocolSide protocolSide, SSLConnectionType connectionType)
+      | ^
+src/libavformat/tls_securetransport.c:276:57: warning: 'kSSLServerSide' is deprecated: first deprecated in iOS 13.0 [-Wdeprecated-declarations]
+  276 |     c->ssl_context = SSLCreateContext(NULL, s->listen ? kSSLServerSide : kSSLClientSide, kSSLStreamType);
+      |                                                         ^
+/Applications/Xcode_26.0.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h:217:5: note: 'kSSLServerSide' has been explicitly marked deprecated here
+  217 |     kSSLServerSide CF_ENUM_DEPRECATED(10_2, 10_15, 2_0, 13_0),
+      |     ^
+src/libavformat/tls_securetransport.c:276:74: warning: 'kSSLClientSide' is deprecated: first deprecated in iOS 13.0 [-Wdeprecated-declarations]
+  276 |     c->ssl_context = SSLCreateContext(NULL, s->listen ? kSSLServerSide : kSSLClientSide, kSSLStreamType);
+      |                                                                          ^
+/Applications/Xcode_26.0.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h:218:5: note: 'kSSLClientSide' has been explicitly marked deprecated here
+  218 |     kSSLClientSide CF_ENUM_DEPRECATED(10_2, 10_15, 2_0, 13_0)
+      |     ^
+src/libavformat/tls_securetransport.c:276:90: warning: 'kSSLStreamType' is deprecated: first deprecated in iOS 13.0 [-Wdeprecated-declarations]
+  276 |     c->ssl_context = SSLCreateContext(NULL, s->listen ? kSSLServerSide : kSSLClientSide, kSSLStreamType);
+      |                                                                                          ^
+/Applications/Xcode_26.0.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h:223:5: note: 'kSSLStreamType' has been explicitly marked deprecated here
+  223 |     kSSLStreamType CF_ENUM_DEPRECATED(10_2, 10_15, 2_0, 13_0),
+      |     ^
+src/libavformat/tls_securetransport.c:287:21: warning: 'SSLSetSessionOption' is deprecated: first deprecated in iOS 13.0 - No longer supported. Use Network.framework. [-Wdeprecated-declarations]
+  287 |         CHECK_ERROR(SSLSetSessionOption, c->ssl_context, kSSLSessionOptionBreakOnServerAuth, true);
+      |                     ^
+/Applications/Xcode_26.0.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h:384:1: note: 'SSLSetSessionOption' has been explicitly marked deprecated here
+  384 | SSLSetSessionOption                     (SSLContextRef          context,
+      | ^
+src/libavformat/tls_securetransport.c:287:58: warning: 'kSSLSessionOptionBreakOnServerAuth' is deprecated: first deprecated in iOS 13.0 [-Wdeprecated-declarations]
+  287 |         CHECK_ERROR(SSLSetSessionOption, c->ssl_context, kSSLSessionOptionBreakOnServerAuth, true);
+      |                                                          ^
+/Applications/Xcode_26.0.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h:99:2: note: 'kSSLSessionOptionBreakOnServerAuth' has been explicitly marked deprecated here
+   99 |         kSSLSessionOptionBreakOnServerAuth CF_ENUM_DEPRECATED(10_2, 10_15, 2_0, 13_0) = 0,
+      |         ^
+src/libavformat/tls_securetransport.c:291:17: warning: 'SSLSetPeerDomainName' is deprecated: first deprecated in iOS 13.0 - No longer supported. Use Network.framework. [-Wdeprecated-declarations]
+  291 |     CHECK_ERROR(SSLSetPeerDomainName, c->ssl_context, s->host, strlen(s->host));
+      |                 ^
+/Applications/Xcode_26.0.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h:686:1: note: 'SSLSetPeerDomainName' has been explicitly marked deprecated here
+  686 | SSLSetPeerDomainName            (SSLContextRef          context,
+      | ^
+src/libavformat/tls_securetransport.c:292:17: warning: 'SSLSetIOFuncs' is deprecated: first deprecated in iOS 13.0 - No longer supported. Use Network.framework. [-Wdeprecated-declarations]
+  292 |     CHECK_ERROR(SSLSetIOFuncs, c->ssl_context, tls_read_cb, tls_write_cb);
+      |                 ^
+/Applications/Xcode_26.0.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h:418:1: note: 'SSLSetIOFuncs' has been explicitly marked deprecated here
+  418 | SSLSetIOFuncs                           (SSLContextRef          context,
+      | ^
+src/libavformat/tls_securetransport.c:293:17: warning: 'SSLSetConnection' is deprecated: first deprecated in iOS 13.0 - No longer supported. Use Network.framework. [-Wdeprecated-declarations]
+  293 |     CHECK_ERROR(SSLSetConnection, c->ssl_context, h);
+      |                 ^
+/Applications/Xcode_26.0.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h:657:1: note: 'SSLSetConnection' has been explicitly marked deprecated here
+  657 | SSLSetConnection                        (SSLContextRef                  context,
+      | ^
+src/libavformat/tls_securetransport.c:295:27: warning: 'SSLHandshake' is deprecated: first deprecated in iOS 13.0 - No longer supported. Use Network.framework. [-Wdeprecated-declarations]
+  295 |         OSStatus status = SSLHandshake(c->ssl_context);
+      |                           ^
+/Applications/Xcode_26.0.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h:1641:1: note: 'SSLHandshake' has been explicitly marked deprecated here
+ 1641 | SSLHandshake                            (SSLContextRef          context)
+      | ^
+src/libavformat/tls_securetransport.c:302:17: warning: 'SSLCopyPeerTrust' is deprecated: first deprecated in iOS 13.0 - No longer supported. Use Network.framework. [-Wdeprecated-declarations]
+  302 |             if (SSLCopyPeerTrust(c->ssl_context, &peerTrust) != noErr) {
+      |                 ^
+/Applications/Xcode_26.0.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h:1261:1: note: 'SSLCopyPeerTrust' has been explicitly marked deprecated here
+ 1261 | SSLCopyPeerTrust                        (SSLContextRef          context,
+      | ^
+src/libavformat/tls_securetransport.c:312:17: warning: 'SecTrustEvaluate' is deprecated: first deprecated in iOS 13.0 [-Wdeprecated-declarations]
+  312 |             if (SecTrustCC	libavformat/vpcc.o
+Evaluate(peerTrust, &trustResult) != noErr) {
+      |                 ^~~~~~~~~~~~~~~~
+      |                 SecTrustEvaluateWithError
+/Applications/Xcode_26.0.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Security.framework/Headers/SecTrust.h:377:10: note: 'SecTrustEvaluate' has been explicitly marked deprecated here
+  377 | OSStatus SecTrustEvaluate(SecTrustRef trust, SecTrustResultType *result)
+      |          ^
+src/libavformat/tls_securetransport.c:358:5: warning: unannotated fall-through between switch labels [-Wimplicit-fallthrough]
+  358 |     default:
+      |     ^
+src/libavformat/tls_securetransport.c:358:5: note: insert '__attribute__((fallthrough));' to silence this warning
+  358 |     default:
+      |     ^
+      |     __attribute__((fallthrough)); 
+src/libavformat/tls_securetransport.c:358:5: note: insert 'break;' to avoid fall-through
+  358 |     default:
+      |     ^
+      |     break; 
+src/libavformat/tls_securetransport.c:368:5: warning: 'SSLGetBufferedReadSize' is deprecated: first deprecated in iOS 13.0 - No longer supported. Use Network.framework. [-Wdeprecated-declarations]
+  368 |     SSLGetBufferedReadSize(c->ssl_context, &available);
+      |     ^
+/Applications/Xcode_26.0.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h:1705:1: note: 'SSLGetBufferedReadSize' has been explicitly marked deprecated here
+ 1705 | SSLGetBufferedReadSize          (SSLContextRef context,
+      | ^
+src/libavformat/tls_securetransport.c:371:11: warning: 'SSLRead' is deprecated: first deprecated in iOS 13.0 - No longer supported. Use Network.framework. [-Wdeprecated-declarations]
+  371 |     ret = SSLRead(c->ssl_context, buf, size, &processed);
+      |           ^
+/Applications/Xcode_26.0.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h:1689:1: note: 'SSLRead' has been explicitly marked deprecated here
+ 1689 | SSLRead                                         (SSLContextRef          context,
+      | ^
+src/libavformat/tls_securetransport.c:384:15: warning: 'SSLWrite' is deprecated: first deprecated in iOS 13.0 - No longer supported. Use Network.framework. [-Wdeprecated-declarations]
+  384 |     int ret = SSLWrite(c->ssl_context, buf, size, &processed);
+      |               ^
+/Applications/Xcode_26.0.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.0.sdk/System/Library/Frameworks/Security.framework/Headers/SecureTransport.h:1670:1: note: 'SSLWrite' has been explicitly marked deprecated here
+ 1670 | SSLWrite                                        (SSLContextRef          context,
+      | ^
+CC	libavformat/vvc.o
+CC	libavformat/webvttdec.o
+18 warnings generated.
+CC	libavformat/webvttenc.o
+GEN	libavformat/libavformat.pc
+CC	libavcodec/lcevctab.o
+GEN	libavcodec/libavcodec.pc
+GEN	libswresample/libswresample.pc
+GEN	libswscale/libswscale.pc
+CC	libavutil/half2float.o
+GEN	libavutil/libavutil.pc
+AR	libavfilter/libavfilter.a
+CC	libavcodec/aac/aacdec.o
+CC	libavcodec/aac/aacdec_ac.o
+CC	libavcodec/aac/aacdec_float.o
+CC	libavcodec/aac/aacdec_lpd.o
+CC	libavcodec/aac/aacdec_tab.o
+CC	libavcodec/aac/aacdec_usac.o
+CC	libavcodec/aac/aacdec_usac_mps212.o
+CC	libavcodec/aac_ac3_parser.o
+CC	libavcodec/aac_parser.o
+CC	libavcodec/aacps_common.o
+CC	libavcodec/aacps_float.o
+CC	libavcodec/aacpsdsp_float.o
+CC	libavcodec/aacsbr.o
+CC	libavcodec/aactab.o
+CC	libavcodec/aandcttab.o
+CC	libavcodec/aarch64/aacpsdsp_init_aarch64.o
+AS	libavcodec/aarch64/aacpsdsp_neon.o
+CC	libavcodec/aarch64/ac3dsp_init_aarch64.o
+AS	libavcodec/aarch64/ac3dsp_neon.o
+CC	libavcodec/aarch64/fdctdsp_init_aarch64.o
+AS	libavcodec/aarch64/fdctdsp_neon.o
+CC	libavcodec/aarch64/fmtconvert_init.o
+AS	libavcodec/aarch64/fmtconvert_neon.o
+CC	libavcodec/aarch64/h264chroma_init_aarch64.o
+AS	libavcodec/aarch64/h264cmc_neon.o
+CC	libavcodec/aarch64/h264dsp_init_aarch64.o
+AS	libavcodec/aarch64/h264dsp_neon.o
+AS	libavcodec/aarch64/h264idct_neon.o
+CC	libavcodec/aarch64/h264pred_init.o
+AS	libavcodec/aarch64/h264pred_neon.o
+CC	libavcodec/aarch64/h264qpel_init_aarch64.o
+AS	libavcodec/aarch64/h264qpel_neon.o
+AS	libavcodec/aarch64/h26x/epel_neon.o
+AS	libavcodec/aarch64/h26x/qpel_neon.o
+AS	libavcodec/aarch64/h26x/sao_neon.o
+AS	libavcodec/aarch64/hevcdsp_deblock_neon.o
+AS	libavcodec/aarch64/hevcdsp_dequant_neon.o
+AS	libavcodec/aarch64/hevcdsp_idct_neon.o
+CC	libavcodec/aarch64/hevcdsp_init_aarch64.o
+CC	libavcodec/aarch64/hevcpred_init_aarch64.o
+AS	libavcodec/aarch64/hevcpred_neon.o
+CC	libavcodec/aarch64/hpeldsp_init_aarch64.o
+AS	libavcodec/aarch64/hpeldsp_neon.o
+CC	libavcodec/aarch64/idctdsp_init_aarch64.o
+AS	libavcodec/aarch64/idctdsp_neon.o
+CC	libavcodec/aarch64/me_cmp_init_aarch64.o
+AS	libavcodec/aarch64/me_cmp_neon.o
+CC	libavcodec/aarch64/mpegaudiodsp_init.o
+AS	libavcodec/aarch64/mpegaudiodsp_neon.o
+CC	libavcodec/aarch64/mpegvideoencdsp_init.o
+AS	libavcodec/aarch64/mpegvideoencdsp_neon.o
+CC	libavcodec/aarch64/opusdsp_init.o
+AS	libavcodec/aarch64/opusdsp_neon.o
+CC	libavcodec/aarch64/pixblockdsp_init_aarch64.o
+AS	libavcodec/aarch64/pixblockdsp_neon.o
+CC	libavcodec/aarch64/pngdsp_init.o
+AS	libavcodec/aarch64/pngdsp_neon.o
+CC	libavcodec/aarch64/sbrdsp_init_aarch64.o
+AS	libavcodec/aarch64/sbrdsp_neon.o
+AS	libavcodec/aarch64/videodsp.o
+AS	libavcodec/aarch64/simple_idct_neon.o
+CC	libavcodec/aarch64/videodsp_init.o
+CC	libavcodec/aarch64/vp9dsp_init_10bpp_aarch64.o
+CC	libavcodec/aarch64/vp9dsp_init_12bpp_aarch64.o
+CC	libavcodec/aarch64/vp9dsp_init_aarch64.o
+AS	libavcodec/aarch64/vp9itxfm_16bpp_neon.o
+AS	libavcodec/aarch64/vp9itxfm_neon.o
+AS	libavcodec/aarch64/vp9lpf_16bpp_neon.o
+AS	libavcodec/aarch64/vp9lpf_neon.o
+AS	libavcodec/aarch64/vp9mc_16bpp_neon.o
+AS	libavcodec/aarch64/vp9mc_aarch64.o
+AS	libavcodec/aarch64/vp9mc_neon.o
+CC	libavcodec/ac3.o
+CC	libavcodec/ac3_channel_layout_tab.o
+CC	libavcodec/ac3_parser.o
+CC	libavcodec/ac3dec_data.o
+CC	libavcodec/ac3dec_float.o
+CC	libavcodec/ac3dsp.o
+CC	libavcodec/ac3tab.o
+CC	libavcodec/adts_header.o
+CC	libavcodec/adts_parser.o
+CC	libavcodec/alac.o
+CC	libavcodec/alac_data.o
+CC	libavcodec/alacdsp.o
+CC	libavcodec/alacenc.o
+CC	libavcodec/allcodecs.o
+CC	libavcodec/aom_film_grain.o
+CC	libavcodec/ass.o
+CC	libavcodec/assdec.o
+CC	libavcodec/atsc_a53.o
+CC	libavcodec/av1_parse.o
+CC	libavcodec/av1_parser.o
+CC	libavcodec/av1dec.o
+CC	libavcodec/avcodec.o
+CC	libavcodec/avdct.o
+CC	libavcodec/bitstream.o
+CC	libavcodec/bitstream_filters.o
+CC	libavcodec/blockdsp.o
+CC	libavcodec/bsf.o
+CC	libavcodec/bsf/aac_adtstoasc.o
+CC	libavcodec/bsf/extract_extradata.o
+CC	libavcodec/bsf/h264_mp4toannexb.o
+CC	libavcodec/bsf/hevc_mp4toannexb.o
+CC	libavcodec/bsf/vp9_superframe.o
+CC	libavcodec/bsf/vp9_superframe_split.o
+CC	libavcodec/bsf/vvc_mp4toannexb.o
+CC	libavcodec/bswapdsp.o
+CC	libavcodec/cabac.o
+CC	libavcodec/cbrt_data.o
+CC	libavcodec/cbrt_tablegen_common.o
+CC	libavcodec/cbs.o
+CC	libavcodec/cbs_av1.o
+CC	libavcodec/cbs_bsf.o
+CC	libavcodec/cbs_vp9.o
+CC	libavcodec/codec_desc.o
+CC	libavcodec/codec_par.o
+CC	libavcodec/d3d11va.o
+CC	libavcodec/dct32_fixed.o
+CC	libavcodec/dct32_float.o
+CC	libavcodec/decode.o
+CC	libavcodec/dirac.o
+CC	libavcodec/dovi_rpu.o
+CC	libavcodec/dovi_rpudec.o
+CC	libavcodec/dv_profile.o
+CC	libavcodec/dynamic_hdr_vivid.o
+CC	libavcodec/eac3_data.o
+CC	libavcodec/encode.o
+CC	libavcodec/error_resilience.o
+CC	libavcodec/exif.o
+CC	libavcodec/faandct.o
+CC	libavcodec/faanidct.o
+CC	libavcodec/fdctdsp.o
+CC	libavcodec/flac.o
+CC	libavcodec/flac_parser.o
+CC	libavcodec/flacdata.o
+CC	libavcodec/flacdec.o
+CC	libavcodec/flacdsp.o
+CC	libavcodec/fmtconvert.o
+CC	libavcodec/frame_thread_encoder.o
+CC	libavcodec/get_buffer.o
+CC	libavcodec/golomb.o
+CC	libavcodec/h2645_parse.o
+CC	libavcodec/h2645_sei.o
+CC	libavcodec/h2645_vui.o
+CC	libavcodec/h2645data.o
+CC	libavcodec/h264_cabac.o
+CC	libavcodec/h264_cavlc.o
+CC	libavcodec/h264_direct.o
+CC	libavcodec/h264_loopfilter.o
+CC	libavcodec/h264_mb.o
+CC	libavcodec/h264_parse.o
+CC	libavcodec/h264_parser.o
+CC	libavcodec/h264_picture.o
+CC	libavcodec/h264_ps.o
+CC	libavcodec/h264_refs.o
+CC	libavcodec/h264_sei.o
+CC	libavcodec/h264_slice.o
+CC	libavcodec/h264chroma.o
+CC	libavcodec/h264data.o
+CC	libavcodec/h264dec.o
+CC	libavcodec/h264dsp.o
+CC	libavcodec/h264idct.o
+CC	libavcodec/h264pred.o
+CC	libavcodec/h264qpel.o
+CC	libavcodec/h274.o
+CC	libavcodec/hevc/cabac.o
+CC	libavcodec/hevc/data.o
+CC	libavcodec/hevc/dsp.o
+CC	libavcodec/hevc/filter.o
+CC	libavcodec/hevc/hevcdec.o
+CC	libavcodec/hevc/mvs.o
+CC	libavcodec/hevc/parse.o
+CC	libavcodec/hevc/parser.o
+CC	libavcodec/hevc/pred.o
+CC	libavcodec/hevc/ps.o
+CC	libavcodec/hevc/refs.o
+CC	libavcodec/hevc/sei.o
+CC	libavcodec/hpeldsp.o
+CC	libavcodec/htmlsubtitles.o
+CC	libavcodec/idctdsp.o
+CC	libavcodec/imgconvert.o
+CC	libavcodec/itut35.o
+CC	libavcodec/jfdctfst.o
+CC	libavcodec/jfdctint.o
+CC	libavcodec/jni.o
+CC	libavcodec/jpegtables.o
+CC	libavcodec/jrevdct.o
+CC	libavcodec/kbdwin.o
+CC	libavcodec/libdav1d.o
+CC	libavcodec/lossless_videoencdsp.o
+CC	libavcodec/lpc.o
+CC	libavcodec/mathtables.o
+CC	libavcodec/me_cmp.o
+CC	libavcodec/mediacodec.o
+CC	libavcodec/mjpegdec.o
+CC	libavcodec/mjpegdec_common.o
+CC	libavcodec/mjpegenc.o
+CC	libavcodec/mjpegenc_common.o
+CC	libavcodec/mjpegenc_huffman.o
+CC	libavcodec/motion_est.o
+CC	libavcodec/mpeg12data.o
+CC	libavcodec/mpeg12framerate.o
+CC	libavcodec/mpeg4audio.o
+CC	libavcodec/mpeg4audio_sample_rates.o
+CC	libavcodec/mpegaudio.o
+CC	libavcodec/mpegaudio_parser.o
+CC	libavcodec/mpegaudiodata.o
+CC	libavcodec/mpegaudiodec_common.o
+CC	libavcodec/mpegaudiodec_fixed.o
+CC	libavcodec/mpegaudiodecheader.o
+CC	libavcodec/mpegaudiodsp.o
+CC	libavcodec/mpegaudiodsp_data.o
+CC	libavcodec/mpegaudiodsp_fixed.o
+CC	libavcodec/mpegaudiodsp_float.o
+CC	libavcodec/mpegaudiotabs.o
+CC	libavcodec/mpegpicture.o
+CC	libavcodec/mpegvideo.o
+CC	libavcodec/mpegvideo_enc.o
+CC	libavcodec/mpegvideo_motion.o
+src/libavcodec/mpegvideo_enc.c:2887:31: warning: variable 'pred_x' is uninitialized when used here [-Wuninitialized]
+ 2887 |     bytestream_put_byte(&ptr, pred_x); /* hmv1 */
+      |                               ^~~~~~
+src/libavcodec/mpegvideo_enc.c:2880:15: note: initialize the variable 'pred_x' to silence this warning
+ 2880 |     int pred_x, pred_y;
+      |               ^
+      |                = 0
+src/libavcodec/mpegvideo_enc.c:2888:31: warning: variable 'pred_y' is uninitialized when used here [-Wuninitialized]
+ 2888 |     bytestream_put_byte(&ptr, pred_y); /* vmv1 */
+      |                               ^~~~~~
+src/libavcodec/mpegvideo_enc.c:2880:23: note: initialize the variable 'pred_y' to silence this warning
+ 2880 |     int pred_x, pred_y;
+      |                       ^
+      |                        = 0
+CC	libavcodec/mpegvideo_unquantize.o
+CC	libavcodec/mpegvideodata.o
+CC	libavcodec/mpegvideoencdsp.o
+CC	libavcodec/neon/mpegvideo.o
+CC	libavcodec/options.o
+CC	libavcodec/opus/celt.o
+CC	libavcodec/opus/dec.o
+CC	libavcodec/opus/dec_celt.o
+CC	libavcodec/opus/dsp.o
+CC	libavcodec/opus/frame_duration_tab.o
+CC	libavcodec/opus/parse.o
+CC	libavcodec/opus/parser.o
+CC	libavcodec/opus/pvq.o
+CC	libavcodec/opus/rc.o
+CC	libavcodec/opus/silk.o
+CC	libavcodec/opus/tab.o
+CC	libavcodec/packet.o
+CC	libavcodec/parser.o
+CC	libavcodec/parsers.o
+CC	libavcodec/pixblockdsp.o
+CC	libavcodec/png.o
+CC	libavcodec/pngdec.o
+CC	libavcodec/pngdsp.o
+CC	libavcodec/pngenc.o
+CC	libavcodec/profiles.o
+CC	libavcodec/pthread.o
+CC	libavcodec/pthread_frame.o
+CC	libavcodec/pthread_slice.o
+2 warnings generated.
+CC	libavcodec/qsv_api.o
+CC	libavcodec/ratecontrol.o
+CC	libavcodec/raw.o
+CC	libavcodec/rl.o
+CC	libavcodec/sbrdsp.o
+CC	libavcodec/simple_idct.o
+CC	libavcodec/sinewin.o
+CC	libavcodec/srtdec.o
+CC	libavcodec/startcode.o
+CC	libavcodec/threadprogress.o
+CC	libavcodec/tiff_common.o
+CC	libavcodec/to_upper4.o
+CC	libavcodec/utils.o
+CC	libavcodec/version.o
+CC	libavcodec/videodsp.o
+CC	libavcodec/videotoolbox.o
+CC	libavcodec/videotoolbox_av1.o
+CC	libavcodec/videotoolbox_vp9.o
+CC	libavcodec/videotoolboxenc.o
+CC	libavcodec/vlc.o
+CC	libavcodec/vorbis_data.o
+CC	libavcodec/vorbis_parser.o
+CC	libavcodec/vp9.o
+CC	libavcodec/vp9_parser.o
+CC	libavcodec/vp9block.o
+CC	libavcodec/vp9dsp.o
+CC	libavcodec/vp9data.o
+CC	libavcodec/vp9dsp_10bpp.o
+CC	libavcodec/vp9dsp_12bpp.o
+CC	libavcodec/vp9dsp_8bpp.o
+CC	libavcodec/vp9lpf.o
+CC	libavcodec/vp9mvs.o
+CC	libavcodec/vp9prob.o
+CC	libavcodec/vp9recon.o
+CC	libavcodec/vpx_rac.o
+CC	libavcodec/webvttdec.o
+CC	libavcodec/xiph.o
+CC	libavcodec/zlib_wrapper.o
+CC	libswresample/aarch64/audio_convert_init.o
+AS	libswresample/aarch64/audio_convert_neon.o
+AS	libswresample/aarch64/resample.o
+CC	libswresample/aarch64/resample_init.o
+CC	libswresample/audioconvert.o
+CC	libswresample/dither.o
+CC	libswresample/options.o
+CC	libswresample/rematrix.o
+CC	libswresample/resample.o
+CC	libswresample/resample_dsp.o
+CC	libswresample/swresample.o
+CC	libswresample/swresample_frame.o
+CC	libswresample/version.o
+AS	libswscale/aarch64/hscale.o
+AS	libswscale/aarch64/input.o
+CC	libswscale/aarch64/ops.o
+HOSTCC	libswscale/aarch64/ops_asmgen.o
+AS	libswscale/aarch64/output.o
+AS	libswscale/aarch64/range_convert_neon.o
+CC	libswscale/aarch64/rgb2rgb.o
+AS	libswscale/aarch64/rgb2rgb_neon.o
+CC	libswscale/aarch64/swscale.o
+CC	libswscale/aarch64/swscale_unscaled.o
+AS	libswscale/aarch64/swscale_unscaled_neon.o
+AS	libswscale/aarch64/xyz2rgb_neon.o
+AS	libswscale/aarch64/yuv2rgb_neon.o
+CC	libswscale/alphablend.o
+CC	libswscale/cms.o
+CC	libswscale/csputils.o
+CC	libswscale/filters.o
+CC	libswscale/format.o
+CC	libswscale/framepool.o
+CC	libswscale/gamma.o
+CC	libswscale/graph.o
+CC	libswscale/hscale.o
+CC	libswscale/hscale_fast_bilinear.o
+CC	libswscale/input.o
+CC	libswscale/lut3d.o
+CC	libswscale/ops.o
+CC	libswscale/ops_chain.o
+CC	libswscale/ops_dispatch.o
+CC	libswscale/ops_memcpy.o
+CC	libswscale/ops_optimizer.o
+CC	libswscale/options.o
+CC	libswscale/output.o
+CC	libswscale/rational64.o
+CC	libswscale/slice.o
+CC	libswscale/rgb2rgb.o
+CC	libswscale/swscale.o
+CC	libswscale/swscale_unscaled.o
+CC	libswscale/uops.o
+CC	libswscale/uops_backend.o
+CC	libswscale/utils.o
+CC	libswscale/version.o
+CC	libswscale/vscale.o
+CC	libswscale/yuv2rgb.o
+CC	libavutil/aarch64/cpu.o
+AS	libavutil/aarch64/cpu_sme.o
+AS	libavutil/aarch64/cpu_sve.o
+AS	libavutil/aarch64/crc.o
+CC	libavutil/aarch64/float_dsp_init.o
+AS	libavutil/aarch64/float_dsp_neon.o
+CC	libavutil/aarch64/tx_float_init.o
+AS	libavutil/aarch64/tx_float_neon.o
+CC	libavutil/adler32.o
+CC	libavutil/aes.o
+CC	libavutil/aes_ctr.o
+CC	libavutil/ambient_viewing_environment.o
+CC	libavutil/audio_fifo.o
+CC	libavutil/avsscanf.o
+CC	libavutil/avstring.o
+CC	libavutil/base64.o
+CC	libavutil/blowfish.o
+CC	libavutil/bprint.o
+CC	libavutil/buffer.o
+CC	libavutil/camellia.o
+CC	libavutil/cast5.o
+CC	libavutil/channel_layout.o
+CC	libavutil/container_fifo.o
+CC	libavutil/cpu.o
+CC	libavutil/crc.o
+CC	libavutil/csp.o
+CC	libavutil/des.o
+CC	libavutil/detection_bbox.o
+CC	libavutil/dict.o
+CC	libavutil/display.o
+CC	libavutil/dovi_meta.o
+CC	libavutil/downmix_info.o
+CC	libavutil/encryption_info.o
+CC	libavutil/error.o
+CC	libavutil/eval.o
+CC	libavutil/executor.o
+CC	libavutil/fifo.o
+CC	libavutil/file.o
+CC	libavutil/file_open.o
+CC	libavutil/film_grain_params.o
+CC	libavutil/fixed_dsp.o
+CC	libavutil/float_dsp.o
+CC	libavutil/float_scalarproduct.o
+CC	libavutil/hash.o
+CC	libavutil/frame.o
+CC	libavutil/hdr_dynamic_metadata.o
+CC	libavutil/hdr_dynamic_vivid_metadata.o
+CC	libavutil/hmac.o
+CC	libavutil/hwcontext.o
+CC	libavutil/hwcontext_stub.o
+CC	libavutil/hwcontext_videotoolbox.o
+CC	libavutil/iamf.o
+CC	libavutil/imgutils.o
+CC	libavutil/integer.o
+CC	libavutil/intmath.o
+CC	libavutil/lfg.o
+CC	libavutil/lls.o
+CC	libavutil/log.o
+CC	libavutil/log2_tab.o
+CC	libavutil/lzo.o
+CC	libavutil/mastering_display_metadata.o
+CC	libavutil/mathematics.o
+CC	libavutil/md5.o
+CC	libavutil/mem.o
+CC	libavutil/murmur3.o
+CC	libavutil/opt.o
+CC	libavutil/parseutils.o
+CC	libavutil/pixdesc.o
+CC	libavutil/pixelutils.o
+CC	libavutil/random_seed.o
+CC	libavutil/rational.o
+CC	libavutil/raw_color_params.o
+CC	libavutil/rc4.o
+CC	libavutil/reverse.o
+CC	libavutil/refstruct.o
+CC	libavutil/ripemd.o
+CC	libavutil/samplefmt.o
+CC	libavutil/sha.o
+CC	libavutil/sha512.o
+CC	libavutil/side_data.o
+CC	libavutil/slicethread.o
+CC	libavutil/spherical.o
+CC	libavutil/stereo3d.o
+CC	libavutil/tdrdi.o
+CC	libavutil/tea.o
+CC	libavutil/threadmessage.o
+CC	libavutil/time.o
+CC	libavutil/timecode.o
+CC	libavutil/timecode_internal.o
+CC	libavutil/timestamp.o
+CC	libavutil/tree.o
+CC	libavutil/twofish.o
+CC	libavutil/tx.o
+CC	libavutil/tx_double.o
+CC	libavutil/tx_float.o
+CC	libavutil/tx_int32.o
+CC	libavutil/utils.o
+CC	libavutil/uuid.o
+CC	libavutil/version.o
+CC	libavutil/video_enc_params.o
+CC	libavutil/video_hint.o
+CC	libavutil/xga_font_data.o
+CC	libavutil/xtea.o
+AR	libavformat/libavformat.a
+AR	libavcodec/libavcodec.a
+AR	libswresample/libswresample.a
+HOSTLD	libswscale/aarch64/ops_asmgen
+GEN	libswscale/aarch64/ops_lookup.gen.c
+GEN	libswscale/aarch64/ops_neon.gen.S
+CP	libswscale/aarch64/ops_lookup.gen.c
+CP	libswscale/aarch64/ops_neon.gen.S
+AS	libswscale/aarch64/ops_neon.gen.o
+CC	libswscale/aarch64/ops_lookup.gen.o
+AR	libavutil/libavutil.a
+AR	libswscale/libswscale.a
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavfilter/avfilter.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavfilter/buffersink.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavfilter/buffersrc.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavfilter/version.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavfilter/version_major.h
+INSTALL	libavfilter/libavfilter.pc
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavformat/avformat.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavformat/avio.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavformat/version.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavformat/version_major.h
+INSTALL	libavformat/libavformat.pc
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/ac3_parser.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/adts_parser.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/avcodec.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/avdct.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/bsf.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/codec.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/codec_desc.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/codec_id.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/codec_par.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/d3d11va.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/defs.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/dirac.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/dv_profile.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/dxva2.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/exif.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/jni.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/mediacodec.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/packet.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/qsv.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/smpte_436m.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/vdpau.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/version.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/version_major.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/videotoolbox.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavcodec/vorbis_parser.h
+INSTALL	libavcodec/libavcodec.pc
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libswresample/swresample.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libswresample/version.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libswresample/version_major.h
+INSTALL	libswresample/libswresample.pc
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libswscale/swscale.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libswscale/version.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libswscale/version_major.h
+INSTALL	libswscale/libswscale.pc
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/adler32.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/aes.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/aes_ctr.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/ambient_viewing_environment.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/attributes.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/audio_fifo.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/avassert.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/avstring.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/avutil.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/base64.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/blowfish.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/bprint.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/bswap.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/buffer.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/cast5.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/camellia.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/channel_layout.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/common.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/container_fifo.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/cpu.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/crc.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/csp.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/des.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/detection_bbox.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/dict.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/display.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/dovi_meta.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/downmix_info.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/encryption_info.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/error.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/eval.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/executor.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/fifo.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/file.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/film_grain_params.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/frame.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hash.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hdr_dynamic_metadata.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hdr_dynamic_vivid_metadata.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hmac.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hwcontext.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hwcontext_cuda.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hwcontext_d3d11va.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hwcontext_d3d12va.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hwcontext_drm.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hwcontext_dxva2.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hwcontext_amf.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hwcontext_qsv.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hwcontext_mediacodec.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hwcontext_opencl.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hwcontext_oh.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hwcontext_vaapi.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hwcontext_videotoolbox.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hwcontext_vdpau.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/hwcontext_vulkan.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/iamf.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/imgutils.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/intfloat.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/intreadwrite.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/lfg.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/log.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/lzo.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/macros.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/mathematics.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/mastering_display_metadata.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/md5.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/mem.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/motion_vector.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/murmur3.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/opt.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/parseutils.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/pixdesc.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/pixelutils.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/pixfmt.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/random_seed.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/raw_color_params.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/rc4.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/rational.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/refstruct.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/replaygain.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/ripemd.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/samplefmt.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/sha.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/sha512.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/spherical.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/stereo3d.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/tdrdi.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/threadmessage.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/time.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/timecode.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/timestamp.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/tree.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/twofish.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/uuid.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/version.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/video_enc_params.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/xtea.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/tea.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/tx.h
+INSTALL	Users/runner/.cache/piliplus-native/tools/ffmpeg-9.0.2/ffmpeg-9.0.2/libavutil/video_hint.h
+INSTALL	libavutil/avconfig.h
+INSTALL	libavutil/ffversion.h
+INSTALL	libavutil/libavutil.pc
+INSTALL	libavfilter/libavfilter.a
+INSTALL	libavformat/libavformat.a
+INSTALL	libavcodec/libavcodec.a
+INSTALL	libswresample/libswresample.a
+INSTALL	libswscale/libswscale.a
+INSTALL	libavutil/libavutil.a
+The Meson build system
+Version: 1.12.1
+Source dir: /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0
+Build dir: /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/freetype
+Build type: cross build
+Project name: freetype2
+Project version: 2.15.0
+C compiler for the host machine: /Applications/Xcode_26.0.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang (clang 17.0.0 "Apple clang version 17.0.0 (clang-1700.3.19.1)")
+C linker for the host machine: /Applications/Xcode_26.0.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang ld64 1221.4
+C compiler for the build machine: cc (clang 17.0.0 "Apple clang version 17.0.0 (clang-1700.3.19.1)")
+C linker for the build machine: cc ld64 1221.4
+Build machine cpu family: aarch64
+Build machine cpu: aarch64
+Host machine cpu family: aarch64
+Host machine cpu: aarch64
+Target machine cpu family: aarch64
+Target machine cpu: aarch64
+Program python3 found: YES (/opt/homebrew/bin/python3)
+Has header "unistd.h" : YES 
+Has header "fcntl.h" : YES 
+Has header "sys/mman.h" : YES 
+Found pkg-config: YES (/opt/homebrew/bin/pkg-config) 3.0.10
+Found CMake: NO
+Run-time dependency zlib found: YES 1.2.12
+Dependency zlib for host machine found: YES 1.2.12 (cached)
+Dependency bzip2 for host machine skipped: feature bzip2 disabled
+Library bz2 skipped: feature bzip2 disabled
+Dependency libpng for host machine skipped: feature png disabled
+Dependency libbrotlidec for host machine skipped: feature brotli disabled
+Found pkg-config: YES (/opt/homebrew/bin/pkg-config) 3.0.10
+Build targets in project: 4
+
+freetype2 2.15.0
+
+  Operating System
+    OS             : darwin
+
+  Used Libraries
+    Zlib           : system
+    Bzip2          : NO
+    Png            : NO
+    HarfBuzz       : NO
+    Brotli         : NO
+    HVF            : NO
+
+  User defined options
+    Cross files    : /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/cross.ini
+    auto_features  : disabled
+    b_staticpic    : true
+    buildtype      : release
+    default_library: static
+    harfbuzz       : disabled
+    libdir         : lib
+    prefix         : /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor
+    tests          : disabled
+    wrap_mode      : nofallback
+
+Found ninja-1.13.2 at /opt/homebrew/bin/ninja
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+ninja: Entering directory `/Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/freetype'
+[1/47] Generating ftmodule.h with a custom command
+[2/47] Generating ftoption.h with a custom command
+[3/47] Compiling C object libfreetype.a.p/src_base_ftinit.c.o
+[4/47] Compiling C object libfreetype.a.p/src_hvf_hvf.c.o
+[5/47] Compiling C object libfreetype.a.p/src_cid_type1cid.c.o
+[6/47] Compiling C object libfreetype.a.p/src_type42_type42.c.o
+[7/47] Compiling C object libfreetype.a.p/src_winfonts_winfnt.c.o
+[8/47] Compiling C object libfreetype.a.p/src_pfr_pfr.c.o
+[9/47] Compiling C object libfreetype.a.p/src_type1_type1.c.o
+[10/47] Compiling C object libfreetype.a.p/src_pcf_pcf.c.o
+[11/47] Compiling C object libfreetype.a.p/src_cff_cff.c.o
+[12/47] Compiling C object libfreetype.a.p/src_bdf_bdf.c.o
+[13/47] Compiling C object libfreetype.a.p/src_smooth_smooth.c.o
+[14/47] Compiling C object libfreetype.a.p/src_raster_raster.c.o
+[15/47] Compiling C object libfreetype.a.p/src_svg_svg.c.o
+[16/47] Compiling C object libfreetype.a.p/src_pshinter_pshinter.c.o
+[17/47] Compiling C object libfreetype.a.p/src_base_ftbase.c.o
+[18/47] Compiling C object libfreetype.a.p/src_gzip_ftgzip.c.o
+[19/47] Compiling C object libfreetype.a.p/src_lzw_ftlzw.c.o
+[20/47] Compiling C object libfreetype.a.p/src_cache_ftcache.c.o
+[21/47] Compiling C object libfreetype.a.p/src_sdf_sdf.c.o
+[22/47] Compiling C object libfreetype.a.p/src_psnames_psnames.c.o
+[23/47] Compiling C object libfreetype.a.p/src_base_ftbdf.c.o
+[24/47] Compiling C object libfreetype.a.p/src_base_ftbbox.c.o
+[25/47] Compiling C object libfreetype.a.p/src_base_ftcid.c.o
+[26/47] Compiling C object libfreetype.a.p/src_base_ftfstype.c.o
+[27/47] Compiling C object libfreetype.a.p/src_base_ftgasp.c.o
+[28/47] Compiling C object libfreetype.a.p/src_base_ftbitmap.c.o
+[29/47] Compiling C object libfreetype.a.p/src_base_ftglyph.c.o
+[30/47] Compiling C object libfreetype.a.p/src_base_ftgxval.c.o
+[31/47] Compiling C object libfreetype.a.p/src_base_ftotval.c.o
+[32/47] Compiling C object libfreetype.a.p/src_base_ftmm.c.o
+[33/47] Compiling C object libfreetype.a.p/src_base_ftpatent.c.o
+[34/47] Compiling C object libfreetype.a.p/src_base_ftpfr.c.o
+[35/47] Compiling C object libfreetype.a.p/src_base_ftsynth.c.o
+[36/47] Compiling C object libfreetype.a.p/src_base_fttype1.c.o
+[37/47] Compiling C object libfreetype.a.p/src_base_ftwinfnt.c.o
+[38/47] Compiling C object libfreetype.a.p/src_base_ftsystem.c.o
+[39/47] Compiling C object libfreetype.a.p/src_dlg_dlgwrap.c.o
+[40/47] Compiling C object libfreetype.a.p/src_base_ftdebug.c.o
+[41/47] Compiling C object libfreetype.a.p/src_autofit_autofit.c.o
+[42/47] Compiling C object libfreetype.a.p/src_base_ftstroke.c.o
+[43/47] Compiling C object libfreetype.a.p/src_sfnt_sfnt.c.o
+[44/47] Compiling C object libfreetype.a.p/src_truetype_truetype.c.o
+[45/47] Compiling C object libfreetype.a.p/src_psaux_psaux.c.o
+[46/47] Linking static target libfreetype.a
+[46/47] Installing files
+Installing ftmodule.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype/config
+Installing ftoption.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype/config
+Installing libfreetype.a to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/lib
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/ft2build.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/freetype.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftadvanc.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftbbox.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftbdf.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftbitmap.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftbzip2.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftcache.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftchapters.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftcid.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftcolor.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftdriver.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/fterrdef.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/fterrors.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftfntfmt.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftgasp.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftglyph.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftgxval.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftgzip.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftimage.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftincrem.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftlcdfil.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftlist.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftlogging.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftlzw.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftmac.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftmm.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftmodapi.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftmoderr.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftotval.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftoutln.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftparams.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftpfr.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftrender.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftsizes.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftsnames.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftstroke.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftsynth.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftsystem.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/fttrigon.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/fttypes.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ftwinfnt.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/otsvg.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/t1tables.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/ttnameid.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/tttables.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/tttags.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/config/ftconfig.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype/config
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/config/ftheader.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype/config
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/config/ftstdlib.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype/config
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/config/integer-types.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype/config
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/config/mac-support.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype/config
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/include/freetype/config/public-macros.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/freetype2/freetype/config
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/freetype-2.15.0/builds/unix/freetype2.m4 to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/share/aclocal
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/freetype/meson-private/freetype2.pc to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/lib/pkgconfig
+The Meson build system
+Version: 1.12.1
+Source dir: /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18
+Build dir: /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/fribidi
+Build type: cross build
+Project name: fribidi
+Project version: 1.0.18
+C compiler for the host machine: /Applications/Xcode_26.0.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang (clang 17.0.0 "Apple clang version 17.0.0 (clang-1700.3.19.1)")
+C linker for the host machine: /Applications/Xcode_26.0.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang ld64 1221.4
+C compiler for the build machine: cc (clang 17.0.0 "Apple clang version 17.0.0 (clang-1700.3.19.1)")
+C linker for the build machine: cc ld64 1221.4
+Build machine cpu family: aarch64
+Build machine cpu: aarch64
+Host machine cpu family: aarch64
+Host machine cpu: aarch64
+Target machine cpu family: aarch64
+Target machine cpu: aarch64
+Checking for function "memmove" : YES 
+Checking for function "memset" : YES 
+Checking for function "strdup" : YES 
+Has header "stdlib.h" : YES 
+Has header "string.h" : YES 
+Has header "memory.h" : YES 
+Has header "strings.h" : YES 
+Has header "sys/times.h" : YES 
+Has header "strings.h" : YES (cached)
+Configuring config.h using configuration
+Has header "stdlib.h" : YES (cached)
+Has header "string.h" : YES (cached)
+Has header "strings.h" : YES (cached)
+Checking for size of "int" : 4 
+Configuring fribidi-config.h using configuration
+Found pkg-config: YES (/opt/homebrew/bin/pkg-config) 3.0.10
+Build targets in project: 15
+
+fribidi 1.0.18
+
+  User defined options
+    Cross files    : /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/cross.ini
+    auto_features  : disabled
+    b_staticpic    : true
+    bin            : false
+    buildtype      : release
+    default_library: static
+    docs           : false
+    libdir         : lib
+    prefix         : /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor
+    tests          : false
+    wrap_mode      : nofallback
+
+Found ninja-1.13.2 at /opt/homebrew/bin/ninja
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+ninja: Entering directory `/Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/fribidi'
+[1/47] Compiling C object gen.tab/gen-unicode-version.p/gen-unicode-version.c.o
+[2/47] Linking target gen.tab/gen-unicode-version
+[3/47] Generating gen.tab/fribidi-unicode-version.h with a custom command (wrapped by meson to capture output)
+[4/47] Compiling C object gen.tab/gen-arabic-shaping-tab.p/gen-arabic-shaping-tab.c.o
+[5/47] Compiling C object gen.tab/gen-joining-type-tab.p/gen-joining-type-tab.c.o
+[6/47] Compiling C object gen.tab/gen-mirroring-tab.p/gen-mirroring-tab.c.o
+[7/47] Compiling C object gen.tab/gen-bidi-type-tab.p/gen-bidi-type-tab.c.o
+[8/47] Compiling C object gen.tab/gen-brackets-tab.p/gen-brackets-tab.c.o
+[9/47] Compiling C object gen.tab/gen-brackets-type-tab.p/gen-brackets-type-tab.c.o
+[10/47] Compiling C object gen.tab/gen-joining-type-tab.p/packtab.c.o
+[11/47] Linking target gen.tab/gen-joining-type-tab
+[12/47] Compiling C object gen.tab/gen-arabic-shaping-tab.p/packtab.c.o
+[13/47] Compiling C object gen.tab/gen-bidi-type-tab.p/packtab.c.o
+[14/47] Linking target gen.tab/gen-arabic-shaping-tab
+[15/47] Linking target gen.tab/gen-bidi-type-tab
+[16/47] Compiling C object gen.tab/gen-mirroring-tab.p/packtab.c.o
+[17/47] Linking target gen.tab/gen-mirroring-tab
+[18/47] Compiling C object gen.tab/gen-brackets-tab.p/packtab.c.o
+[19/47] Linking target gen.tab/gen-brackets-tab
+[20/47] Generating gen.tab/gen-arabic-shaping-tab with a custom command (wrapped by meson to capture output)
+[21/47] Compiling C object gen.tab/gen-brackets-type-tab.p/packtab.c.o
+[22/47] Linking target gen.tab/gen-brackets-type-tab
+[23/47] Generating gen.tab/gen-mirroring-tab with a custom command (wrapped by meson to capture output)
+[24/47] Generating gen.tab/gen-brackets-tab with a custom command (wrapped by meson to capture output)
+[25/47] Generating gen.tab/gen-brackets-type-tab with a custom command (wrapped by meson to capture output)
+[26/47] Generating gen.tab/gen-joining-type-tab with a custom command (wrapped by meson to capture output)
+[27/47] Generating gen.tab/gen-bidi-type-tab with a custom command (wrapped by meson to capture output)
+[28/47] Compiling C object lib/libfribidi.a.p/fribidi-arabic.c.o
+[29/47] Compiling C object lib/libfribidi.a.p/fribidi-char-sets.c.o
+[30/47] Compiling C object lib/libfribidi.a.p/fribidi-char-sets-cp1255.c.o
+[31/47] Compiling C object lib/libfribidi.a.p/fribidi-bidi-types.c.o
+[32/47] Compiling C object lib/libfribidi.a.p/fribidi-char-sets-iso8859-6.c.o
+[33/47] Compiling C object lib/libfribidi.a.p/fribidi.c.o
+[34/47] Compiling C object lib/libfribidi.a.p/fribidi-char-sets-iso8859-8.c.o
+[35/47] Compiling C object lib/libfribidi.a.p/fribidi-char-sets-cp1256.c.o
+[36/47] Compiling C object lib/libfribidi.a.p/fribidi-char-sets-cap-rtl.c.o
+[37/47] Compiling C object lib/libfribidi.a.p/fribidi-deprecated.c.o
+[38/47] Compiling C object lib/libfribidi.a.p/fribidi-char-sets-utf8.c.o
+[39/47] Compiling C object lib/libfribidi.a.p/fribidi-joining.c.o
+[40/47] Compiling C object lib/libfribidi.a.p/fribidi-mirroring.c.o
+[41/47] Compiling C object lib/libfribidi.a.p/fribidi-shape.c.o
+[42/47] Compiling C object lib/libfribidi.a.p/fribidi-brackets.c.o
+[43/47] Compiling C object lib/libfribidi.a.p/fribidi-joining-types.c.o
+[44/47] Compiling C object lib/libfribidi.a.p/fribidi-run.c.o
+[45/47] Compiling C object lib/libfribidi.a.p/fribidi-bidi.c.o
+../../fribidi-1.0.18/lib/fribidi-bidi.c:608:28: warning: implicit conversion from enumeration type 'FriBidiCharType' to different enumeration type 'FriBidiParType' [-Wenum-conversion]
+  608 |               *pbase_dir = FRIBIDI_LEVEL_TO_DIR (base_level);
+      |                          ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../fribidi-1.0.18/lib/fribidi-bidi-types.h:263:32: note: expanded from macro 'FRIBIDI_LEVEL_TO_DIR'
+  263 |         (FRIBIDI_LEVEL_IS_RTL (lev) ? FRIBIDI_TYPE_RTL : FRIBIDI_TYPE_LTR)
+      |                                       ^~~~~~~~~~~~~~~~
+../../fribidi-1.0.18/lib/fribidi-bidi.c:608:28: warning: implicit conversion from enumeration type 'FriBidiCharType' to different enumeration type 'FriBidiParType' [-Wenum-conversion]
+  608 |               *pbase_dir = FRIBIDI_LEVEL_TO_DIR (base_level);
+      |                          ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../fribidi-1.0.18/lib/fribidi-bidi-types.h:263:51: note: expanded from macro 'FRIBIDI_LEVEL_TO_DIR'
+  263 |         (FRIBIDI_LEVEL_IS_RTL (lev) ? FRIBIDI_TYPE_RTL : FRIBIDI_TYPE_LTR)
+      |                                                          ^~~~~~~~~~~~~~~~
+../../fribidi-1.0.18/lib/fribidi-bidi.c:613:14: warning: implicit conversion from enumeration type 'FriBidiCharType' to different enumeration type 'FriBidiParType' [-Wenum-conversion]
+  613 |   base_dir = FRIBIDI_LEVEL_TO_DIR (base_level);
+      |            ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../fribidi-1.0.18/lib/fribidi-bidi-types.h:263:32: note: expanded from macro 'FRIBIDI_LEVEL_TO_DIR'
+  263 |         (FRIBIDI_LEVEL_IS_RTL (lev) ? FRIBIDI_TYPE_RTL : FRIBIDI_TYPE_LTR)
+      |                                       ^~~~~~~~~~~~~~~~
+../../fribidi-1.0.18/lib/fribidi-bidi.c:613:14: warning: implicit conversion from enumeration type 'FriBidiCharType' to different enumeration type 'FriBidiParType' [-Wenum-conversion]
+  613 |   base_dir = FRIBIDI_LEVEL_TO_DIR (base_level);
+      |            ~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../fribidi-1.0.18/lib/fribidi-bidi-types.h:263:51: note: expanded from macro 'FRIBIDI_LEVEL_TO_DIR'
+  263 |         (FRIBIDI_LEVEL_IS_RTL (lev) ? FRIBIDI_TYPE_RTL : FRIBIDI_TYPE_LTR)
+      |                                                          ^~~~~~~~~~~~~~~~
+../../fribidi-1.0.18/lib/fribidi-bidi.c:1569:16: warning: implicit conversion from enumeration type 'FriBidiParType' to different enumeration type 'FriBidiCharType' [-Wenum-conversion]
+ 1569 |             p->type = base_dir;
+      |                     ~ ^~~~~~~~
+5 warnings generated.
+[46/47] Linking static target lib/libfribidi.a
+[46/47] Installing files
+Installing gen.tab/fribidi-unicode-version.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing lib/libfribidi.a to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/lib
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-arabic.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-begindecls.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-bidi.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-bidi-types.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-bidi-types-list.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-char-sets.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-char-sets-list.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-common.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-deprecated.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-enddecls.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-flags.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-joining.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-joining-types.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-joining-types-list.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-mirroring.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-brackets.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-shape.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-types.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi-unicode.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/fribidi-1.0.18/lib/fribidi.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/fribidi/lib/fribidi-config.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/fribidi
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/fribidi/meson-private/fribidi.pc to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/lib/pkgconfig
+The Meson build system
+Version: 1.12.1
+Source dir: /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0
+Build dir: /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/harfbuzz
+Build type: cross build
+Project name: harfbuzz
+Project version: 15.1.0
+C compiler for the host machine: /Applications/Xcode_26.0.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang (clang 17.0.0 "Apple clang version 17.0.0 (clang-1700.3.19.1)")
+C linker for the host machine: /Applications/Xcode_26.0.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang ld64 1221.4
+C++ compiler for the host machine: /Applications/Xcode_26.0.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ (clang 17.0.0 "Apple clang version 17.0.0 (clang-1700.3.19.1)")
+C++ linker for the host machine: /Applications/Xcode_26.0.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ ld64 1221.4
+C compiler for the build machine: cc (clang 17.0.0 "Apple clang version 17.0.0 (clang-1700.3.19.1)")
+C linker for the build machine: cc ld64 1221.4
+C++ compiler for the build machine: c++ (clang 17.0.0 "Apple clang version 17.0.0 (clang-1700.3.19.1)")
+C++ linker for the build machine: c++ ld64 1221.4
+Build machine cpu family: aarch64
+Build machine cpu: aarch64
+Host machine cpu family: aarch64
+Host machine cpu: aarch64
+Target machine cpu family: aarch64
+Target machine cpu: aarch64
+Compiler for C++ supports link arguments -Bsymbolic-functions: YES 
+Compiler for C++ supports arguments -fno-exceptions: YES 
+Compiler for C++ supports arguments -fno-rtti: YES 
+Compiler for C++ supports arguments -fno-threadsafe-statics: YES 
+Compiler for C++ supports arguments -fvisibility-inlines-hidden: YES 
+Library m found: YES
+Found pkg-config: YES (/opt/homebrew/bin/pkg-config) 3.0.10
+Run-time dependency freetype2 found: YES 26.7.20
+Dependency glib-2.0 for host machine skipped: feature glib disabled
+Dependency gobject-2.0 for host machine skipped: feature gobject disabled
+Dependency graphite2 for host machine skipped: feature graphite2 disabled
+Dependency graphite2 for host machine skipped: feature graphite disabled
+Library iwasm skipped: feature wasm disabled
+Dependency icu-uc for host machine skipped: feature icu disabled
+Dependency chafa for host machine skipped: feature chafa disabled
+Dependency libpng for host machine skipped: feature png disabled
+Dependency zlib for host machine skipped: feature zlib disabled
+Run-time dependency threads found: YES
+Has header "unistd.h" : YES 
+Has header "sys/mman.h" : YES 
+Has header "stdbool.h" : YES 
+Has header "xlocale.h" : YES 
+Checking for function "atexit" : YES 
+Checking for function "mprotect" : YES 
+Checking for function "sysconf" : YES 
+Checking for function "getpagesize" : YES 
+Checking for function "mmap" : YES 
+Checking for function "isatty" : YES 
+Checking for function "uselocale" : YES 
+Checking for function "newlocale" : YES 
+Checking for function "localeconv_l" : NO 
+Checking for function "sincos" : NO 
+Checking for function "sincosf" : NO 
+Checking for function "FT_Get_Var_Blend_Coordinates" with dependency freetype2: YES 
+Checking for function "FT_Set_Var_Blend_Coordinates" with dependency freetype2: YES 
+Checking for function "FT_Done_MM_Var" with dependency freetype2: YES 
+Checking for function "FT_Get_Transform" with dependency freetype2: YES 
+Program gen-hb-version.py found: YES (/Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/gen-hb-version.py)
+Configuring hb-version.h with command
+Program ragel found: NO
+../../../.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/meson.build:463: WARNING: You have to install ragel if you are going to develop HarfBuzz itself
+Program gen-harfbuzzcc.py found: YES (/Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/gen-harfbuzzcc.py)
+Configuring hb-features.h using configuration
+Configuring hb-supported-features.h using configuration
+Program gen-def.py found: YES (/Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/gen-def.py)
+Program gen-gpu-shader-artifacts.py found: YES (/Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/gen-gpu-shader-artifacts.py)
+Found pkg-config: YES (/opt/homebrew/bin/pkg-config) 3.0.10
+Configuring harfbuzz-config.cmake using configuration
+Program gen-harfbuzz-world.py found: YES (/Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/gen-harfbuzz-world.py)
+Configuring config.h using configuration
+Build targets in project: 22
+
+harfbuzz 15.1.0
+
+  Directories
+    prefix                    : /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor
+    bindir                    : bin
+    libdir                    : lib
+    includedir                : include
+    datadir                   : share
+    cmakepackagedir           : lib/cmake
+
+  Unicode callbacks (you want at least one)
+    Builtin                   : YES
+    Glib                      : NO
+    ICU                       : NO
+
+  Font callbacks (the more the merrier)
+    Builtin                   : YES
+    FreeType                  : YES
+    Fontations                : NO
+
+  Additional shapers
+    Graphite2                 : NO
+    WebAssembly (experimental): NO
+
+  Platform / other shapers (not normally needed)
+    CoreText                  : NO
+    DirectWrite               : NO
+    GDI/Uniscribe             : NO
+    HarfRust                  : NO
+    kbts                      : NO
+
+  Additional libraries
+    Subset                    : NO
+    Raster                    : NO
+    Vector                    : NO
+    GPU                       : NO
+
+  Dependencies used by additional libraries
+    PNG                       : NO
+    Zlib                      : NO
+
+  Other features
+    Utilities                 : NO
+    Documentation             : NO
+    GObject bindings          : NO
+    Cairo integration         : NO
+    Introspection             : NO
+    Experimental APIs         : NO
+
+  Dependencies used by command-line utilities
+    Cairo                     : NO
+    Chafa                     : NO
+
+  Testing
+    Tests                     : NO
+    Benchmark                 : NO
+
+  User defined options
+    Cross files               : /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/cross.ini
+    auto_features             : disabled
+    b_staticpic               : true
+    buildtype                 : release
+    default_library           : static
+    freetype                  : enabled
+    gpu                       : disabled
+    libdir                    : lib
+    prefix                    : /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor
+    raster                    : disabled
+    subset                    : disabled
+    tests                     : disabled
+    utilities                 : disabled
+    vector                    : disabled
+    wrap_mode                 : nofallback
+
+Found ninja-1.13.2 at /opt/homebrew/bin/ninja
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+ninja: Entering directory `/Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/harfbuzz'
+[1/77] Compiling C++ object src/libharfbuzz.a.p/hb-buffer-verify.cc.o
+[2/77] Compiling C++ object src/libharfbuzz.a.p/hb-blob.cc.o
+[3/77] Compiling C++ object src/libharfbuzz.a.p/hb-buffer-serialize.cc.o
+[4/77] Compiling C++ object src/libharfbuzz.a.p/hb-common.cc.o
+[5/77] Compiling C++ object src/libharfbuzz.a.p/hb-draw.cc.o
+[6/77] Compiling C++ object src/libharfbuzz.a.p/hb-buffer.cc.o
+[7/77] Compiling C++ object src/libharfbuzz.a.p/hb-paint.cc.o
+[8/77] Compiling C++ object src/libharfbuzz.a.p/hb-paint-bounded.cc.o
+[9/77] Compiling C++ object src/libharfbuzz.a.p/hb-paint-extents.cc.o
+[10/77] Compiling C++ object src/libharfbuzz.a.p/hb-aat-map.cc.o
+[11/77] Compiling C++ object src/libharfbuzz.a.p/hb-fallback-shape.cc.o
+[12/77] Compiling C++ object src/libharfbuzz.a.p/hb-number.cc.o
+[13/77] Compiling C++ object src/libharfbuzz.a.p/hb-map.cc.o
+[14/77] Compiling C++ object src/libharfbuzz.a.p/hb-face-builder.cc.o
+[15/77] Compiling C++ object src/libharfbuzz.a.p/hb-font.cc.o
+[16/77] Compiling C++ object src/libharfbuzz.a.p/hb-face.cc.o
+[17/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-cff2-table.cc.o
+[18/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-cff1-table.cc.o
+[19/77] Compiling C++ object src/libharfbuzz.a.p/hb-outline.cc.o
+[20/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-fetch.cc.o
+[21/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-color.cc.o
+[22/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-map.cc.o
+[23/77] Compiling C++ object src/libharfbuzz.a.p/hb-aat-layout.cc.o
+[24/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-math.cc.o
+[25/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-meta.cc.o
+[26/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-face.cc.o
+[27/77] Compiling C++ object src/libharfbuzz.a.p/OT_Var_VARC_VARC.cc.o
+[28/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-name.cc.o
+[29/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-shaper-default.cc.o
+[30/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-font.cc.o
+[31/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-metrics.cc.o
+[32/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-shaper-hangul.cc.o
+[33/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-shaper-hebrew.cc.o
+[34/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-shaper-indic-table.cc.o
+[35/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-shaper-khmer.cc.o
+[36/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-shaper-indic.cc.o
+[37/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-shaper-myanmar.cc.o
+[38/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-shaper-syllabic.cc.o
+[39/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-shaper-thai.cc.o
+[40/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-shaper-vowel-constraints.cc.o
+[41/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-shaper-use.cc.o
+[42/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-shape-normalize.cc.o
+[43/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-tag.cc.o
+[44/77] Compiling C++ object src/libharfbuzz.a.p/hb-set.cc.o
+[45/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-shape.cc.o
+[46/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-shaper-arabic.cc.o
+[47/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-var.cc.o
+[48/77] Compiling C++ object src/libharfbuzz.a.p/hb-shape-plan.cc.o
+[49/77] Compiling C++ object src/libharfbuzz.a.p/hb-shaper.cc.o
+[50/77] Compiling C++ object src/libharfbuzz.a.p/hb-shape.cc.o
+[51/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-shape-fallback.cc.o
+[52/77] Compiling C++ object src/libharfbuzz.a.p/hb-ucd.cc.o
+[53/77] Generating src/harfbuzz.cc with a custom command
+[54/77] Generating src/hb-gpu-fragment-glsl.hh with a custom command
+[55/77] Compiling C++ object src/libharfbuzz.a.p/hb-unicode.cc.o
+[56/77] Generating src/hb-gpu-fragment-wgsl.hh with a custom command
+[57/77] Generating src/hb-gpu-vertex-glsl.hh with a custom command
+[58/77] Generating src/hb-gpu-vertex-wgsl.hh with a custom command
+[59/77] Generating src/hb-gpu-fragment-msl.hh with a custom command
+[60/77] Generating src/hb-gpu-vertex-msl.hh with a custom command
+[61/77] Generating src/hb-gpu-fragment-hlsl.hh with a custom command
+[62/77] Generating src/hb-gpu-draw-fragment-glsl.hh with a custom command
+[63/77] Generating src/hb-gpu-vertex-hlsl.hh with a custom command
+[64/77] Generating src/hb-gpu-draw-fragment-wgsl.hh with a custom command
+[65/77] Generating src/hb-gpu-draw-fragment-msl.hh with a custom command
+[66/77] Generating src/hb-gpu-draw-fragment-hlsl.hh with a custom command
+[67/77] Generating src/hb-gpu-paint-fragment-glsl.hh with a custom command
+[68/77] Generating src/hb-gpu-paint-fragment-msl.hh with a custom command
+[69/77] Generating src/hb-gpu-paint-fragment-wgsl.hh with a custom command
+[70/77] Generating src/hb-gpu-paint-fragment-hlsl.hh with a custom command
+[71/77] Generating src/harfbuzz-world.cc with a custom command
+[72/77] Compiling C++ object src/libharfbuzz.a.p/hb-style.cc.o
+[73/77] Compiling C++ object src/libharfbuzz.a.p/hb-ft.cc.o
+[74/77] Compiling C++ object src/libharfbuzz.a.p/hb-static.cc.o
+[75/77] Compiling C++ object src/libharfbuzz.a.p/hb-ot-layout.cc.o
+[76/77] Linking static target src/libharfbuzz.a
+[76/77] Installing files
+Installing src/libharfbuzz.a to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/lib
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-aat-layout.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-aat.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-blob.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-buffer.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-common.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-cplusplus.hh to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-deprecated.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-draw.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-paint.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-face.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-font.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-map.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-ot-color.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-ot-deprecated.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-ot-fetch.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-ot-font.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-ot-layout.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-ot-math.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-ot-meta.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-ot-metrics.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-ot-name.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-ot-shape.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-ot-var.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-ot.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-script-list.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-set.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-shape-plan.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-shape.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-style.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-unicode.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/harfbuzz/src/hb-version.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/harfbuzz-15.1.0/src/hb-ft.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/harfbuzz/src/hb-version.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/harfbuzz/src/hb-features.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/harfbuzz
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/harfbuzz/meson-private/harfbuzz.pc to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/lib/pkgconfig
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/harfbuzz/src/harfbuzz-config.cmake to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/lib/cmake/harfbuzz
+The Meson build system
+Version: 1.12.1
+Source dir: /Users/runner/.cache/piliplus-native/tools/subtitle/libass-0.17.5
+Build dir: /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/libass
+Build type: cross build
+Project name: libass
+Project version: 0.17.5
+C compiler for the host machine: /Applications/Xcode_26.0.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang (clang 17.0.0 "Apple clang version 17.0.0 (clang-1700.3.19.1)")
+C linker for the host machine: /Applications/Xcode_26.0.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang ld64 1221.4
+C compiler for the build machine: cc (clang 17.0.0 "Apple clang version 17.0.0 (clang-1700.3.19.1)")
+C linker for the build machine: cc ld64 1221.4
+Build machine cpu family: aarch64
+Build machine cpu: aarch64
+Host machine cpu family: aarch64
+Host machine cpu: aarch64
+Target machine cpu family: aarch64
+Target machine cpu: aarch64
+Compiler for C supports arguments -Wno-sign-compare: YES 
+Compiler for C supports arguments -Wno-unused-parameter: YES 
+Compiler for C supports arguments -Werror-implicit-function-declaration: YES 
+Compiler for C supports arguments -Wstrict-prototypes: YES 
+Compiler for C supports arguments -Wpointer-arith: YES 
+Compiler for C supports arguments -Wredundant-decls: YES 
+Compiler for C supports arguments -Wno-missing-field-initializers: YES 
+Compiler for C supports arguments -Wformat-non-iso: YES 
+Compiler for C supports arguments -Werror=format-non-iso: YES 
+Compiler for C supports arguments -D_GNU_SOURCE: YES 
+Compiler for C supports arguments -D_XPLATFORM_SOURCE: YES 
+Compiler for C supports arguments -fno-math-errno: YES 
+Checking for function "strdup" : YES 
+Header "string.h" has symbol "strdup" : YES 
+Checking for function "strndup" : YES 
+Header "string.h" has symbol "strndup" : YES 
+Checking for function "fstat" : YES 
+Header "sys/stat.h" has symbol "fstat" : YES 
+Library m found: YES
+Run-time dependency iconv found: YES
+Found pkg-config: YES (/opt/homebrew/bin/pkg-config) 3.0.10
+Run-time dependency freetype2 found: YES 26.7.20
+Run-time dependency fribidi found: YES 1.0.18
+Run-time dependency harfbuzz found: YES 15.1.0
+Dependency libunibreak for host machine skipped: feature libunibreak disabled
+Found CMake: NO
+Run-time dependency libpng found: NO  (tried pkg-config, framework and cmake)
+Dependency fontconfig for host machine skipped: feature fontconfig disabled
+Run-time dependency appleframeworks found: NO  (tried framework)
+Run-time dependency appleframeworks found: YES (CoreText, CoreFoundation)
+Configuring config.h.in.in using configuration
+Found pkg-config: YES (/opt/homebrew/bin/pkg-config) 3.0.10
+Build targets in project: 5
+
+libass 0.17.5
+
+    Font providers              : Core Text
+    ASM optimizations           : NO
+
+  User defined options
+    Cross files                 : /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/cross.ini
+    auto_features               : disabled
+    b_staticpic                 : true
+    buildtype                   : release
+    coretext                    : enabled
+    default_library             : static
+    libdir                      : lib
+    prefix                      : /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor
+    require-system-font-provider: true
+    wrap_mode                   : nofallback
+
+Found ninja-1.13.2 at /opt/homebrew/bin/ninja
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+ninja: Entering directory `/Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/libass'
+[1/31] Copying file libass/ass/ass_types.h
+[2/31] Copying file libass/ass/ass.h
+[3/31] Generating config.h.in with a custom command
+[4/31] Generating config.h with a custom command
+[5/31] Compiling C object libass/libass.a.p/ass_arabic_charmap.c.o
+[6/31] Compiling C object libass/libass.a.p/c_c_be_blur.c.o
+[7/31] Compiling C object libass/libass.a.p/ass_bitmap_engine.c.o
+[8/31] Compiling C object libass/libass.a.p/c_c_blend_bitmaps.c.o
+[9/31] Compiling C object libass/libass.a.p/ass_bitmap.c.o
+[10/31] Compiling C object libass/libass.a.p/ass_blur.c.o
+[11/31] Compiling C object libass/libass.a.p/ass_drawing.c.o
+[12/31] Compiling C object libass/libass.a.p/ass_filesystem.c.o
+[13/31] Compiling C object libass/libass.a.p/c_c_rasterizer.c.o
+[14/31] Compiling C object libass/libass.a.p/ass_font.c.o
+[15/31] Compiling C object libass/libass.a.p/ass_cache.c.o
+[16/31] Compiling C object libass/libass.a.p/ass_library.c.o
+[17/31] Compiling C object libass/libass.a.p/ass_fontselect.c.o
+[18/31] Compiling C object libass/libass.a.p/ass.c.o
+[19/31] Compiling C object libass/libass.a.p/c_c_blur.c.o
+[20/31] Compiling C object libass/libass.a.p/ass_rasterizer.c.o
+[21/31] Compiling C object libass/libass.a.p/ass_render_api.c.o
+[22/31] Compiling C object libass/libass.a.p/ass_string.c.o
+[23/31] Compiling C object libass/libass.a.p/ass_strtod.c.o
+[24/31] Compiling C object libass/libass.a.p/ass_utils.c.o
+[25/31] Compiling C object libass/libass.a.p/ass_outline.c.o
+[26/31] Compiling C object libass/libass.a.p/ass_shaper.c.o
+[27/31] Compiling C object libass/libass.a.p/ass_coretext.c.o
+[28/31] Compiling C object libass/libass.a.p/ass_parse.c.o
+[29/31] Compiling C object libass/libass.a.p/ass_render.c.o
+[30/31] Linking static target libass/libass.a
+[30/31] Installing files
+Installing libass/libass.a to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/lib
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/libass-0.17.5/libass/ass.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/ass
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/libass-0.17.5/libass/ass_types.h to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/include/ass
+Installing /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/libass/meson-private/libass.pc to /Users/runner/.cache/piliplus-native/tools/subtitle/build-ios-ff6c0fbbd17d/vendor/lib/pkgconfig
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  118k    0  118k    0     0   479k      0 --:--:-- --:--:-- --:--:--  481k
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 2695k  100 2695k    0     0  9011k      0 --:--:-- --:--:-- --:--:-- 9014k
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 7091k    0 7091k    0     0  10.2M      0 --:--:-- --:--:-- --:--:-- 10.2M
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100  842k  100  842k    0     0  3392k      0 --:--:-- --:--:-- --:--:-- 3395k
+The Meson build system
+Version: 1.12.1
+Source dir: /Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1
+Build dir: /Users/runner/.cache/piliplus-native/tools/mpv/ios-8f6121fe23ba5d7c/placebo
+Build type: cross build
+Project name: libplacebo
+Project version: 7.360.1
+C compiler for the host machine: /Applications/Xcode_26.0.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang (clang 17.0.0 "Apple clang version 17.0.0 (clang-1700.3.19.1)")
+C linker for the host machine: /Applications/Xcode_26.0.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang ld64 1221.4
+C++ compiler for the host machine: /Applications/Xcode_26.0.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ (clang 17.0.0 "Apple clang version 17.0.0 (clang-1700.3.19.1)")
+C++ linker for the host machine: /Applications/Xcode_26.0.1.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ ld64 1221.4
+C compiler for the build machine: cc (clang 17.0.0 "Apple clang version 17.0.0 (clang-1700.3.19.1)")
+C linker for the build machine: cc ld64 1221.4
+C++ compiler for the build machine: c++ (clang 17.0.0 "Apple clang version 17.0.0 (clang-1700.3.19.1)")
+C++ linker for the build machine: c++ ld64 1221.4
+Build machine cpu family: aarch64
+Build machine cpu: aarch64
+Host machine cpu family: aarch64
+Host machine cpu: aarch64
+Target machine cpu family: aarch64
+Target machine cpu: aarch64
+Compiler for C supports arguments -Wincompatible-pointer-types: YES 
+Compiler for C supports arguments -Wc23-extensions: YES 
+Compiler for C supports link arguments -Wl,--exclude-libs=ALL: NO 
+Library m found: YES
+Program python3 found: YES (/opt/homebrew/opt/python@3.15/bin/python3.15)
+Run-time dependency threads found: YES
+Header "pthread.h" has symbol "pthread_condattr_setclock" with dependency threads: NO 
+Dependency libunwind for host machine skipped: feature unwind disabled
+Library execinfo found: NO
+Checking for function "backtrace_symbols" with dependency -lexecinfo: YES 
+Check usable header "dbghelp.h" : NO 
+Fetching value of define "__MINGW32__" : (undefined) 
+Dependency shaderc for host machine skipped: feature shaderc disabled
+Check usable header "d3d11.h" : NO 
+Check usable header "d3d11_4.h" skipped: feature d3d11 disabled
+Check usable header "dxgi1_6.h" skipped: feature d3d11 disabled
+Dependency spirv-cross-c-shared for host machine skipped: feature d3d11 disabled
+Library version skipped: feature d3d11 disabled
+Library dl skipped: feature gl-proc-addr disabled
+Found pkg-config: YES (/opt/homebrew/bin/pkg-config) 3.0.10
+Run-time dependency vulkan found: NO  (tried pkg-config and system)
+Header "vulkan/vulkan_core.h" has symbol "VK_VERSION_1_4" with dependency vulkan: YES 
+Dependency lcms2 for host machine skipped: feature lcms disabled
+../../../.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/src/meson.build:171: WARNING: Building without any graphics API. libplacebo built this way still has some limited use (e.g. generating GLSL shaders), but most of its functionality will be missing or impaired!
+Dependency dovi for host machine skipped: feature libdovi disabled
+Dependency libxxhash for host machine skipped: feature xxhash disabled
+Configuring config.h using configuration
+Configuring config_internal.h using configuration
+WARNING: Library target 'placebo' has 'name_prefix' set. Compilers may not find it from its '-lplacebo' linker flag in the 'libplacebo.pc' pkg-config file.
+WARNING: Library target 'placebo' has 'name_prefix' set. Compilers may not find it from its '-lplacebo' linker flag in the 'libplacebo-uninstalled.pc' pkg-config file.
+Found pkg-config: YES (/opt/homebrew/bin/pkg-config) 3.0.10
+Build targets in project: 15
+
+libplacebo 7.360.1
+
+  Optional features
+    d3d11          : NO
+    dovi           : NO
+    gl-proc-addr   : NO
+    glslang        : NO
+    lcms           : NO
+    libdovi        : NO
+    opengl         : NO
+    shaderc        : NO
+    vk-proc-addr   : NO
+    vulkan         : NO
+    xxhash         : NO
+
+  User defined options
+    Cross files    : /Users/runner/.cache/piliplus-native/tools/mpv/ios-8f6121fe23ba5d7c/cross.ini
+    auto_features  : disabled
+    b_staticpic    : true
+    buildtype      : release
+    default_library: static
+    demos          : false
+    glslang        : disabled
+    libdir         : lib
+    opengl         : disabled
+    prefix         : /Users/runner/.cache/piliplus-native/tools/mpv/ios-8f6121fe23ba5d7c/vendor
+    shaderc        : disabled
+    tests          : false
+    vulkan         : disabled
+    wrap_mode      : nofallback
+
+Found ninja-1.13.2 at /opt/homebrew/bin/ninja
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+WARNING: Cross file does not specify strip binary, result will not be stripped.
+ninja: Entering directory `/Users/runner/.cache/piliplus-native/tools/mpv/ios-8f6121fe23ba5d7c/placebo'
+[1/53] Generating src/shaders/custom.c with a custom command (wrapped by meson to set env)
+FAILED: [code=1] src/shaders/custom.c 
+/opt/homebrew/bin/meson --internal exe --unpickle /Users/runner/.cache/piliplus-native/tools/mpv/ios-8f6121fe23ba5d7c/placebo/meson-private/meson_exe_python3_a788ee6d6db6ff40529925815ea145c4fe2549ba.dat
+while executing ['/opt/homebrew/opt/python@3.15/bin/python3.15', '/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/main.py', '--strip', '../../libplacebo-7.360.1/src/shaders/custom.c', 'src/shaders/custom.c']
+--- stdout ---
+
+--- stderr ---
+Traceback (most recent call last):
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/main.py", line 6, in <module>
+    from macros import Macro
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/macros.py", line 6, in <module>
+    from templates import *
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/templates.py", line 1, in <module>
+    import jinja2
+ModuleNotFoundError: No module named 'jinja2'
+
+[2/53] Generating src/renderer.c with a custom command (wrapped by meson to set env)
+FAILED: [code=1] src/renderer.c 
+/opt/homebrew/bin/meson --internal exe --unpickle /Users/runner/.cache/piliplus-native/tools/mpv/ios-8f6121fe23ba5d7c/placebo/meson-private/meson_exe_python3_fc8eab936be748d0be82c680e7718baf25261bf2.dat
+while executing ['/opt/homebrew/opt/python@3.15/bin/python3.15', '/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/main.py', '--strip', '../../libplacebo-7.360.1/src/renderer.c', 'src/renderer.c']
+--- stdout ---
+
+--- stderr ---
+Traceback (most recent call last):
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/main.py", line 6, in <module>
+    from macros import Macro
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/macros.py", line 6, in <module>
+    from templates import *
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/templates.py", line 1, in <module>
+    import jinja2
+ModuleNotFoundError: No module named 'jinja2'
+
+[3/53] Generating src/shaders/custom_mpv.c with a custom command (wrapped by meson to set env)
+FAILED: [code=1] src/shaders/custom_mpv.c 
+/opt/homebrew/bin/meson --internal exe --unpickle /Users/runner/.cache/piliplus-native/tools/mpv/ios-8f6121fe23ba5d7c/placebo/meson-private/meson_exe_python3_fa39c720125220c19bbcfa4c71ddc2b4139aaf0c.dat
+while executing ['/opt/homebrew/opt/python@3.15/bin/python3.15', '/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/main.py', '--strip', '../../libplacebo-7.360.1/src/shaders/custom_mpv.c', 'src/shaders/custom_mpv.c']
+--- stdout ---
+
+--- stderr ---
+Traceback (most recent call last):
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/main.py", line 6, in <module>
+    from macros import Macro
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/macros.py", line 6, in <module>
+    from templates import *
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/templates.py", line 1, in <module>
+    import jinja2
+ModuleNotFoundError: No module named 'jinja2'
+
+[4/53] Generating src/shaders/deinterlacing.c with a custom command (wrapped by meson to set env)
+FAILED: [code=1] src/shaders/deinterlacing.c 
+/opt/homebrew/bin/meson --internal exe --unpickle /Users/runner/.cache/piliplus-native/tools/mpv/ios-8f6121fe23ba5d7c/placebo/meson-private/meson_exe_python3_cd218c1c442036b2cfbde2c0ea9bf123ab16e123.dat
+while executing ['/opt/homebrew/opt/python@3.15/bin/python3.15', '/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/main.py', '--strip', '../../libplacebo-7.360.1/src/shaders/deinterlacing.c', 'src/shaders/deinterlacing.c']
+--- stdout ---
+
+--- stderr ---
+Traceback (most recent call last):
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/main.py", line 6, in <module>
+    from macros import Macro
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/macros.py", line 6, in <module>
+    from templates import *
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/templates.py", line 1, in <module>
+    import jinja2
+ModuleNotFoundError: No module named 'jinja2'
+
+[5/53] Generating src/shaders/dithering.c with a custom command (wrapped by meson to set env)
+FAILED: [code=1] src/shaders/dithering.c 
+/opt/homebrew/bin/meson --internal exe --unpickle /Users/runner/.cache/piliplus-native/tools/mpv/ios-8f6121fe23ba5d7c/placebo/meson-private/meson_exe_python3_81d4640dcae0c55bf94721f460d9cf294a0cb9e4.dat
+while executing ['/opt/homebrew/opt/python@3.15/bin/python3.15', '/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/main.py', '--strip', '../../libplacebo-7.360.1/src/shaders/dithering.c', 'src/shaders/dithering.c']
+--- stdout ---
+
+--- stderr ---
+Traceback (most recent call last):
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/main.py", line 6, in <module>
+    from macros import Macro
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/macros.py", line 6, in <module>
+    from templates import *
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/templates.py", line 1, in <module>
+    import jinja2
+ModuleNotFoundError: No module named 'jinja2'
+
+[6/53] Generating src/shaders/colorspace.c with a custom command (wrapped by meson to set env)
+FAILED: [code=1] src/shaders/colorspace.c 
+/opt/homebrew/bin/meson --internal exe --unpickle /Users/runner/.cache/piliplus-native/tools/mpv/ios-8f6121fe23ba5d7c/placebo/meson-private/meson_exe_python3_1b7d1b3dac7bd784779cef23bb8f5c83dfe5ff33.dat
+while executing ['/opt/homebrew/opt/python@3.15/bin/python3.15', '/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/main.py', '--strip', '../../libplacebo-7.360.1/src/shaders/colorspace.c', 'src/shaders/colorspace.c']
+--- stdout ---
+
+--- stderr ---
+Traceback (most recent call last):
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/main.py", line 6, in <module>
+    from macros import Macro
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/macros.py", line 6, in <module>
+    from templates import *
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/templates.py", line 1, in <module>
+    import jinja2
+ModuleNotFoundError: No module named 'jinja2'
+
+[7/53] Generating src/shaders.c with a custom command (wrapped by meson to set env)
+FAILED: [code=1] src/shaders.c 
+/opt/homebrew/bin/meson --internal exe --unpickle /Users/runner/.cache/piliplus-native/tools/mpv/ios-8f6121fe23ba5d7c/placebo/meson-private/meson_exe_python3_781a8b5a21f829b7f136750b69baef5bf0397a20.dat
+while executing ['/opt/homebrew/opt/python@3.15/bin/python3.15', '/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/main.py', '--strip', '../../libplacebo-7.360.1/src/shaders.c', 'src/shaders.c']
+--- stdout ---
+
+--- stderr ---
+Traceback (most recent call last):
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/main.py", line 6, in <module>
+    from macros import Macro
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/macros.py", line 6, in <module>
+    from templates import *
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/templates.py", line 1, in <module>
+    import jinja2
+ModuleNotFoundError: No module named 'jinja2'
+
+[8/53] Generating src/shaders/film_grain.c with a custom command (wrapped by meson to set env)
+FAILED: [code=1] src/shaders/film_grain.c 
+/opt/homebrew/bin/meson --internal exe --unpickle /Users/runner/.cache/piliplus-native/tools/mpv/ios-8f6121fe23ba5d7c/placebo/meson-private/meson_exe_python3_537267ed857e3a0a730f442e048964542e775e63.dat
+while executing ['/opt/homebrew/opt/python@3.15/bin/python3.15', '/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/main.py', '--strip', '../../libplacebo-7.360.1/src/shaders/film_grain.c', 'src/shaders/film_grain.c']
+--- stdout ---
+
+--- stderr ---
+Traceback (most recent call last):
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/main.py", line 6, in <module>
+    from macros import Macro
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/macros.py", line 6, in <module>
+    from templates import *
+  File "/Users/runner/.cache/piliplus-native/tools/mpv/libplacebo-7.360.1/tools/glsl_preproc/templates.py", line 1, in <module>
+    import jinja2
+ModuleNotFoundError: No module named 'jinja2'
+
+ninja: build stopped: subcommand failed.
+Traceback (most recent call last):
+  File "/Users/runner/work/LiLite/LiLite/MediaKit/build-mpv.py", line 83, in <module>
+    run([tool('ninja'),'-C',build,'-j'+os.environ.get('PILI_MPV_JOBS','8'),'install'])
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/runner/work/LiLite/LiLite/MediaKit/build-mpv.py", line 11, in run
+    subprocess.run([str(v) for v in args], check=True, stdout=sys.stderr)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.15/3.15.2/Frameworks/Python.framework/Versions/3.15/lib/python3.15/subprocess.py", line 692, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command ['/opt/homebrew/bin/ninja', '-C', '/Users/runner/.cache/piliplus-native/tools/mpv/ios-8f6121fe23ba5d7c/placebo', '-j8', 'install'] returned non-zero exit status 1.
