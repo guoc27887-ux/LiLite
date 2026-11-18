@@ -10,29 +10,30 @@ struct SharedFollowing: View {
   @EnvironmentObject private var accounts: AccountContext
   @State private var remoteName: String?
   @State private var total: Int?
+  private func fetchSharedPage(cursor: String?) async throws -> Page<Creator> {
+    let fields = (cursor ?? "1:0").split(separator: ":")
+    let page = Int(fields.first ?? "1") ?? 1
+    let offset = Int(fields.last ?? "0") ?? 0
+    struct Result: Decodable { let list: [Creator]?, total: Int? }
+    guard let account = try await AccountJar.shared.current(), account.id == uid,
+      let csrf = account.csrf
+    else { throw ServiceError("请重新登录") }
+    let r = try await BiliAPI.shared.read(
+      alsoFollowsCreator
+        ? "/x/relation/followings/followed_upper" : "/x/relation/same/followings",
+      ["vmid": String(mid), "pn": String(page), "csrf": csrf, "web_location": "333.789"],
+      expectedAccount: uid, as: Result.self)
+    try Task.checkCancellation()
+    total = r.total
+    let rows = r.list ?? []
+    let seen = offset + rows.count
+    return Page(
+      items: rows, next: !rows.isEmpty && seen < (r.total ?? 0) ? "\(page+1):\(seen)" : nil)
+  }
   private var sharedList: some View {
-    PageList(empty: "暂无用户") { cursor in
-        let fields = (cursor ?? "1:0").split(separator: ":")
-        let page = Int(fields.first ?? "1") ?? 1
-        let offset = Int(fields.last ?? "0") ?? 0
-        struct Result: Decodable { let list: [Creator]?, total: Int? }
-        guard let account = try await AccountJar.shared.current(), account.id == uid,
-          let csrf = account.csrf
-        else { throw ServiceError("请重新登录") }
-        let r = try await BiliAPI.shared.read(
-          alsoFollowsCreator
-            ? "/x/relation/followings/followed_upper" : "/x/relation/same/followings",
-          ["vmid": String(mid), "pn": String(page), "csrf": csrf, "web_location": "333.789"],
-          expectedAccount: uid, as: Result.self)
-        try Task.checkCancellation()
-        total = r.total
-        let rows = r.list ?? []
-        let seen = offset + rows.count
-        return Page(
-          items: rows, next: !rows.isEmpty && seen < (r.total ?? 0) ? "\(page+1):\(seen)" : nil)
-      } row: { person in
-        CreatorLink(person: person)
-      }
+    PageList(empty: "暂无用户", fetch: fetchSharedPage) { person in
+      CreatorLink(person: person)
+    }
   }
   var body: some View {
     VStack(alignment: .leading) {
