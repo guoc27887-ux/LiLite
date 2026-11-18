@@ -177,13 +177,9 @@ struct FeedView: View {
         .clipped()
         .ignoresSafeArea(.container, edges: [.top, .bottom])
         .padding(.top, reserved.top)
-        .onGeometryChange(for: FeedHeaderInsets.self) { proxy in
-          // Scaled, the regions come in unscaled coordinates: the Dynamic Island landed inside
-          // the header and pushed it, with the feed under it, off to the right edge.
-          guard #available(iOS 27.1, *), !interfaceScaled else { return FeedHeaderInsets() }
-          let regions = proxy.reservedRegions(kind: .division) + proxy.reservedRegions(kind: .occlusion)
-          return FeedHeaderInsets.avoiding(width: proxy.size.width, height: headerHeight + top,
-            regions: regions.filter(\.isActive).map(\.frame))
+        .onGeometryChange(for: FeedHeaderInsets.self) { _ in
+          // iOS 27.1 reservedRegions API is not in the iOS 26 SDK; folds report no insets.
+          FeedHeaderInsets()
         } action: { reserved = $0 }
         .padding(.leading, windowInsets.leading).padding(.trailing, windowInsets.trailing)
         .background {
@@ -516,6 +512,19 @@ extension EnvironmentValues {
   var homeFeedBottomClearance: CGFloat {
     get { self[HomeFeedBottomClearance.self] }
     set { self[HomeFeedBottomClearance.self] = newValue }
+  }
+}
+private struct FeedHeaderPlacement: ViewModifier {
+  @State private var insets = FeedHeaderInsets()
+  func body(content: Content) -> some View {
+    content
+      .padding(.top, insets.top)
+      .padding(.leading, insets.leading).padding(.trailing, insets.trailing)
+      .frame(maxWidth: .infinity)
+      .onGeometryChange(for: FeedHeaderInsets.self) { _ in
+        // iOS 27.1 reservedRegions API is not in the iOS 26 SDK; folds report no insets.
+        FeedHeaderInsets()
+      } action: { insets = $0 }
   }
 }
 
