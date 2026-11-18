@@ -514,6 +514,45 @@ struct DetailView: View {
     }
     .background(Color(uiColor: .secondarySystemBackground), in: Capsule())
   }
+
+  @ViewBuilder private func detailPanels(source: Video, video: Video, deferred: (() -> Void)?) -> some View {
+PlaybackPanels(
+  model: model, key: source.bvid, canDiscuss: showReplies, selection: $panelOverride,
+  full: { theater = true }, startDeferred: deferred, playlist: JoinedPlaybackPanels.merge(libraryPanel, archivePlaylist(video), fullscreen: false), creator: creatorPanel,
+  accessory: AnyView(bulletAccessory),
+  commentCount: commentCount ?? (detail ?? video).stat?.reply.map(Int64.init),
+  related: detail != nil && relatedShown ? AnyView(ArchiveRelatedList(bvid: video.bvid).id(video.bvid)) : nil
+) {
+  if let cid, prepared == ticket(video, cid) {
+    videoSurface(video)
+  } else {
+    PlaybackCover(title: video.title, url: video.cover, enabled: cid != nil) {
+      guard let cid, detailOwner == (accounts.state.active ?? "") else { return }
+      manualTicket = ticket(video, cid)
+      retryPlayback += 1
+    }
+  }
+} info: {
+  ScrollView {
+    videoInfo(video).frame(maxWidth: .infinity, alignment: .leading)
+  }.defaultScrollAnchor(.top).reportsScrollCollapse().id(source.bvid)
+} replies: {
+  if let aid = video.aid ?? ArchiveNumber.av(video.bvid) {
+    // Rebuilt only when what it shows changes: its closures made every render of this page
+    // (each player state change) re-render the whole comment list.
+    StableContent(key: [String(aid), String(video.owner?.mid ?? 0), video.desc ?? "", video.owner?.name ?? "",
+      String(model.duration)]) {
+      Discussion(
+        oid: aid, type: 1, owner: video.owner?.mid, intro: video.desc, embeddedTitle: "视频",
+        readingCount: { n in commentCount = n }, mentionOwnerName: video.owner?.name
+      ).environment(\.replyPlayback, ReplyPlaybackTarget(duration: model.duration, seek: model.seek, model: model))
+    }.equatable().id(aid)
+  } else {
+    ContentUnavailableView("未找到评论区", systemImage: "text.bubble")
+  }
+}
+  }
+
   var body: some View {
     let source = following ?? initial
     let video = detail ?? following ?? initial
@@ -525,41 +564,8 @@ struct DetailView: View {
       guard prepared != key, detailOwner == (accounts.state.active ?? "") else { return nil }
       return { manualTicket = key; retryPlayback += 1 }
     }
-    return PlaybackPanels(
-      model: model, key: source.bvid, canDiscuss: showReplies, selection: $panelOverride,
-      full: { theater = true }, startDeferred: deferred, playlist: JoinedPlaybackPanels.merge(libraryPanel, archivePlaylist(video), fullscreen: false), creator: creatorPanel,
-      accessory: AnyView(bulletAccessory),
-      commentCount: commentCount ?? (detail ?? video).stat?.reply.map(Int64.init),
-      related: detail != nil && relatedShown ? AnyView(ArchiveRelatedList(bvid: video.bvid).id(video.bvid)) : nil
-    ) {
-      if let cid, prepared == ticket(video, cid) {
-        videoSurface(video)
-      } else {
-        PlaybackCover(title: video.title, url: video.cover, enabled: cid != nil) {
-          guard let cid, detailOwner == (accounts.state.active ?? "") else { return }
-          manualTicket = ticket(video, cid)
-          retryPlayback += 1
-        }
-      }
-    } info: {
-      ScrollView {
-        videoInfo(video).frame(maxWidth: .infinity, alignment: .leading)
-      }.defaultScrollAnchor(.top).reportsScrollCollapse().id(source.bvid)
-    } replies: {
-      if let aid = video.aid ?? ArchiveNumber.av(video.bvid) {
-        // Rebuilt only when what it shows changes: its closures made every render of this page
-        // (each player state change) re-render the whole comment list.
-        StableContent(key: [String(aid), String(video.owner?.mid ?? 0), video.desc ?? "", video.owner?.name ?? "",
-          String(model.duration)]) {
-          Discussion(
-            oid: aid, type: 1, owner: video.owner?.mid, intro: video.desc, embeddedTitle: "视频",
-            readingCount: { n in commentCount = n }, mentionOwnerName: video.owner?.name
-          ).environment(\.replyPlayback, ReplyPlaybackTarget(duration: model.duration, seek: model.seek, model: model))
-        }.equatable().id(aid)
-      } else {
-        ContentUnavailableView("未找到评论区", systemImage: "text.bubble")
-      }
-    }.onGeometryChange(for: Bool.self) {
+    return detailPanels(source: source, video: video, deferred: deferred)
+      .onGeometryChange(for: Bool.self) {
       $0.size.width > $0.size.height && $0.size.width >= 540
     } action: {
       // Behind fullscreen the page turns with the phone but stays laid out as it was
