@@ -30,10 +30,13 @@ struct SharedFollowing: View {
     return Page(
       items: rows, next: !rows.isEmpty && seen < (r.total ?? 0) ? "\(page+1):\(seen)" : nil)
   }
-  private var sharedList: some View {
+  private var sharedList: PageList<Creator, CreatorLink> {
     PageList(empty: "暂无用户", fetch: fetchSharedPage) { person in
       CreatorLink(person: person)
     }
+  }
+  private var navTitleText: String {
+    alsoFollowsCreator ? "我关注的" + (total.map(String.init) ?? "") + "人也关注了" + (remoteName ?? "TA") : (remoteName.map { "我与" + $0 + "的" } ?? "") + "共同关注"
   }
   var body: some View {
     VStack(alignment: .leading) {
@@ -41,7 +44,7 @@ struct SharedFollowing: View {
         Text("共 \(total) 人").piliFont(.caption).foregroundStyle(.secondary).padding(.horizontal)
       }
       sharedList
-    }.navigationTitle(alsoFollowsCreator ? "我关注的" + (total.map(String.init) ?? "") + "人也关注了" + (remoteName ?? "TA") : (remoteName.map { "我与" + $0 + "的" } ?? "") + "共同关注")
+    }.navigationTitle(navTitleText)
     .task(id: "\(mid):\(accounts.state.active ?? "")") {
       remoteName = nil
       guard accounts.state.active == uid else { return }
