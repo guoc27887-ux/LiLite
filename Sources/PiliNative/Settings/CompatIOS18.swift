@@ -46,9 +46,12 @@ extension View {
 
   /// Upstream's `.glassEffect(_:in:)` is iOS 26-only; on iOS 18 fall back to a
   /// plain ultra-thin material disc so the button keeps its tinted round look.
-  @ViewBuilder func piliGlassEffect<S: Shape>(_ glass: Glass, in shape: S) -> some View {
+  /// The `Glass` type itself is iOS 26-only, so it must not appear in the
+  /// signature — pass tint/interactive and build the Glass value inside the
+  /// availability-guarded branch instead.
+  @ViewBuilder func piliGlassEffect<S: Shape>(tint: Color? = nil, interactive: Bool = false, in shape: S) -> some View {
     if #available(iOS 26, *) {
-      glassEffect(glass, in: shape)
+      glassEffect(.regular.tint(tint).interactive(interactive), in: shape)
     } else {
       background(.ultraThinMaterial, in: shape)
     }
