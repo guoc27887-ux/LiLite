@@ -61,9 +61,10 @@ struct LiveTrackView: View {
     (shield?.keyword_list ?? []).map { "k:" + $0 }
       + (shield?.shield_user_list ?? []).map { "u:" + String($0.uid) }
   }
+  private var bullets: [Bullet] { timeline.entries.map(\.bullet) }
   @ViewBuilder private func bulletOverlay() -> some View {
     BulletOverlay(
-      items: timeline.entries.map(\.bullet), time: 0, revision: timeline.revision,
+      items: bullets, time: 0, revision: timeline.revision,
       clock: player, inspector: inspector, fullscreen: fullscreen
     )
   }
