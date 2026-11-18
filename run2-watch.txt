@@ -1,0 +1,67 @@
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* ios18-compat Build iOS 18 IPA (error harvest) · 44239048703
+Triggered via workflow_dispatch less than a minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134582139124)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Show Xcode and SDK
+  * Install xtool
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* ios18-compat Build iOS 18 IPA (error harvest) · 44239048703
+Triggered via workflow_dispatch less than a minute ago
+
+JOBS
+X Build with iOS 18 target in 22s (ID 134582139124)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Show Xcode and SDK
+  ✓ Install xtool
+  X Build (log to file)
+  - Upload IPA
+  ✓ Upload build log
+  ✓ Post Checkout
+  ✓ Complete job
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Build with iOS 18 target: .github#2
+
+X Process completed with exit code 127.
+Build with iOS 18 target: .github#7
+
+- Due to capacity constraints, jobs targeting macOS arm64 runners may experience longer queue times.
+Build with iOS 18 target: .github#1
+
+X ios18-compat Build iOS 18 IPA (error harvest) · 44239048703
+Triggered via workflow_dispatch less than a minute ago
+
+JOBS
+X Build with iOS 18 target in 22s (ID 134582139124)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Show Xcode and SDK
+  ✓ Install xtool
+  X Build (log to file)
+  - Upload IPA
+  ✓ Upload build log
+  ✓ Post Checkout
+  ✓ Complete job
+
+ANNOTATIONS
+! Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Build with iOS 18 target: .github#2
+
+X Process completed with exit code 127.
+Build with iOS 18 target: .github#7
+
+- Due to capacity constraints, jobs targeting macOS arm64 runners may experience longer queue times.
+Build with iOS 18 target: .github#1
+

@@ -1,0 +1,127 @@
+Account/AvatarEditor.swift:53:25: error: 'glass' is only available in iOS 26.0 or newer
+Account/AvatarEditor.swift:63:27: error: 'glassProminent' is only available in iOS 26.0 or newer
+Account/LoginKit.swift:115:19: error: 'glassProminent' is only available in iOS 26.0 or newer
+Account/SpacePrivacy.swift:54:27: error: 'glassProminent' is only available in iOS 26.0 or newer
+Account/SpacePrivacy.swift:57:10: error: 'glassEffect(_:in:)' is only available in iOS 26.0 or newer
+Account/WebsiteLogin.swift:151:10: error: 'glassEffect(_:in:)' is only available in iOS 26.0 or newer
+Audio/ListenView.swift:119:5: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Audio/ListenView.swift:32:46: error: 'glass' is only available in iOS 26.0 or newer
+Audio/ListenView.swift:41:28: error: 'glassProminent' is only available in iOS 26.0 or newer
+Audio/Song.swift:57:27: error: 'glassProminent' is only available in iOS 26.0 or newer
+Audio/Song.swift:64:27: error: 'glass' is only available in iOS 26.0 or newer
+Discover/Courses.swift:187:24: error: 'glassProminent' is only available in iOS 26.0 or newer
+Discover/Courses.swift:200:23: error: 'glass' is only available in iOS 26.0 or newer
+Discover/Courses.swift:99:28: error: 'glass' is only available in iOS 26.0 or newer
+Discover/EpisodePlayPayload.swift:81:9: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Discover/MusicAndMatches.swift:72:25: error: 'glassProminent' is only available in iOS 26.0 or newer
+Discover/MusicAndMatches.swift:77:29: error: 'glass' is only available in iOS 26.0 or newer
+Discover/MusicAndMatches.swift:79:106: error: 'glass' is only available in iOS 26.0 or newer
+Discover/NativeNotebook.swift:46:23: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Discover/NotebookAttachments.swift:123:26: error: 'glass' is only available in iOS 26.0 or newer
+Discover/NotebookAttachments.swift:129:28: error: 'glassProminent' is only available in iOS 26.0 or newer
+Discover/Rankings.swift:104:66: error: 'glass' is only available in iOS 26.0 or newer
+Discover/SearchView.swift:234:26: error: 'glass' is only available in iOS 26.0 or newer
+Discover/SearchView.swift:277:8: error: 'safeAreaBar(edge:alignment:spacing:content:)' is only available in iOS 26.0 or newer
+Discover/SearchView.swift:315:24: error: 'glass' is only available in iOS 26.0 or newer
+Discover/SeasonLibrary.swift:73:23: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Discover/SeasonLibrary.swift:7:23: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Discover/SitePage.swift:25:27: error: 'glassProminent' is only available in iOS 26.0 or newer
+Discover/SitePage.swift:27:27: error: 'glass' is only available in iOS 26.0 or newer
+Library/CloudLibrary.swift:28:23: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Library/CloudOrder.swift:51:67: error: 'glassProminent' is only available in iOS 26.0 or newer
+Library/FavoriteHub.swift:41:6: error: 'safeAreaBar(edge:alignment:spacing:content:)' is only available in iOS 26.0 or newer
+Library/FavoriteOrder.swift:29:67: error: 'glassProminent' is only available in iOS 26.0 or newer
+Library/Feed.swift:104:10: error: 'safeAreaBar(edge:alignment:spacing:content:)' is only available in iOS 26.0 or newer
+Library/Feed.swift:325:70: error: 'glass' is only available in iOS 26.0 or newer
+Library/Feed.swift:331:27: error: 'glass' is only available in iOS 26.0 or newer
+Library/FloatingAction.swift:14:21: error: 'glassProminent' is only available in iOS 26.0 or newer
+Library/FolderEditor.swift:67:70: error: 'glassProminent' is only available in iOS 26.0 or newer
+Library/HistoryLibrary.swift:65:23: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Library/LoadingViews.swift:50:67: error: 'glass' is only available in iOS 26.0 or newer
+Library/NativePager.swift:171:26: error: 'interactiveContentPopGestureRecognizer' is only available in iOS 26.0 or newer
+Library/PageList.swift:157:86: error: 'glass' is only available in iOS 26.0 or newer
+Library/PageList.swift:175:25: error: 'glass' is only available in iOS 26.0 or newer
+Library/PickFolder.swift:64:65: error: 'glassProminent' is only available in iOS 26.0 or newer
+Library/SavedReadings.swift:29:23: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Live/LiveComposer.swift:124:23: error: 'glassProminent' is only available in iOS 26.0 or newer
+Live/LiveTrackView.swift:61:5: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Live/LiveViews.swift:118:16: error: cannot infer type of closure parameter 'r' without a type annotation
+Offline/DownloadViews.swift:215:23: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Offline/LegacyCacheImportView.swift:66:27: error: 'glassProminent' is only available in iOS 26.0 or newer
+Offline/LegacyCacheImportView.swift:70:10: error: 'glassEffect(_:in:)' is only available in iOS 26.0 or newer
+Offline/OfflineArchiveGrant.swift:36:11: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Offline/OfflineCollectionSelection.swift:55:23: error: 'glassProminent' is only available in iOS 26.0 or newer
+Offline/OfflineCollectionSelection.swift:60:8: error: 'glassEffect(_:in:)' is only available in iOS 26.0 or newer
+Offline/OfflineGroupView.swift:119:10: error: 'glassEffect(_:in:)' is only available in iOS 26.0 or newer
+Offline/OfflineGroupView.swift:66:27: error: 'glassProminent' is only available in iOS 26.0 or newer
+Offline/OfflineGroupView.swift:75:29: error: 'glass' is only available in iOS 26.0 or newer
+Offline/OfflineShelf.swift:74:6: error: 'safeAreaBar(edge:alignment:spacing:content:)' is only available in iOS 26.0 or newer
+Offline/SeasonBatchCache.swift:104:23: error: 'glassProminent' is only available in iOS 26.0 or newer
+Offline/SeasonBatchCache.swift:108:8: error: 'glassEffect(_:in:)' is only available in iOS 26.0 or newer
+Playback/ArchiveCoinPicker.swift:33:26: error: 'glassProminent' is only available in iOS 26.0 or newer
+Playback/ArchiveIntro.swift:109:27: error: 'glass' is only available in iOS 26.0 or newer
+Playback/Cast.swift:221:64: error: 'glass' is only available in iOS 26.0 or newer
+Playback/DetailView.swift:246:25: error: 'glass' is only available in iOS 26.0 or newer
+Playback/DetailView.swift:371:66: error: 'glass' is only available in iOS 26.0 or newer
+Playback/DetailView.swift:403:69: error: 'glass' is only available in iOS 26.0 or newer
+Playback/DetailView.swift:494:12: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Playback/FrameCapture.swift:384:70: error: 'glassProminent' is only available in iOS 26.0 or newer
+Playback/FrameCapture.swift:387:31: error: 'glass' is only available in iOS 26.0 or newer
+Playback/FrameCapture.swift:391:106: error: 'glass' is only available in iOS 26.0 or newer
+Playback/FrameCapture.swift:392:79: error: 'glassProminent' is only available in iOS 26.0 or newer
+Playback/PlaybackPanels.swift:92:23: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Playback/PlaybackSessionEvents.swift:20:30: error: type 'AVAudioSession' has no member 'didBecomeInactiveNotification'
+Playback/PlaybackSessionEvents.swift:21:54: error: type 'AVAudioSession' has no member 'deactivationContextKey'
+Playback/PlaybackSessionEvents.swift:22:30: error: 'DeactivationContext' is not a member type of class 'AVFAudio.AVAudioSession'
+Playback/PlaybackSessionEvents.swift:27:30: error: type 'AVAudioSession' has no member 'resumptionRecommendationNotification'
+Playback/PlaybackSessionEvents.swift:28:49: error: type 'AVAudioSession' has no member 'resumptionContextKey'
+Playback/PlaybackSessionEvents.swift:28:90: error: 'ResumptionContext' is not a member type of class 'AVFAudio.AVAudioSession'
+Playback/PlayerViewport.swift:41:23: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Playback/SponsorDraftEditor.swift:47:23: error: 'glassProminent' is only available in iOS 26.0 or newer
+Playback/VideoExtras.swift:57:28: error: 'glass' is only available in iOS 26.0 or newer
+Playback/VideoExtras.swift:68:75: error: 'glass' is only available in iOS 26.0 or newer
+Playback/VideoNavigationChrome.swift:64:66: error: 'interactiveContentPopGestureRecognizer' is only available in iOS 26.0 or newer
+Playback/VideoNavigationChrome.swift:68:28: error: 'interactiveContentPopGestureRecognizer' is only available in iOS 26.0 or newer
+Playback/VideoNavigationChrome.swift:88:47: error: 'interactiveContentPopGestureRecognizer' is only available in iOS 26.0 or newer
+Settings/EdgeSwipePriority.swift:48:25: error: 'interactiveContentPopGestureRecognizer' is only available in iOS 26.0 or newer
+Settings/EdgeSwipePriority.swift:56:11: error: 'interactiveContentPopGestureRecognizer' is only available in iOS 26.0 or newer
+Settings/EdgeSwipePriority.swift:62:28: error: 'interactiveContentPopGestureRecognizer' is only available in iOS 26.0 or newer
+Settings/MainNavShell.swift:209:68: error: 'onScrollDown' is only available in iOS 26.0 or newer
+Settings/MainNavShell.swift:209:6: error: 'tabBarMinimizeBehavior' is only available in iOS 26.0 or newer
+Settings/MainNavShell.swift:209:84: error: 'never' is only available in iOS 26.0 or newer
+Settings/NativeGlass.swift:24:15: error: 'glassEffect(_:in:)' is only available in iOS 26.0 or newer
+Settings/NativeGlass.swift:41:25: error: 'GlassEffectContainer' is only available in iOS 26.0 or newer
+Settings/NavigationMotion.swift:62:28: error: 'interactiveContentPopGestureRecognizer' is only available in iOS 26.0 or newer
+Social/BubbleCommunity.swift:103:12: error: 'glassEffect(_:in:)' is only available in iOS 26.0 or newer
+Social/Compose.swift:255:31: error: 'glassProminent' is only available in iOS 26.0 or newer
+Social/CreatorArchiveBrowser.swift:109:26: error: 'glassProminent' is only available in iOS 26.0 or newer
+Social/CreatorArchiveBrowser.swift:115:28: error: 'glass' is only available in iOS 26.0 or newer
+Social/CreatorArchiveBrowser.swift:120:28: error: 'glass' is only available in iOS 26.0 or newer
+Social/CreatorCatalog.swift:56:23: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Social/CreatorFavorites.swift:58:33: error: 'glass' is only available in iOS 26.0 or newer
+Social/CreatorOpus.swift:97:6: error: 'safeAreaBar(edge:alignment:spacing:content:)' is only available in iOS 26.0 or newer
+Social/CreatorQuickRelation.swift:27:84: error: 'glass' is only available in iOS 26.0 or newer
+Social/CreatorQuickRelation.swift:28:42: error: 'glassProminent' is only available in iOS 26.0 or newer
+Social/CreatorRelations.swift:13:23: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Social/CreatorRelations.swift:96:67: error: 'glassProminent' is only available in iOS 26.0 or newer
+Social/Creators.swift:108:23: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Social/Creators.swift:436:25: error: 'glass' is only available in iOS 26.0 or newer
+Social/Creators.swift:438:25: error: 'glass' is only available in iOS 26.0 or newer
+Social/Creators.swift:442:25: error: 'glass' is only available in iOS 26.0 or newer
+Social/Creators.swift:445:25: error: 'glassProminent' is only available in iOS 26.0 or newer
+Social/Creators.swift:454:22: error: 'glass' is only available in iOS 26.0 or newer
+Social/Creators.swift:475:22: error: 'glass' is only available in iOS 26.0 or newer
+Social/Creators.swift:485:22: error: 'glassProminent' is only available in iOS 26.0 or newer
+Social/Discussion.swift:612:23: error: 'glassProminent' is only available in iOS 26.0 or newer
+Social/Discussion.swift:865:21: error: 'glassProminent' is only available in iOS 26.0 or newer
+Social/DynamicComposerKit.swift:126:23: error: 'glass' is only available in iOS 26.0 or newer
+Social/DynamicEditView.swift:102:58: error: 'glassProminent' is only available in iOS 26.0 or newer
+Social/DynamicFeed.swift:60:23: error: the compiler is unable to type-check this expression in reasonable time; try breaking up the expression into distinct sub-expressions
+Social/FeedDirectory.swift:116:25: error: 'glassProminent' is only available in iOS 26.0 or newer
+Social/GroupedNoticeList.swift:39:74: error: 'glass' is only available in iOS 26.0 or newer
+Social/IMPreferences.swift:234:29: error: 'glassProminent' is only available in iOS 26.0 or newer
+Social/IMShareSheet.swift:118:21: error: 'glassProminent' is only available in iOS 26.0 or newer
+Social/LiveReservation.swift:104:23: error: 'glassProminent' is only available in iOS 26.0 or newer
+Social/MessageComposer.swift:167:23: error: 'glassProminent' is only available in iOS 26.0 or newer
+Social/VoteEditor.swift:108:25: error: 'glassProminent' is only available in iOS 26.0 or newer
+Timing/PresentationSession.swift:34:65: error: type 'AVAudioSession' has no member 'didBecomeInactiveNotification'
