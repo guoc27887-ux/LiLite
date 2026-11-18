@@ -807,11 +807,7 @@ struct Discussion: View {
     .frame(maxWidth: 640)
     .frame(maxWidth: .infinity)
     .background {
-      // Fixed top corners; the bottom follows the display's corners (iPhone Duo, iPad, iPhone).
-      ConcentricRectangle(uniformTopCorners: .fixed(14), uniformBottomCorners: .concentric)
-        .fill(Color(uiColor: .systemBackground))
-        .shadow(color: .black.opacity(0.12), radius: 12, y: -2)
-        .ignoresSafeArea(.container, edges: .bottom)
+      PiliComposerBackdrop()
     }
   }
   /// Emote, picture, @, formula, more and share-to-dynamic, then the send button.

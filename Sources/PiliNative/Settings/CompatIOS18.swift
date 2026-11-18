@@ -55,3 +55,20 @@ extension UINavigationController {
     return interactivePopGestureRecognizer
   }
 }
+
+/// Composer sheet backdrop: concentric bottom corners on iOS 26, rounded rect on 18.
+struct PiliComposerBackdrop: View {
+  var body: some View {
+    Group {
+      if #available(iOS 26.0, *) {
+        ConcentricRectangle(uniformTopCorners: .fixed(14), uniformBottomCorners: .concentric)
+          .fill(Color(uiColor: .systemBackground))
+      } else {
+        RoundedRectangle(cornerRadius: 14, style: .continuous)
+          .fill(Color(uiColor: .systemBackground))
+      }
+    }
+    .shadow(color: .black.opacity(0.12), radius: 12, y: -2)
+    .ignoresSafeArea(.container, edges: .bottom)
+  }
+}
