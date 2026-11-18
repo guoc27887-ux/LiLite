@@ -240,7 +240,7 @@ struct PlaybackPanels<Surface: View, Info: View, Replies: View>: View {
     }
   }
 
-  @ViewBuilder private func panelsContent(layout: GeometryProxy) -> some View {
+  @ViewBuilder private func panelsContent(layout: GeometryProxy, topInset: CGFloat) -> some View {
   let width = layout.size.width
   let height = layout.size.height
   let wide = width > height && width >= 540
