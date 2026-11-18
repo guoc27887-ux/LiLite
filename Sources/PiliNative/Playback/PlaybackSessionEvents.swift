@@ -16,32 +16,20 @@ import UIKit
         MainActor.assumeIsolated { receive(event) }
       })
     }
-    if #available(iOS 27, *) {
-      observe(AVAudioSession.didBecomeInactiveNotification) { n in
-        guard let state = n.userInfo?[AVAudioSession.deactivationContextKey]
-          as? AVAudioSession.DeactivationContext else { return .appInactive }
-        guard state.source == .system else { return .appInactive }
-        if let reason = state.interruptionContext?.reason, reason != .default { return .outputLost }
+    // iOS 18 fork: upstream's iOS 27 audio-session notifications do not exist in the
+    // iOS 26 SDK, so only the classic interruption notification path is kept.
+    observe(AVAudioSession.interruptionNotification) { n in
+      guard let code = n.userInfo?[AVAudioSessionInterruptionTypeKey] as? NSNumber,
+        let kind = AVAudioSession.InterruptionType(rawValue: code.uintValue) else { return nil }
+      switch kind {
+      case .began:
+        if let reason = n.userInfo?[AVAudioSessionInterruptionReasonKey] as? NSNumber,
+          reason.uintValue != AVAudioSession.InterruptionReason.default.rawValue { return .outputLost }
         return .systemInterruption
-      }
-      observe(AVAudioSession.resumptionRecommendationNotification) { n in
-        let advice = n.userInfo?[AVAudioSession.resumptionContextKey] as? AVAudioSession.ResumptionContext
-        return .recommendation(advice?.recommendation == .shouldResume)
-      }
-    } else {
-      observe(AVAudioSession.interruptionNotification) { n in
-        guard let code = n.userInfo?[AVAudioSessionInterruptionTypeKey] as? NSNumber,
-          let kind = AVAudioSession.InterruptionType(rawValue: code.uintValue) else { return nil }
-        switch kind {
-        case .began:
-          if let reason = n.userInfo?[AVAudioSessionInterruptionReasonKey] as? NSNumber,
-            reason.uintValue != AVAudioSession.InterruptionReason.default.rawValue { return .outputLost }
-          return .systemInterruption
-        case .ended:
-          let flags = (n.userInfo?[AVAudioSessionInterruptionOptionKey] as? NSNumber)?.uintValue ?? 0
-          return .recommendation(AVAudioSession.InterruptionOptions(rawValue: flags).contains(.shouldResume))
-        @unknown default: return nil
-        }
+      case .ended:
+        let flags = (n.userInfo?[AVAudioSessionInterruptionOptionKey] as? NSNumber)?.uintValue ?? 0
+        return .recommendation(AVAudioSession.InterruptionOptions(rawValue: flags).contains(.shouldResume))
+      @unknown default: return nil
       }
     }
     observe(AVAudioSession.routeChangeNotification) { n in

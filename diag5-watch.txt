@@ -1,0 +1,940 @@
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch less than a minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch less than a minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  * Checkout
+  * Select newest stable Xcode 26
+  * Install xtool
+  * Cache native deps (FFmpeg/mpv build trees)
+  * Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch less than a minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  * Install xtool
+  * Cache native deps (FFmpeg/mpv build trees)
+  * Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch less than a minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  * Install xtool
+  * Cache native deps (FFmpeg/mpv build trees)
+  * Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch less than a minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  * Cache native deps (FFmpeg/mpv build trees)
+  * Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch less than a minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  * Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch less than a minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch less than a minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch less than a minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 1 minute ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 2 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 2 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 2 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 2 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 2 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 2 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 2 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 2 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 2 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 2 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 2 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 3 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 4 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 4 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 4 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 4 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 4 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  * Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 4 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  ✓ Build (log to file)
+  * Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 4 minutes ago
+
+JOBS
+* Build with iOS 18 target (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  ✓ Build (log to file)
+  ✓ Upload IPA
+  * Upload build log
+  * Post Cache native deps (FFmpeg/mpv build trees)
+  * Post Checkout
+Refreshing run status every 3 seconds. Press Ctrl+C to quit.
+
+* diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 4 minutes ago
+
+JOBS
+✓ Build with iOS 18 target in 4m17s (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  ✓ Build (log to file)
+  ✓ Upload IPA
+  ✓ Upload build log
+  ✓ Post Cache native deps (FFmpeg/mpv build trees)
+  ✓ Post Checkout
+  ✓ Complete job
+✓ diag-root Build iOS 18 IPA (error harvest) · 44294247492
+Triggered via workflow_dispatch about 4 minutes ago
+
+JOBS
+✓ Build with iOS 18 target in 4m17s (ID 134767007590)
+  ✓ Set up job
+  ✓ Checkout
+  ✓ Select newest stable Xcode 26
+  ✓ Install xtool
+  ✓ Cache native deps (FFmpeg/mpv build trees)
+  ✓ Install native build tools
+  ✓ Build (log to file)
+  ✓ Upload IPA
+  ✓ Upload build log
+  ✓ Post Cache native deps (FFmpeg/mpv build trees)
+  ✓ Post Checkout
+  ✓ Complete job
