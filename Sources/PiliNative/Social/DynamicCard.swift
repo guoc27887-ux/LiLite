@@ -35,7 +35,7 @@ private struct MomentNavigation: ViewModifier {
       // own, and a second one on the same view can be ignored.
       .background {
         Color.clear.frame(width: 0, height: 0)
-          .navigationDestination(item: $target) { MomentTargetView(target: $0) }
+          .navigationDestination(item: $target) { AnyView(MomentTargetView(target: $0)) }
       }
   }
 }
@@ -87,7 +87,9 @@ struct MomentGo<Label: View>: View {
       } label: { label() }
       .buttonStyle(.plain)
     } else {
-      NavigationLink { DeferredPage { MomentTargetView(target: target) } } label: { label() }.buttonStyle(.plain)
+      // Destination type-erased: MomentTargetView resolves to DynamicDetail, which embeds
+      // DynamicCard, closing a type cycle the iOS 18 runtime resolves by infinite recursion.
+      NavigationLink { AnyView(DeferredPage { MomentTargetView(target: target) }) } label: { label() }.buttonStyle(.plain)
     }
   }
 }
