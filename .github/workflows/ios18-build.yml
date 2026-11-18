@@ -40,7 +40,9 @@ jobs:
           xtool --version
 
       - name: Install native build tools
-        run: brew install meson ninja pkg-config
+        run: |
+          brew install meson ninja pkg-config
+          python3 -m pip install --break-system-packages jinja2
 
       - name: Build (log to file)
         run: |
