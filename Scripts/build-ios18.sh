@@ -28,6 +28,7 @@ PILI_IOS_SDK_VERSION=$(python3 "$root/Tools/build_stamp.py" --root "$root" --pli
 export PILI_IOS_SDK_VERSION
 cp "$root/Resources/AppIcon.png" "$work/Resources/AppIcon.png"
 cp "$root/Package.swift" "$root/xtool.yml" "$work/"
+python3 "$root/Tools/firebase_sdk.py" "$root" "$work"
 if [[ ${1:-} == --sign-personal || ${1:-} == --release-personal || ${1:-} == --sign-dev ]]; then
   python3 "$root/Tools/personal_profile.py" "$work"
 fi
