@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
+# The pinned swift-protobuf revision's protoc executable product is rejected by
+# Xcode 26's SwiftPM; Wire only needs the SwiftProtobuf library, so opt out.
+export PROTOBUF_NO_PROTOC=${PROTOBUF_NO_PROTOC:-true}
 root=$(cd "$(dirname "$0")/.." && pwd)
 case "${1:-}" in
     ""|--release|--release-personal|--sign-dev) ;;
