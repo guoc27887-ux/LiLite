@@ -602,6 +602,8 @@ struct Theater: View {
   private func afterTouch(_ change: @escaping @MainActor () -> Void) {
     DispatchQueue.main.async { change() }
   }
+
+
   /// The original client's player chrome: a header (back/title left, tools right) and a bottom
   /// bar (progress, then play/time left and menus/fullscreen right), each on a 75 % black
   /// gradient that slides in from its own edge. Fullscreen adds the action row under the header
