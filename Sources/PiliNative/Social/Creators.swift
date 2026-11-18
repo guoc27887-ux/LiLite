@@ -143,9 +143,7 @@ struct RelationsList: View {
         NavigationLink("黑名单") { BlacklistView(uid: uid) }
       }
     }
-  }
-  var body: some View {
-    creatorsContent
+  
     .confirmationDialog(
       "移除这位粉丝？", isPresented: Binding(get: { removing != nil }, set: { if !$0 { removing = nil } }),
       titleVisibility: .visible, presenting: removing
@@ -157,10 +155,13 @@ struct RelationsList: View {
       Text(issue ?? "")
     }
     .onChange(of: accounts.state.active) { _, _ in removing = nil }
+}
+  var body: some View {
+    creatorsContent
     if fans {
-      list
+      creatorsContent
     } else {
-      list.searchable(text: $draft, prompt: "搜索关注").onSubmit(of: .search) { query = draft }
+      creatorsContent.searchable(text: $draft, prompt: "搜索关注").onSubmit(of: .search) { query = draft }
         .onChange(of: draft) { _, s in if s.isEmpty { query = "" } }
     }
   }
