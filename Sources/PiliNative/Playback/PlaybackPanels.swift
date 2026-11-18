@@ -537,7 +537,8 @@ private struct PlayerPageHeaderButtons: View {
 /// vertical bar beside the player.
 private struct HorizontalBarsOnly: ViewModifier {
   func body(content: Content) -> some View {
-    if #available(iOS 27.1, *) { content.toolbarVerticalBehavior(.disabled) } else { content }
+    // toolbarVerticalBehavior is iOS 27.1, absent from the iOS 26 SDK; no-op here.
+    content
   }
 }
 
