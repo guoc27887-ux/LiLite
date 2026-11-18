@@ -44,9 +44,7 @@ import UIKit
 /// iOS 27.1). Inactive while the device lies flat, so layouts only change in a folded posture.
 enum DeviceFold {
   static func division(in proxy: GeometryProxy) -> CGRect? {
-    if #available(iOS 27.1, *) {
-      return proxy.reservedRegions(kind: .division).first(where: \.isActive)?.frame
-    }
+    // iOS 27.1 reservedRegions API is not in the iOS 26 SDK; folds report nil.
     return nil
   }
 }
