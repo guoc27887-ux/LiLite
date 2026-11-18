@@ -98,7 +98,7 @@ struct FeedView: View {
   var body: some View {
     PiliNavigationStack {
       let channels = NavigationLayout.read(layoutData).channels
-      Color.clear  // DIAG2: deck removed
+      deck(channels)  // DIAG3: deck restored, page content stubbed
         // The original client's header: one row (search, messages, menu, avatar) that scrolls
         // away with the feed, and the channel chips under it, which always stay.
         .piliSafeAreaBar(edge: .top, spacing: 0) {
@@ -138,14 +138,8 @@ struct FeedView: View {
     let owner = accounts.state.owner(.role(.recommend)) ?? ""
     let shelfID = "\(mobile):\(rules.hashValue):\(owner)"
     return RetainedDeck(choices: channels, selection: $shelf, progress: $pageProgress) { channel in
-      switch channel {
-      case .recommended: VideoShelf(shelf: .recommended).id(shelfID)
-      case .popular: VideoShelf(shelf: .popular).id(shelfID)
-      case .rank: Rankings(embedded: true)
-      case .live: LiveDirectory(area: nil, child: nil, embedded: true)
-      case .bangumi: PGCHome(cinema: false)
-      case .cinema: PGCHome(cinema: true)
-      }
+      // DIAG3: real page content replaced with a static placeholder
+      ZStack { Color.clear; Text(verbatim: "DIAG3 page") }
     }.id("\(accounts.state.active ?? ""):\(owner)")
       .onChange(of: channels) { _, new in
         if !new.contains(shelf) { shelf = NavigationRules.firstChannel(new) }
