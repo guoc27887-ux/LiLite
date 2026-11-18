@@ -105,27 +105,28 @@ struct RelationsList: View {
   @State private var issue: String?
   @State private var draft = ""
   @State private var query = ""
+  @ViewBuilder private func creatorRow(_ person: Creator) -> some View {
+    HStack {
+      CreatorLink(person: person)
+      if !fans && uid == accounts.state.active { CreatorQuickRelation(mid: person.mid, knownFollowing: true) }
+    }.swipeActions(edge: .trailing, allowsFullSwipe: false) {
+      if fans && uid == accounts.state.active {
+        Button("移除粉丝", role: .destructive) { removing = person }.disabled(busy)
+      }
+    }.contextMenu {
+      if fans && uid == accounts.state.active {
+        Button("移除粉丝", role: .destructive) { removing = person }.disabled(busy)
+      }
+    }
+  }
   private var creatorsList: some View {
     PageList(empty: fans ? "暂无粉丝" : "暂无关注") { p in
       try await BiliAPI.shared.connections(
         uid: uid, fans: fans, page: Int(p ?? "1") ?? 1, term: query, order: order, expectedAccount: accounts.state.active ?? "")
-    } row: { person in
-      HStack {
-        CreatorLink(person: person)
-        if !fans && uid == accounts.state.active { CreatorQuickRelation(mid: person.mid, knownFollowing: true) }
-      }.swipeActions(edge: .trailing, allowsFullSwipe: false) {
-        if fans && uid == accounts.state.active {
-          Button("移除粉丝", role: .destructive) { removing = person }.disabled(busy)
-        }
-      }.contextMenu {
-        if fans && uid == accounts.state.active {
-          Button("移除粉丝", role: .destructive) { removing = person }.disabled(busy)
-        }
-      }
-    }
+    } row: { person in creatorRow(person) }
   }
-  var body: some View {
-    let list = creatorsList
+  private var creatorsContent: some View {
+    creatorsList
     .id("\(query):\(revision):\(fans || !query.isEmpty ? 0 : order):\(accounts.state.active ?? "")")
     .navigationTitle((remoteName.map { $0 + "的" } ?? "") + (fans ? "粉丝" : "关注"))
     .task(id: uid + ":" + (accounts.state.active ?? "")) {
@@ -142,6 +143,9 @@ struct RelationsList: View {
         NavigationLink("黑名单") { BlacklistView(uid: uid) }
       }
     }
+  }
+  var body: some View {
+    creatorsContent
     .confirmationDialog(
       "移除这位粉丝？", isPresented: Binding(get: { removing != nil }, set: { if !$0 { removing = nil } }),
       titleVisibility: .visible, presenting: removing

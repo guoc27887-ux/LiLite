@@ -485,6 +485,20 @@ struct DetailView: View {
     }
   }
 
+
+  @ViewBuilder private func detailContent(source: Video, video: Video, deferred: (() -> Void)?) -> some View {
+    detailPanels(source: source, video: video, deferred: deferred)
+      .onGeometryChange(for: Bool.self) {
+      $0.size.width > $0.size.height && $0.size.width >= 540
+    } action: {
+      wideViewport = $0
+      if !$0 { sideAuthor = nil }
+    }.navigationTitle("").navigationBarTitleDisplayMode(.inline)
+      .linkedDiscussion(oid: detail?.aid ?? detail.flatMap { ArchiveNumber.av($0.bvid) }, type: 1, author: detail?.owner?.mid,
+        playback: ReplyPlaybackTarget(duration: model.duration, seek: model.seek, model: model),
+        selectComments:{if showReplies {sideAuthor=nil;panelOverride=true}})
+  }
+
   @ViewBuilder private func detailPanels(source: Video, video: Video, deferred: (() -> Void)?) -> some View {
 PlaybackPanels(
   model: model, key: source.bvid, canDiscuss: showReplies, selection: $panelOverride,
@@ -528,16 +542,7 @@ PlaybackPanels(
       guard prepared != key, detailOwner == (accounts.state.active ?? "") else { return nil }
       return { manualTicket = key; retryPlayback += 1 }
     }
-    return detailPanels(source: source, video: video, deferred: deferred)
-      .onGeometryChange(for: Bool.self) {
-      $0.size.width > $0.size.height && $0.size.width >= 540
-    } action: {
-      wideViewport = $0
-      if !$0 { sideAuthor = nil }
-    }.navigationTitle("").navigationBarTitleDisplayMode(.inline)
-      .linkedDiscussion(oid: detail?.aid ?? detail.flatMap { ArchiveNumber.av($0.bvid) }, type: 1, author: detail?.owner?.mid,
-        playback: ReplyPlaybackTarget(duration: model.duration, seek: model.seek, model: model),
-        selectComments:{if showReplies {sideAuthor=nil;panelOverride=true}})
+    return detailContent(source: source, video: video, deferred: deferred)
       .task(id: "\(reload)|\(accounts.state.active ?? "")|\(source.bvid)") {
         let uid = accounts.state.active
         let pickedPart = sidebarPart.flatMap { $0.bvid == source.bvid ? $0.cid : nil }

@@ -38,7 +38,7 @@ struct Theater: View {
   @State private var volumeSequence = 0
   @State private var pulse = 0
   @AccessibilityFocusState private var controlsFocused: Bool
-  var body: some View {
+  private var viewportBase: some View {
     GeometryReader { geo in viewportContent(size: geo.size) }.preference(key: PlayerControlsVisibleKey.self, value: visible && showsControls && !system)
     .onReceive(AVAudioSession.sharedInstance().publisher(for:\.outputVolume).removeDuplicates().dropFirst()){level in
       guard !detached,level.isFinite else{return}
@@ -53,6 +53,9 @@ struct Theater: View {
     }
     .background { if let native = player.nativePlayer { VideoSceneMarker(player: native) } }
     .background { if let mpv = player as? MPVPlayer, let upscale { MPVUpscaleBinding(player: mpv, session: upscale) } }
+  }
+  var body: some View {
+    viewportBase
     .alert("画中画", isPresented: Binding(get: { pipError != nil }, set: { if !$0 { pipError = nil } })) {
       Button("好") {}
     } message: { Text(pipError ?? "") }
