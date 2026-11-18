@@ -224,31 +224,10 @@ struct FeedView: View {
         .clipped()
         .ignoresSafeArea(.container, edges: [.top, .bottom])
         .padding(.top, reserved.top)
-        .onGeometryChange(for: FeedHeaderInsets.self) { proxy in
-          // Scaled, the regions come in unscaled coordinates: the Dynamic Island landed inside
-          // the header and pushed it, with the feed under it, off to the right edge.
-          guard #available(iOS 27.1, *), !interfaceScaled else { return FeedHeaderInsets(width: proxy.size.width) }
-          var insets = FeedHeaderInsets.avoiding(width: proxy.size.width, height: headerHeight + top,
-            divisions: proxy.reservedRegions(kind: .division).filter(\.isActive).map(\.frame),
-            occlusions: proxy.reservedRegions(kind: .occlusion).filter(\.isActive).map(\.frame))
-          insets.width = proxy.size.width
-          return insets
-        } action: { next in
-          // While an iPhone Duo folds or unfolds, the regions arrive for a moment from the screen
-          // being left (or turned a quarter): the header jumped to one half, then 124 pt right,
-          // then back. What was kept clear of on another width goes at once, as does everything
-          // when there is nothing to avoid; anything else takes effect once it holds.
-          if next.width != reserved.width { reserved = FeedHeaderInsets(width: next.width) }
-          if next.isEmpty { pendingReserved = nil; reserved = next }
-          else { pendingReserved = next == reserved ? nil : next }
-        }
-        .task(id: pendingReserved) {
-          guard let next = pendingReserved else { return }
-          try? await Task.sleep(for: .milliseconds(180))
-          guard !Task.isCancelled, pendingReserved == next else { return }
-          reserved = next
-          pendingReserved = nil
-        }
+        .onGeometryChange(for: FeedHeaderInsets.self) { _ in
+          // iOS 27.1 reservedRegions API is not in the iOS 26 SDK; folds report no insets.
+          FeedHeaderInsets()
+        } action: { reserved = $0 }
         .padding(.leading, windowInsets.leading).padding(.trailing, windowInsets.trailing)
         .background {
           FeedWindowSafeArea { windowInsets = $0 }.allowsHitTesting(false).accessibilityHidden(true)
@@ -580,6 +559,19 @@ extension EnvironmentValues {
   var homeFeedBottomClearance: CGFloat {
     get { self[HomeFeedBottomClearance.self] }
     set { self[HomeFeedBottomClearance.self] = newValue }
+  }
+}
+private struct FeedHeaderPlacement: ViewModifier {
+  @State private var insets = FeedHeaderInsets()
+  func body(content: Content) -> some View {
+    content
+      .padding(.top, insets.top)
+      .padding(.leading, insets.leading).padding(.trailing, insets.trailing)
+      .frame(maxWidth: .infinity)
+      .onGeometryChange(for: FeedHeaderInsets.self) { _ in
+        // iOS 27.1 reservedRegions API is not in the iOS 26 SDK; folds report no insets.
+        FeedHeaderInsets()
+      } action: { insets = $0 }
   }
 }
 
