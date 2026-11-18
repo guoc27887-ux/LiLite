@@ -11,7 +11,7 @@ work="$HOME/.cache/piliplus-native/build"
 mkdir -p "$work/Sources" "$root/dist"
 # xtool and SwiftPM share this staging directory between debug, release and signing.
 exec 9>"$work/.pili-build.lock"
-flock 9
+# flock removed for macOS CI (single-runner, no lock contention)
 mkdir -p "$work/Resources"
 cp "$root/Resources/Info.plist" "$root/Resources/PiliPlus.entitlements" "$work/Resources/"
 if [[ $(uname -s) == Darwin ]]; then
