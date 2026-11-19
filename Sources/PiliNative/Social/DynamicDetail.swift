@@ -38,13 +38,14 @@ struct DynamicDetail: View {
       } else if let d = entry {
         ScrollViewReader { proxy in
           ReadingSplit(hasPanel: true) {
-            DynamicCard(
-              entry: d, inside: true,
-              openPanel: { kind in
-                selected = kind
-                jump += 1
-              }
-            ) { revision += 1 }
+            AnyView(
+              DynamicCard(
+                entry: d, inside: true,
+                openPanel: { kind in
+                  selected = kind
+                  jump += 1
+                }
+              ) { revision += 1 })
             .environment(\.momentPageCloser, closer.bind(dismiss))
           } panel: { header in
             let bar = picker(d)
