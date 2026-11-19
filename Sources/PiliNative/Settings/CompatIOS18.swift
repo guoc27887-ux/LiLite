@@ -44,6 +44,16 @@ extension View {
     }
   }
 
+  /// Upstream's `.scrollEdgeEffectHidden(_:for:)` is iOS 26-only; iOS 18 has
+  /// no scroll edge effect to hide, so it is a no-op there.
+  @ViewBuilder func piliScrollEdgeEffectHidden(_ hidden: Bool, for edges: Edge.Set) -> some View {
+    if #available(iOS 26, *) {
+      scrollEdgeEffectHidden(hidden, for: edges)
+    } else {
+      self
+    }
+  }
+
   /// Upstream's `.glassEffect(_:in:)` is iOS 26-only; on iOS 18 fall back to a
   /// plain ultra-thin material disc so the button keeps its tinted round look.
   /// The `Glass` type itself is iOS 26-only, so it must not appear in the
