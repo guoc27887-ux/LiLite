@@ -175,34 +175,34 @@ struct DynamicCard: View {
     .frame(maxWidth: .infinity, alignment: .leading)
     .buttonStyle(.plain)
     .onChange(of: accounts.state.active) { _, _ in issue = nil }
-    .piliSheet(item: $visibility) { VisibilityPanel(request: $0) }
+    .piliSheet(item: $visibility) { AnyView(VisibilityPanel(request: $0)) }
     .piliSheet(isPresented: $editing) {
       if let uid = accounts.state.active, uid == entry.authorID.map(String.init) {
-        DynamicEditView(id: entry.id, uid: uid, changed: changed)
+        AnyView(DynamicEditView(id: entry.id, uid: uid, changed: changed))
       }
     }
     .piliSheet(isPresented: $ownerSettings) {
       if let uid = accounts.state.active, uid == entry.authorID.map(String.init) {
-        PiliNavigationStack {
+        AnyView(PiliNavigationStack {
           MomentOwnerSettings(entry: entry, uid: uid, changed: changed)
             .toolbar { ToolbarItem(placement: .cancellationAction) { Button("完成") { ownerSettings = false } } }
-        }
+        })
       }
     }
     .piliSheet(isPresented: $reporting) {
       if let uid = accounts.state.active, let mid = entry.authorID {
-        PiliNavigationStack {
+        AnyView(PiliNavigationStack {
           CommunityReport(target: .moment(id: entry.id, author: mid), uid: uid) { hidden = true }
             .toolbar { ToolbarItem(placement: .cancellationAction) { Button("关闭") { reporting = false } } }
-        }
+        })
       }
     }
     .piliSheet(isPresented: $poster) {
       if let url = shareURL {
-        PiliNavigationStack {
+        AnyView(PiliNavigationStack {
           SharePoster(content: .moment(entry, link: url))
             .toolbar { ToolbarItem(placement: .cancellationAction) { Button("完成") { poster = false } } }
-        }
+        })
       }
     }
     .confirmationDialog("删除这条动态？", isPresented: $removing, titleVisibility: .visible) {
@@ -276,7 +276,7 @@ struct DynamicCard: View {
       }
       if !entry.blockedAttachment && !entry.media.isEmpty { pictures(entry.media) }
       if !entry.blockedAttachment, let card = entry.card { MomentVideoCover(video: card, fullTitle: inside) }
-      MomentResourceViews(values: entry.resources, dynamic: entry.id)
+      AnyView(MomentResourceViews(values: entry.resources, dynamic: entry.id))
       if !entry.blockedAttachment, let vote = entry.voteID {
         MomentGo(target: .vote(vote, entry.id)) {
           Label("查看投票", systemImage: "chart.bar.doc.horizontal").font(.subheadline).foregroundStyle(.tint)
@@ -312,7 +312,7 @@ struct DynamicCard: View {
         }
         if !entry.originalMedia.isEmpty { pictures(entry.originalMedia) }
         if let card = entry.originalCard { MomentVideoCover(video: card, fullTitle: inside) }
-        if let extras = entry.originalExtras { MomentResourceViews(values: extras, dynamic: orig) }
+        if let extras = entry.originalExtras { AnyView(MomentResourceViews(values: extras, dynamic: orig)) }
         if let vote = entry.originalVote {
           MomentGo(target: .vote(vote, orig)) {
             Label("查看投票", systemImage: "chart.bar.doc.horizontal").font(.footnote).foregroundStyle(.tint)
@@ -551,8 +551,8 @@ struct DynamicActionBar: View {
     .frame(height: 42)
     .onChange(of: accounts.state.active) { _, _ in likedReceipt = nil }
     .onChange(of: entry.liked) { _, _ in likedReceipt = nil }
-    .piliSheet(isPresented: $repost) { DynamicComposer(repost: entry.id) { changed() } }
-    .piliSheet(isPresented: $login) { PiliNavigationStack { QRLoginView() } }
+    .piliSheet(isPresented: $repost) { AnyView(DynamicComposer(repost: entry.id) { changed() }) }
+    .piliSheet(isPresented: $login) { AnyView(PiliNavigationStack { QRLoginView() }) }
     .alert("动态", isPresented: Binding(get: { issue != nil }, set: { if !$0 { issue = nil } })) {
       Button("好") {}
     } message: {
