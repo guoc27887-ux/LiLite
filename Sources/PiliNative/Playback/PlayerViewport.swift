@@ -220,20 +220,25 @@ struct Theater: View {
     .background { if let native = player.nativePlayer { VideoSceneMarker(player: native) } }
     .background { if let mpv = player as? MPVPlayer, let upscale { MPVUpscaleBinding(player: mpv, session: upscale) } }
   }
-  var body: some View {
-    viewportBase
+  /// PiP alert + PiP notifications. Split out of `body`: the full modifier chain
+  /// (stage + alert + receivers + state tracking + hide timers) exceeds what
+  /// the type checker handles in reasonable time on the iOS 26 SDK.
+  private var viewportPlaybackEvents: some View {
+    lockOfferTiming(stage)
     .alert("画中画", isPresented: Binding(get: { pipError != nil }, set: { if !$0 { pipError = nil } })) {
       Button("好") {}
     } message: { Text(pipError ?? "") }
-  }
-  var body: some View {
-    lockOfferTiming(stage)
     .onReceive(NotificationCenter.default.publisher(for: .piliStartPictureInPicture)) { n in
       if (n.object as AnyObject?) === player { resetZoom() }
     }
     .onReceive(NotificationCenter.default.publisher(for: .piliMPVPiPError)) { n in
       if (n.object as AnyObject?) === player { pipError = "画中画启动失败，请稍后重试" }
     }
+  }
+
+  /// Player / clock / control state tracking, on top of the PiP events above.
+  private var viewportStateTracking: some View {
+    viewportPlaybackEvents
     .onChange(of: ObjectIdentifier(player)) { _, _ in
       clock.attach(player)
       wake()
@@ -262,6 +267,10 @@ struct Theater: View {
       touch.horizontalSeek = nil
       touch.reveal = nil
     }
+  }
+
+  var body: some View {
+    viewportStateTracking
     // The official client's auto-hide: 3 s after the controls come up, and only while playing —
     // paused, they stay until tapped away. Resuming restarts the timer (clock.playing above).
     .task(id: pulse) {
