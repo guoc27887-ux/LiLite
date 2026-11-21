@@ -59,7 +59,9 @@ def device_executable(blob, info):
     version=info.get("MinimumOSVersion","").split(".")
     require(len(version) in (2,3) and all(s.isdecimal() for s in version),"Invalid minimum iOS version")
     declared=tuple(map(int,version))+(0,)*(3-len(version))
-    require(declared==(minimum>>16,(minimum>>8)&255,minimum&255) and declared==(17,0,0),"Deployment target mismatch")
+    require(declared==(minimum>>16,(minimum>>8)&255,minimum&255) and declared==(18,0,0),"Deployment target mismatch")
+    # iOS 18 fork: upstream expects 17.0 here; this fork lowers the target to 18.0
+    # (Package.swift platforms + LiLite.xcodeproj IPHONEOS_DEPLOYMENT_TARGET).
     sdk=platforms[0][2]
     sdk_version=(sdk>>16,(sdk>>8)&255,sdk&255)
     name=info.get("DTSDKName", "")
