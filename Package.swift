@@ -22,7 +22,7 @@ let firebaseTargets: [Target] = firebaseNames.map {
 
 let package = Package(
   name: "PiliNative",
-  platforms: [.iOS("17.0")],
+  platforms: [.iOS("18.0")],
   products: [.library(name: "PiliNative", targets: ["PiliNative"])],
   dependencies: [.package(path: "Wire"), .package(path: "ArchiveKit"), .package(path: "MediaKit"), .package(path: "ColorKit")],
   targets: firebaseTargets + [
