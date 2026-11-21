@@ -196,14 +196,18 @@ struct ProfileFullHistory: View {
   }
   private var identity: String { uid + ":" + category + ":" + term + ":" + String(revision) }
   private var categories: some View {
-    ChipBar(
-      items: ["all"] + tabs.map(\.type),
-      selection: Binding(get: { category }, set: { next in
-        guard next != category else { return }
-        category = next
-        reset()
-      }),
-      title: { type in type == "all" ? "全部" : tabs.first { $0.type == type }?.name ?? type })
+    // Split out of the ChipBar call: the inline Binding + title closures made
+    // the compiler time out type-checking the generic init (Xcode 26.6).
+    let selection: Binding<String> = Binding(get: { category }, set: { next in
+      guard next != category else { return }
+      category = next
+      reset()
+    })
+    let title: (String) -> String = { type in
+      type == "all" ? "全部" : tabs.first { $0.type == type }?.name ?? type
+    }
+    let items: [String] = ["all"] + tabs.map(\.type)
+    return ChipBar(items: items, selection: selection, title: title)
   }
   private func setTerm(_ text: String) {
     let next = text.trimmingCharacters(in: .whitespacesAndNewlines)
