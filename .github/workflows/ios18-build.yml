@@ -23,8 +23,11 @@ jobs:
       - name: Select newest stable Xcode 26
         run: |
           ls /Applications | grep -i xcode || true
-          pick=$(ls -d /Applications/Xcode_26.0.1.app /Applications/Xcode_26.0.app 2>/dev/null | head -1)
-          if [ -z "$pick" ]; then pick=$(ls -d /Applications/Xcode_26*.app 2>/dev/null | grep -v -i beta | sort -V | tail -1); fi
+          # Newest stable Xcode 26: the image default is 26.6 (Xcode_26.6.0.app is a
+          # symlink to it). Xcode 26.0.1's iOS 26.0 platform component is incomplete on
+          # this image ("iOS 26.0 is not installed" for the generic device destination),
+          # so do not pin the oldest 26.0.x.
+          pick=$(ls -d /Applications/Xcode_26*.app 2>/dev/null | grep -v -i beta | sort -V | tail -1)
           echo "Selected: $pick"
           sudo xcode-select -s "$pick"
           xcodebuild -version
