@@ -1,0 +1,54 @@
+name: Build iOS 18 IPA (error harvest)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build with iOS 18 target
+    runs-on: macos-26
+    timeout-minutes: 330
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Xcode and SDK
+        run: |
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-path
+          xcrun --sdk iphoneos --show-sdk-version
+
+      - name: Install xtool
+        run: |
+          brew tap xtool-org/tap
+          brew install xtool
+          xtool --version
+
+      - name: Build (log to file)
+        run: |
+          set -o pipefail
+          bash Scripts/build-ios18.sh 2>&1 | tee build-ios18.log
+
+      - name: Upload IPA
+        if: ${{ success() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lilite-ios18-unsigned-ipa
+          path: dist/*.ipa
+          if-no-files-found: error
+
+      - name: Upload build log
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios18-build-log
+          path: build-ios18.log
+          if-no-files-found: warn
