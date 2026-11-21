@@ -32,13 +32,6 @@ jobs:
           echo "SDK: $sdk"
           python3 -c "import json,plistlib,sys; s=json.load(open('$sdk/SDKSettings.json')); v=plistlib.load(open('$sdk/System/Library/CoreServices/SystemVersion.plist','rb')); print('SDKSettings Version:', s['Version'], '| ProductVersion:', v['ProductVersion'])"
 
-      - name: Install xtool
-        run: |
-          brew tap xtool-org/tap
-          brew trust xtool-org/tap
-          brew install xtool
-          xtool --version
-
       - name: Cache native deps (FFmpeg/mpv build trees)
         uses: actions/cache@v4
         with:
