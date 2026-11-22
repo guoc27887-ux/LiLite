@@ -109,6 +109,10 @@
 
 图标原图在 [Resources/Brand/icon.png](Resources/Brand/icon.png)（1024×1024，直角满版，由系统裁切圆角）。
 
+## 贡献者
+
+Codex、dsh、glm
+
 ## 许可证
 
 本项目以 [PolyForm Noncommercial License 1.0.0](LICENSE) 发布。使用的第三方组件（mpv、FFmpeg、libass、SwiftProtobuf 等）各自遵循其原有许可证，详见应用内"开源许可"页面。
