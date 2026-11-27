@@ -1,11 +1,10 @@
 <p align="center">
-  <img src="Resources/Brand/banner.png" alt="轻哩 LiLite" width="100%">
+  <img src="Resources/Brand/banner.png" alt="轻哩 LiLite，iPhone 和 iPad 的哔哩哔哩第三方客户端" width="100%">
 </p>
 
-<p align="center">
-  <b>轻哩 LiLite</b> · 轻盈顺滑的原生 iOS 视频客户端<br>
-  SwiftUI / UIKit 编写，支持 iOS 17+
-</p>
+# 轻哩 LiLite · 哔哩哔哩第三方 iOS 客户端
+
+[下载 iOS IPA](https://github.com/liuliuya2333/LiLite/releases/latest) · [安装方法](#安装) · [TestFlight 与常见问题](#常见问题)
 
 <p align="center">
   <img alt="iOS 17+" src="https://img.shields.io/badge/iOS-17%2B-3F8DF5?style=flat-square&logo=apple&logoColor=white">
@@ -18,9 +17,11 @@
 
 ## 简介
 
-轻哩是一个第三方哔哩哔哩 iOS 客户端，用 Swift 从头编写：界面完全原生，跟随系统的 Liquid Glass 材质、导航手势、画中画和辅助功能。
+轻哩是给 **iPhone 和 iPad** 用的 B 站第三方客户端，以 SwiftUI 和 UIKit 编写。支持 iOS / iPadOS 17+，在 iOS 26 上使用系统的 **Liquid Glass（液态玻璃）**，保留原生导航手势、画中画和辅助功能。播放可在 mpv 和 AVPlayer 之间切换。
 
-名字里的"轻"是目标：启动快、滑动跟手、播放不卡、界面不打扰内容。
+名字里的「轻」说的是启动快、滑动跟手、播放不卡，界面也不打扰内容。
+
+LiLite is a native third-party Bilibili client for iOS and iPadOS, built with SwiftUI and UIKit. It supports iOS 17+, uses Liquid Glass on iOS 26, and offers both mpv and AVPlayer. Download the unsigned IPA from [GitHub Releases](https://github.com/liuliuya2333/LiLite/releases/latest) to sideload on iPhone or iPad.
 
 ## 功能
 
@@ -40,7 +41,7 @@
 ## 截图
 
 <p align="center">
-  <img src="Resources/Screenshots/showcase.png" alt="轻哩界面截图" width="100%">
+  <img src="Resources/Screenshots/showcase.png" alt="轻哩 iPhone 界面截图，展示 B 站浏览和播放" width="100%">
 </p>
 
 ## 安装
@@ -54,9 +55,25 @@
 | [TrollStore](https://github.com/opa334/TrollStore) | 支持的系统版本可永久安装 |
 
 - 支持 iOS 17+。
-- 未签名包不含组播权限，DLNA 投屏改用 Bonjour 和指定 IP 发现设备。
-- 不提供 App Store 或 TestFlight 版本；也可以按下方说明自行构建。
+- 个人签名未获组播权限时，DLNA 投屏可用 Bonjour 和指定 IP 发现设备。
+- AltStore Classic 和 SideStore 可以添加[轻哩订阅源](https://github.com/liuliuya2333/LiLite/releases/latest/download/LiLite-source.json)，在侧载工具里检查更新。
 - 在「设置 → 版本与更新」打开「提醒新版本」，有新的 Release 时会收到提示。
+
+## 常见问题
+
+### 轻哩有公开的 TestFlight 或 App Store 下载吗？
+
+目前没有在本仓库公布公开 TestFlight 邀请或 App Store 下载地址。2026 年的公开版本记录和 iPhone / iPad IPA 都在 [GitHub Releases](https://github.com/liuliuya2333/LiLite/releases)。也可以按下方说明用 Xcode 构建仓库中的源码。
+
+### 在找开源的 B 站 iOS 客户端？
+
+本仓库公开了轻哩的源码，使用 [PolyForm Noncommercial License 1.0.0](LICENSE)，许可范围限于非商业用途。公开源码快照与最新 IPA 的进度可能不同。
+
+### 和 MiniBili、PiliPlus 等项目有什么区别？
+
+- 如果你在找 **MiniBili TestFlight**，邀请和系统要求见 [MiniBili 官网](https://minibili.zhaohe.org/)。
+- 想比较其他 SwiftUI iOS 客户端，可以看 GitHub 上的 [NeoBili](https://github.com/Fab1e2000/NeoBili) 和 [cilicili](https://github.com/lwshen/cilicili)。[BiliPure](https://github.com/miyiwi/BiliPure) 是 Flutter iOS 项目。
+- [PiliPala](https://github.com/guozhigq/pilipala)、[PiliPalaX](https://github.com/orz12/PiliPalaX)、[PiliPlus](https://github.com/bggRGjQaUbCoE/PiliPlus)、[PiliPlusX](https://github.com/Wodlie/PiliPlusX) 和 [PiliNara](https://github.com/Starfallan/PiliNara) 也有各自的项目仓库。要找 PiliPlus 的 iOS IPA，请查看 [PiliPlus Releases](https://github.com/bggRGjQaUbCoE/PiliPlus/releases)。
 
 ## 交流
 
